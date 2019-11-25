@@ -47,7 +47,7 @@
 
 <nav class="navbar navbar-expand-lg py-2 m-0" id="ftco-navbar">
     <div class="container">
-        <img src="https://i.imgur.com/Kp37muV.png" height="30" alt="kingdomlife logo"> <a class="nav-item text-uppercase font-weight-bold">Kingdomlife Gospel Church</a>
+        <img src="https://i.imgur.com/Kp37muV.png" height="30" alt="kingdomlife logo"> <a href="/" class="nav-item text-uppercase font-weight-bold">Kingdomlife Gospel Church</a>
         <button id="menuicon" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
@@ -58,16 +58,17 @@
                        aria-haspopup="true" aria-expanded="false">About
                     </a>
                     <div class="dropdown-menu dropdown-default dropdown-menu-right text-right " aria-labelledby="navbarDropdownMenuLink-333">
-                        <a class="dropdown-item" href="about">About Kingdomlife</a>
-                        <a class="dropdown-item" href="register">Connect with us</a>
-                        <a class="dropdown-item" href="#">ministers / Team</a>
+                        <a class="dropdown-item" href="about.php">About Kingdomlife</a>
+                        <a class="dropdown-item" href="about.php">Pastor Victor Ohurooa</a>
+                        <a class="dropdown-item" href="connect.php">Connect with us</a>
+                        <a class="dropdown-item" href="ministers.php">ministers / Team</a>
                     </div>
                 </li>
                 <li class="nav-item"><a href="read" class="nav-link">Read</a></li>
                 <li class="nav-item"><a href="give" class="nav-link">Give</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">Downloads
+                       aria-haspopup="true" aria-expanded="false">Online Store
                     </a>
                     <div class="dropdown-menu dropdown-default dropdown-menu-right text-right " aria-labelledby="navbarDropdownMenuLink-333">
                         <a class="dropdown-item" href="#">Audio Message</a>
@@ -75,7 +76,6 @@
                         <a class="dropdown-item" href="#">Services</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="store" class="nav-link">Store</a></li>
             </ul>
             <ul class="navbar-nav ml-3 nav-flex-icons">
                 <li class="nav-item dropdown">

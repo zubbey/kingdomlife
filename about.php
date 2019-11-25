@@ -71,51 +71,11 @@ require ("./components/menu.php");
                 <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
             </div>
         </div>
+    </div>
 
 <!--        FIRST ROW-->
+<div class="container">
     <div class="row content">
-            <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-                <div class="staff">
-                    <div class="d-flex mb-4">
-                        <div class="img" style="background-image: url(images/profile/12.jpg);"></div>
-                        <div class="info ml-4">
-                            <h3><a href="teacher-single.html"> Chukwuma Omerain</a></h3>
-                            <span class="position">Donated on 20th Nov, 2019</span>
-                            <div class="text">
-                                <p>Donated <br> <span>&#8358;450,000</span> for <a href="#">Children Needs Food</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-                <div class="staff">
-                    <div class="d-flex mb-4">
-                        <div class="img" style="background-image: url(images/profile/11.jpg);"></div>
-                        <div class="info ml-4">
-                            <h3><a href="teacher-single.html">patrick Edidi</a></h3>
-                            <span class="position">Donated on 10 Jan, 2020</span>
-                            <div class="text">
-                                <p>Donated <br>  <span>&#8358;5,000,000</span> for <a href="#">Back to School</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-                <div class="staff">
-                    <div class="d-flex mb-4">
-                        <div class="img" style="background-image: url(images/profile/10.jpg);"></div>
-                        <div class="info ml-4">
-                            <h3><a href="teacher-single.html">Peter Egike</a></h3>
-                            <span class="position">Donated on 1'st Fab, 2020</span>
-                            <div class="text">
-                                <p>Donated <br>  <span>&#8358;1,200,000</span> for <a href="#">Help Mama campaign</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
             <div class="staff">
                 <div class="d-flex mb-4">
@@ -203,48 +163,6 @@ require ("./components/menu.php");
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/07.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="teacher-single.html">Peter Egike</a></h3>
-                        <span class="position">Donated on 1'st Fab, 2020</span>
-                        <div class="text">
-                            <p>Donated <br>  <span>&#8358;1,200,000</span> for <a href="#">Help Mama campaign</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/07.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="teacher-single.html">Peter Egike</a></h3>
-                        <span class="position">Donated on 1'st Fab, 2020</span>
-                        <div class="text">
-                            <p>Donated <br>  <span>&#8358;1,200,000</span> for <a href="#">Help Mama campaign</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/07.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="teacher-single.html">Peter Egike</a></h3>
-                        <span class="position">Donated on 1'st Fab, 2020</span>
-                        <div class="text">
-                            <p>Donated <br>  <span>&#8358;1,200,000</span> for <a href="#">Help Mama campaign</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
 <!--        Third Row-->
@@ -291,48 +209,6 @@ require ("./components/menu.php");
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/12.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="teacher-single.html"> Chukwuma Omerain</a></h3>
-                        <span class="position">Donated on 20th Nov, 2019</span>
-                        <div class="text">
-                            <p>Donated <br> <span>&#8358;450,000</span> for <a href="#">Children Needs Food</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/09.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="teacher-single.html">patrick Edidi</a></h3>
-                        <span class="position">Donated on 10 Jan, 2020</span>
-                        <div class="text">
-                            <p>Donated <br>  <span>&#8358;5,000,000</span> for <a href="#">Back to School</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/10.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="teacher-single.html">Peter Egike</a></h3>
-                        <span class="position">Donated on 1'st Fab, 2020</span>
-                        <div class="text">
-                            <p>Donated <br>  <span>&#8358;1,200,000</span> for <a href="#">Help Mama campaign</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
 
@@ -341,13 +217,11 @@ require ("./components/menu.php");
                 <div class="block-27">
                     <article id="pagin">
                         <nav>
-                            <span><a class="prev" href="#"><</a></span>
                             <ul>
                                 <li class="active"><a href="#">1</a></li>
                                 <li><a class="" href="#">2</a></li>
                                 <li><a class="" href="#">3</a></li>
                             </ul>
-                            <span><a class="next" href="#">></a></span>
                         </nav>
                     </article>
                 </div>

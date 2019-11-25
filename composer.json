@@ -1,0 +1,11 @@
+{
+    "name": "zubbey/kingdomlife",
+    "description": "kingdomlife Gospel Church",
+    "authors": [
+        {
+            "name": "zubbey",
+            "email": "com.zubbey@hotmail.com"
+        }
+    ],
+    "require": {}
+}
