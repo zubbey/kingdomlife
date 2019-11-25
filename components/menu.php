@@ -47,7 +47,7 @@
 
 <nav class="navbar navbar-expand-lg py-2 m-0" id="ftco-navbar">
     <div class="container">
-        <img src="https://i.imgur.com/Kp37muV.png" height="30" alt="kingdomlife logo"> <a href="/" class="nav-item text-uppercase font-weight-bold">Kingdomlife Gospel Church</a>
+        <img src="https://i.imgur.com/Kp37muV.png" height="30" alt="kingdomlife logo"> <a href="/" class="nav-item text-uppercase font-weight-bold text-black-50">Kingdomlife Gospel Church</a>
         <button id="menuicon" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
