@@ -1,0 +1,112 @@
+/*@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');*/
+/** {*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-size: 1.01em;*/
+/*}*/
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+.nav-link{
+    color: #0b0b0b;
+    text-transform: uppercase;
+}
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding-right: .8rem;
+    padding-left: .5rem;
+}
+li.nav-item:hover{
+    color: #1e4ba4;
+    transition: all 500ms ease;
+    border-bottom: 3px solid #1e4ba4;
+}
+.rotateicon{
+    transform: rotate(90deg);
+}
+.dropdown-item{
+    text-transform: uppercase;
+}
+i.fas.fa-bars{
+    color: #0b0b0b;
+}
+/* GENERAL BUTTON STYLING */
+span.icon-play{
+    color: #ed4b22;
+}
+button,
+button::after {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+button {
+    background: none;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    font-size: 1em;
+    padding: .5em;
+    font-weight: bold;
+    position: relative;
+    text-transform: uppercase;
+}
+
+button::before,
+button::after {
+    background: #fff;
+    content: '';
+    position: absolute;
+    z-index: -1;
+}
+button:hover {
+    color: #ed4b22;
+}
+button.donatebtn:hover{
+    color: #ed4b22;
+    transform: scale(1);
+}
+button.tithebtn:hover {
+    color: rgb(11, 122, 112) !important;
+    transform: scale(1);
+}
+button.directionbtn{
+    border: 3px solid #0056b3;
+    color: #0056b3;
+}
+button.directionbtn:hover{
+    border: 3px solid #fff;
+}
+button.alldonorbtn{
+    border: 3px solid #0056b3;
+    color: #0056b3;
+}
+button.alldonorbtn:hover{
+    border: 3px solid #fff;
+}
+.btn-5 {
+    overflow: hidden;
+}
+
+.btn-5::after {
+    /*background-color: #f00;*/
+    height: 100%;
+    left: -35%;
+    top: 0;
+    transform: skew(50deg);
+    transition-duration: 0.6s;
+    transform-origin: top left;
+    width: 0;
+}
+
+.btn-5:hover:after {
+    height: 100%;
+    width: 135%;
+}
+
+.celebrate h3{
+    font-family: 'Pacifico', cursive;
+    font-size: 4rem;
+    color: #0b0b0b;
+}
+
+/*Pagination style*/

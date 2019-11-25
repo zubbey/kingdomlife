@@ -1,6 +1,7 @@
 <?php
-include_once("./config/db.php");
-include ("./components/menu.php");
-include ("./components/header.php");
-include ("./components/main.php");
-include ("./components/footer.php");
+require_once("./controller/auth_controller.php");
+require ("./components/menu.php");
+require ("./components/header.php");
+require ("./components/main.php");
+require ("./components/footer.php");
+?>
