@@ -25,8 +25,8 @@
 /*animation:1s spin infinite linear}.loader-body.done{visibility:hidden;opacity:0}@keyframes spin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}*/
 
 .loader-body {
-    width: 12%;
-    height: 12%;
+    width: 5%;
+    height: 10%;
     background-image: url(../images/loading.gif);
     background-size: contain;
     background-repeat: no-repeat;

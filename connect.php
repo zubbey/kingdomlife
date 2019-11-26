@@ -14,7 +14,7 @@ require ("./components/menu.php");
 </div>
 <section class="ftco-section contact-section ftco-degree-bg">
     <div class="container">
-        <div class="row d-flex mb-5 contact-info">
+        <div class="row d-flex mt-5 contact-info">
             <div class="col-md-12 mb-4">
                 <h2 class="h4">Contact Information</h2>
             </div>

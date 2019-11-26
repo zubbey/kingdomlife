@@ -58,10 +58,10 @@
                        aria-haspopup="true" aria-expanded="false">About
                     </a>
                     <div class="dropdown-menu dropdown-default dropdown-menu-right text-right " aria-labelledby="navbarDropdownMenuLink-333">
-                        <a class="dropdown-item" href="about.php">About Kingdomlife</a>
-                        <a class="dropdown-item" href="about.php">Pastor Victor Ohurooa</a>
-                        <a class="dropdown-item" href="connect.php">Connect with us</a>
-                        <a class="dropdown-item" href="ministers.php">ministers / Team</a>
+                        <a class="dropdown-item" href="about">About Kingdomlife</a>
+                        <a class="dropdown-item" href="ministers?pastor=john">Pastor Victor Ohurooa</a>
+                        <a class="dropdown-item" href="connect">Connect with us</a>
+                        <a class="dropdown-item" href="ministers">ministers / Team</a>
                     </div>
                 </li>
                 <li class="nav-item"><a href="read" class="nav-link">Read</a></li>
@@ -71,9 +71,9 @@
                        aria-haspopup="true" aria-expanded="false">Online Store
                     </a>
                     <div class="dropdown-menu dropdown-default dropdown-menu-right text-right " aria-labelledby="navbarDropdownMenuLink-333">
-                        <a class="dropdown-item" href="#">Audio Message</a>
-                        <a class="dropdown-item" href="#">Ebooks</a>
-                        <a class="dropdown-item" href="#">Services</a>
+                        <a class="dropdown-item" href="store?tab=audio">Audio Message</a>
+                        <a class="dropdown-item" href="store?tab=ebook">Ebooks</a>
+                        <a class="dropdown-item" href="store?tab=video">Online Videos</a>
                     </div>
                 </li>
             </ul>
