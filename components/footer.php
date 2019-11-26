@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row mt-5">
         <div class="col-md-12 text-center">
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> The King's Assembly | All Rights Reserved</p>
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> Kingdom Life Gospel Church | All Rights Reserved</p>
         </div>
     </div>
 </div>
