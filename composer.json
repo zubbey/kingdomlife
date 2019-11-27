@@ -7,5 +7,7 @@
             "email": "com.zubbey@hotmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-mysqli": "*"
+    }
 }

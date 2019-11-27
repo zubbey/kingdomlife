@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 .nav-link{
     color: #0b0b0b;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 .navbar-expand-lg .navbar-nav .nav-link{
     padding-right: .8rem;
@@ -17,14 +17,27 @@ li.nav-item:hover{
     transition: all 500ms ease;
     border-bottom: 3px solid #1e4ba4;
 }
+a{
+    color: #000000 !important;
+}
 a:not([href]):not([tabindex]){
     color: black;
+}
+.btn.btn-primary:hover {
+    border: 1px solid #0056b3;
+    background: #154982 !important;
+    color: #ffffff;
+}
+.form-control:focus{
+    color: #4b515d;
+    border: 1px solid #154982;
+    box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 .rotateicon{
     transform: rotate(90deg);
 }
 .dropdown-item{
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 i.fas.fa-bars{
     color: #0b0b0b;

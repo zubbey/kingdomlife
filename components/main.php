@@ -15,7 +15,7 @@
                     <div class="text">
                         <h3 class="mb-4 text-white-50 font-weight-bold">Donate Money</h3>
                         <p class="text-white-50">Even the all-powerful Pointing has no control about the blind texts.</p>
-                        <button class="btn-5 donatebtn">Donate Now</button>
+                        <button onclick="location.assign('give.php?give=donation')" class="btn-5 donatebtn">Donate Now</button>
                     </div>
                 </div>
             </div>

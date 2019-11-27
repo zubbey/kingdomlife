@@ -28,5 +28,25 @@
 <script src="js/main.js"></script>
 <script src="js/loader.js"></script>
 <script src="js/app.js"></script>
+
+<script>
+    function queryParameters () {
+        var result = {};
+        var params = window.location.search.split(/\?|\&/);
+        params.forEach( function(it) {
+            if (it) {
+                var param = it.split("=");
+                result[param[0]] = param[1];
+            }
+        });
+        return result;
+    }
+    if (queryParameters().login === "true"){
+        $('#loginModal').modal('show');
+    }
+    if (queryParameters().register === "true"){
+        $('#registerModal').modal('show');
+    }
+</script>
 </body>
 </html>

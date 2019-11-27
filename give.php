@@ -179,16 +179,16 @@ require ("./components/footer.php");
         });
         return result;
     }
-    if (queryParameters().give == "offering"){
+    if (queryParameters().give === "offering"){
         $('#offeringModal').modal('show');
     }
-    if (queryParameters().give == "tithe"){
+    if (queryParameters().give === "tithe"){
         $('#titheModal').modal('show');
     }
-    if (queryParameters().give == "donation" || queryParameters().anonymous == "user"){
+    if (queryParameters().give === "donation" || queryParameters().anonymous === "user"){
         $('#donationModal').modal('show');
     }
-    if (queryParameters().anonymous == "user"){
+    if (queryParameters().anonymous === "user"){
         $('input[name="anonymous"]')[0].checked = true;
         $('.option').hide();
     }

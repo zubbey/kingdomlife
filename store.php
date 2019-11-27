@@ -25,7 +25,7 @@ require ("./components/menu.php");
                     <a class="nav-link" id="ebook-tab" data-toggle="tab" href="#ebook" role="tab" aria-controls="ebook" aria-selected="false">Ebook <span class="badge badge-primary badge-pill">8</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="video-tab" data-toggle="tab" href="#video" role="tab" aria-controls="video" aria-selected="false">Video <span class="badge badge-primary badge-pill">10</span></a>
+                    <a class="nav-link" id="other-tab" data-toggle="tab" href="#other" role="tab" aria-controls="other" aria-selected="false">Other Items <span class="badge badge-primary badge-pill">0</span></a>
                 </li>
             </ul>
             <div class="tab-content mt-3" id="myTabContent">
@@ -151,162 +151,7 @@ require ("./components/menu.php");
                     </div>
                 </div>
 <!--                VIDEO TAB-->
-                <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-                    <div class="container">
-                        <div class="row clearfix">
-                            <div class="col-lg-3 col-md-4 col-sm-12">
-                                <div class="card product_item">
-                                    <div class="body">
-                                        <div class="cp_img">
-                                            <img src="images/productvideo.jpg" alt="Product" class="img-fluid">
-                                        </div>
-                                        <div class="product_details">
-                                            <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                            <ul class="product_price list-unstyled">
-                                                <li class="old_price text-muted">Two day ago</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-12">
-                                <div class="card product_item">
-                                    <div class="body">
-                                        <div class="cp_img">
-                                            <img src="images/productvideo2.jpeg" alt="Product" class="img-fluid">
-                                        </div>
-                                        <div class="product_details">
-                                            <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                            <ul class="product_price list-unstyled">
-                                                <li class="old_price text-muted">Two day ago</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-12">
-                                <div class="card product_item">
-                                    <div class="body">
-                                        <div class="cp_img">
-                                            <img src="images/productvideo.jpg" alt="Product" class="img-fluid">
-                                        </div>
-                                        <div class="product_details">
-                                            <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                            <ul class="product_price list-unstyled">
-                                                <li class="old_price text-muted">Two day ago</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-12">
-                                <div class="card product_item">
-                                    <div class="body">
-                                        <div class="cp_img">
-                                            <img src="images/productvideo.jpg" alt="Product" class="img-fluid">
-                                        </div>
-                                        <div class="product_details">
-                                            <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                            <ul class="product_price list-unstyled">
-                                                <li class="old_price text-muted">Two day ago</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-12">
-                                <div class="card product_item">
-                                    <div class="body">
-                                        <div class="cp_img">
-                                            <img src="images/productvideo2.jpeg" alt="Product" class="img-fluid">
-                                        </div>
-                                        <div class="product_details">
-                                            <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                            <ul class="product_price list-unstyled">
-                                                <li class="old_price text-muted">Two day ago</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-12">
-                                <div class="card product_item">
-                                    <div class="body">
-                                        <div class="cp_img">
-                                            <img src="images/productvideo.jpg" alt="Product" class="img-fluid">
-                                        </div>
-                                        <div class="product_details">
-                                            <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                            <ul class="product_price list-unstyled">
-                                                <li class="old_price text-muted">Two day ago</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-12">
-                                <div class="card product_item">
-                                    <div class="body">
-                                        <div class="cp_img">
-                                            <img src="images/productvideo.jpg" alt="Product" class="img-fluid">
-                                        </div>
-                                        <div class="product_details">
-                                            <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                            <ul class="product_price list-unstyled">
-                                                <li class="old_price text-muted">Two day ago</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-12">
-                                <div class="card product_item">
-                                    <div class="body">
-                                        <div class="cp_img">
-                                            <img src="images/productvideo.jpg" alt="Product" class="img-fluid">
-                                        </div>
-                                        <div class="product_details">
-                                            <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                            <ul class="product_price list-unstyled">
-                                                <li class="old_price text-muted">Two day ago</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-12">
-                                <div class="card product_item">
-                                    <div class="body">
-                                        <div class="cp_img">
-                                            <img src="images/productvideo.jpg" alt="Product" class="img-fluid">
-                                        </div>
-                                        <div class="product_details">
-                                            <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                            <ul class="product_price list-unstyled">
-                                                <li class="old_price text-muted">Two day ago</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-12">
-                                <div class="card product_item">
-                                    <div class="body">
-                                        <div class="cp_img">
-                                            <img src="images/productvideo2.jpeg" alt="Product" class="img-fluid">
-                                        </div>
-                                        <div class="product_details">
-                                            <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                            <ul class="product_price list-unstyled">
-                                                <li class="old_price text-muted">Two day ago</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
                 </div>
 
             </div>
@@ -334,7 +179,7 @@ require ("./components/footer.php");
     if (queryParameters().tab == "ebook"){
         $('#ebook-tab')[0].click();
     }
-    if (queryParameters().tab == "video"){
-        $('#video-tab')[0].click();
+    if (queryParameters().tab == "other"){
+        $('#other-tab')[0].click();
     }
 </script>
