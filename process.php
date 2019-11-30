@@ -8,7 +8,7 @@ if(isset($_POST['Submit']))
         $new_file_name=$_FILES['audio_file']['name'];
 
         // Where the file is going to be placed
-        $target_path = "upload/".$new_file_name;
+        $target_path = "../upload/".$new_file_name;
 
         //target path where u want to store file.
 
