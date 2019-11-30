@@ -2,6 +2,25 @@
 require ("../components/user_menu.php");
 
 ?>
+
+<!--UPLOAD DATA-->
+    <div class="modal fade" id="additemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <!--        <button type="button" class="float-lg-right close" data-dismiss="modal" aria-label="Close">-->
+            <!--            <span class="rounded-circle" aria-hidden="true">&times;</span>-->
+            <!--        </button>-->
+            <div class="modal-content">
+                <div class="modal-body">
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post' enctype="multipart/form-data">
+                            Description of File: <input type="text" name="description_entered"/><br><br>
+                            <input type="file" name="file"/><br><br>
+                            <input type="submit" name="submit" value="Upload"/>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row my-3">
             <div class="col-md-3">
@@ -36,8 +55,33 @@ require ("../components/user_menu.php");
                         <div class="tab-pane  fade  active show" id="orders" role="tabpanel" aria-labelledby="orders-tab">
                             <div class="d-flex justify-content-between mt-0 mb-4">
                                 <h4 class="font-weight-bold">All Items</h4>
-                                <button class="btn btn-primary rounded"><i class="fas fa-plus"></i> Add Item</button>
+                                <button onclick="location.assign('?add=true')" class="btn btn-primary rounded"><i class="fas fa-plus"></i> Add Item</button>
                             </div>
+
+                            <?php
+
+                            $result= mysql_query("SELECT description, filename FROM audio ORDER BY id desc" )
+                            or die("SELECT Error: ".mysql_error());
+
+                            print "<table border=1>\n";
+                            while ($row = mysql_fetch_array($result)){
+                                $files_field= $row['filename'];
+                                $files_show= "../upload/$files_field";
+                                $descriptionvalue= $row['description'];
+                                print "<tr>\n";
+                                print "\t<td>\n";
+                                echo "<font face=arial size=4/>$descriptionvalue</font>";
+                                print "</td>\n";
+                                print "\t<td>\n";
+                                echo "<div align=center><a href='$files_show'>$files_field</a></div>";
+                                print "</td>\n";
+                                print "</tr>\n";
+                            }
+                            print "</table>\n";
+
+                            ?>
+
+
                             <div class="bg-white card mb-4 order-list shadow-sm">
                                 <div class="gold-members p-4">
                                     <a href="#">
@@ -109,3 +153,20 @@ require ("../components/user_menu.php");
 <?php
 require("../components/user_footer.php");
 ?>
+
+<script>
+    function queryParameters () {
+        var result = {};
+        var params = window.location.search.split(/\?|\&/);
+        params.forEach( function(it) {
+            if (it) {
+                var param = it.split("=");
+                result[param[0]] = param[1];
+            }
+        });
+        return result;
+    }
+    if (queryParameters().add === "true"){
+        $('#additemModal').modal('show');
+    }
+</script>

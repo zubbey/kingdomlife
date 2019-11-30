@@ -113,10 +113,10 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
                 echo '
                     <div class="dropdown-menu dropdown-menu-right text-right dropdown-default"
                          aria-labelledby="navbarDropdownMenuLink-333">
-                        <a class="dropdown-item" href="#">Profile <small><i class="fas fa-user text-muted"></i></small></a>
-                        <a class="dropdown-item" href="#">My Items <small><i class="fas fa-clipboard-list text-muted"></i></small></a>
-                        <a class="dropdown-item" href="#">Account Settings <small><i class="fas fa-cog text-muted"></i></small></a>
-                        <a class="dropdown-item" href="#">Logout <small><i class="fas fa-sign-out-alt text-muted"></i></small></a>
+                        <a class="dropdown-item" href="users/profile">Profile <small><i class="fas fa-user text-muted"></i></small></a>
+                        <a class="dropdown-item" href="users/profile#item">My Items <small><i class="fas fa-clipboard-list text-muted"></i></small></a>
+                        <a class="dropdown-item" href="users/settings">Account Settings <small><i class="fas fa-cog text-muted"></i></small></a>
+                        <a class="dropdown-item" href="users/profile.php?logout=true">Logout <small><i class="fas fa-sign-out-alt text-muted"></i></small></a>
                     </div>
                 ';
                 echo '</li>';
