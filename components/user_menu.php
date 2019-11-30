@@ -85,6 +85,7 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
                         <a class="dropdown-item" href="../ministers?pastor=john">Victor C. Uzosike</a>
                         <a class="dropdown-item" href="../connect">Connect with us</a>
                         <a class="dropdown-item" href="../ministers">ministers / Team</a>
+                        <a class="dropdown-item" href="ministers">Units & their descriptions</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

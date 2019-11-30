@@ -27,66 +27,66 @@ require ("./components/menu.php");
                 <section class="ftco-section ftco-gallery">
                     <div class="container">
                         <div class="d-md-flex">
-                            <a href="images/cause-2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-2.jpg);">
+                            <a href="https://i.imgur.com/46EPoqu.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/46EPoqu.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
                             </a>
-                            <a href="images/cause-3.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-3.jpg);">
+                            <a href="https://i.imgur.com/dOmxT16.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/dOmxT16.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
                             </a>
-                            <a href="images/cause-4.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-4.jpg);">
+                            <a href="https://i.imgur.com/59nWr5j.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/59nWr5j.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
                             </a>
-                            <a href="images/cause-5.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-5.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="d-md-flex">
-                            <a href="images/cause-6.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-6.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="images/image_3.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/image_3.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="images/image_1.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/image_1.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="images/image_2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/image_2.jpg);">
+                            <a href="https://i.imgur.com/UpHBv5j.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/UpHBv5j.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
                             </a>
                         </div>
                         <div class="d-md-flex">
-                            <a href="images/event-1.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/event-1.jpg);">
+                            <a href="https://i.imgur.com/xcsCbgx.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/xcsCbgx.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
                             </a>
-                            <a href="images/event-2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/event-2.jpg);">
+                            <a href="https://i.imgur.com/n3SgnhX.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/n3SgnhX.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
                             </a>
-                            <a href="images/image_1.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/image_4.jpg);">
+                            <a href="https://i.imgur.com/nlGnXqT.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/nlGnXqT.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
                             </a>
-                            <a href="images/image_2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/event-4.jpg);">
+                            <a href="https://i.imgur.com/t56kVk6.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/t56kVk6.jpg);">
+                                <div class="icon d-flex justify-content-center align-items-center">
+                                    <span class="icon-search"></span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="d-md-flex">
+                            <a href="https://i.imgur.com/2exSZLc.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/2exSZLc.jpg);">
+                                <div class="icon d-flex justify-content-center align-items-center">
+                                    <span class="icon-search"></span>
+                                </div>
+                            </a>
+                            <a href="https://i.imgur.com/BnzrknA.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/BnzrknA.jpg);">
+                                <div class="icon d-flex justify-content-center align-items-center">
+                                    <span class="icon-search"></span>
+                                </div>
+                            </a>
+                            <a href="https://i.imgur.com/NRnkQh6.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/NRnkQh6.jpg);">
+                                <div class="icon d-flex justify-content-center align-items-center">
+                                    <span class="icon-search"></span>
+                                </div>
+                            </a>
+                            <a href="https://i.imgur.com/zvKKXd5.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/zvKKXd5.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
