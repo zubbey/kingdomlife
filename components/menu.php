@@ -31,8 +31,8 @@
 <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
     <link rel="stylesheet" href="css/loader.min.css">
     <link rel="stylesheet" href="css/custom.css" />
-    <link href="images/favicon-32x32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="images/ms-icon-256x256.png" rel="apple-touch-icon">
+    <link href="images/https://i.imgur.com/1QeMyjh.png" rel="shortcut icon" type="image/x-icon">
+    <link href="images/https://i.imgur.com/1QeMyjh.png" rel="apple-touch-icon">
 
 </head>
 <body>
@@ -89,11 +89,12 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
                        aria-haspopup="true" aria-expanded="false"><i class="fas fa-shopping-basket"></i> Store
                     </a>
                     <div class="dropdown-menu dropdown-default dropdown-menu-right text-right " aria-labelledby="navbarDropdownMenuLink-333">
-                        <a class="dropdown-item" href="store?tab=audio">Audio Messages</a>
+<!--                        <a class="dropdown-item" href="store?tab=audio">Audio Messages</a>-->
                         <a class="dropdown-item" href="store?tab=ebook">Buy Ebooks</a>
                         <a class="dropdown-item" href="store?tab=other">Others Items</a>
                     </div>
                 </li>
+                <li class="nav-item"><a href="connect" class="nav-link">Contact us</a></li>
             </ul>
             <ul class="navbar-nav">
                 <li>

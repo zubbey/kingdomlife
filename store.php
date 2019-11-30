@@ -18,11 +18,11 @@ require ("./components/menu.php");
 <!--                <li class="nav-item">-->
 <!--                    <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All <span class="badge badge-primary badge-pill">21</span></a>-->
 <!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link active" id="audio-tab" data-toggle="tab" href="#audio" role="tab" aria-controls="audio" aria-selected="true">Audio message <span class="badge badge-primary badge-pill">5</span></a>-->
+<!--                </li>-->
                 <li class="nav-item">
-                    <a class="nav-link active" id="audio-tab" data-toggle="tab" href="#audio" role="tab" aria-controls="audio" aria-selected="true">Audio message <span class="badge badge-primary badge-pill">5</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="ebook-tab" data-toggle="tab" href="#ebook" role="tab" aria-controls="ebook" aria-selected="false">Ebook <span class="badge badge-primary badge-pill">8</span></a>
+                    <a class="nav-link active" id="ebook-tab" data-toggle="tab" href="#ebook" role="tab" aria-controls="ebook" aria-selected="true">Ebook <span class="badge badge-primary badge-pill">8</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="other-tab" data-toggle="tab" href="#other" role="tab" aria-controls="other" aria-selected="false">Other Items <span class="badge badge-primary badge-pill">0</span></a>
@@ -30,51 +30,8 @@ require ("./components/menu.php");
             </ul>
             <div class="tab-content mt-3" id="myTabContent">
 <!--                <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">...</div>-->
-                <div class="tab-pane fade show active" id="audio" role="tabpanel" aria-labelledby="audio-tab">
-                    <div class="container mb-4">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="table-responsive">
-                                    <table class="table table-striped">
-                                        <tbody>
-                                        <tr>
-                                            <td><img src="images/audio1.jpg" width="40px" /> </td>
-                                            <td>Satellite Church Opening Form</td>
-                                            <td class="text-right">21 hours ago</td>
-                                            <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i> </button> </td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="images/audio2.jpg" width="40px" /> </td>
-                                            <td>HomeCell Manual in FRENCH for 19th November, 2019 </td>
-                                            <td class="text-right">3 month ago</td>
-                                            <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i> </td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="images/audio3.png" width="40px" /> </td>
-                                            <td>Leading Lights Welcome Booklet</td>
-                                            <td class="text-right">1 year ago</td>
-                                            <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="images/audio2.jpg" width="40px" /> </td>
-                                            <td>Leading Lights Welcome Booklet</td>
-                                            <td class="text-right">1 year ago</td>
-                                            <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="images/audio1.jpg" width="40px" /> </td>
-                                            <td>Leading Lights Welcome Booklet</td>
-                                            <td class="text-right">1 year ago</td>
-                                            <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="ebook" role="tabpanel" aria-labelledby="ebook-tab">
+
+                <div class="tab-pane fade show active" id="ebook" role="tabpanel" aria-labelledby="ebook-tab">
                     <div class="row clearfix">
                         <div class="col-lg-3 col-md-4 col-sm-12">
                             <div class="card product_item">
@@ -173,12 +130,12 @@ require ("./components/footer.php");
         });
         return result;
     }
-    if (queryParameters().tab == "audio"){
-        $('#audio-tab')[0].click();
-    }
-    if (queryParameters().tab == "ebook"){
-        $('#ebook-tab')[0].click();
-    }
+    // if (queryParameters().tab == "audio"){
+    //     $('#audio-tab')[0].click();
+    // }
+    // if (queryParameters().tab == "ebook"){
+    //     $('#ebook-tab')[0].click();
+    // }
     if (queryParameters().tab == "other"){
         $('#other-tab')[0].click();
     }

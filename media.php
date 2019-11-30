@@ -21,6 +21,9 @@ require ("./components/menu.php");
             <li class="nav-item">
                 <a class="nav-link" id="video-tab" data-toggle="tab" href="#video" role="tab" aria-controls="video" aria-selected="false">Video <span class="badge badge-primary badge-pill">8</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" id="audio-tab" data-toggle="tab" href="#audio" role="tab" aria-controls="audio" aria-selected="false">Video <span class="badge badge-primary badge-pill">8</span></a>
+            </li>
         </ul>
         <div class="tab-content mt-3" id="myTabContent">
             <div class="tab-pane fade show active" id="picture" role="tabpanel" aria-labelledby="picture-tab">
@@ -248,6 +251,51 @@ require ("./components/menu.php");
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade show active" id="audio" role="tabpanel" aria-labelledby="audio-tab">
+                <div class="container mb-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <tbody>
+                                    <tr>
+                                        <td><img src="images/audio1.jpg" width="40px" /> </td>
+                                        <td>Satellite Church Opening Form</td>
+                                        <td class="text-right">21 hours ago</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i> </button> </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/audio2.jpg" width="40px" /> </td>
+                                        <td>HomeCell Manual in FRENCH for 19th November, 2019 </td>
+                                        <td class="text-right">3 month ago</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i> </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/audio3.png" width="40px" /> </td>
+                                        <td>Leading Lights Welcome Booklet</td>
+                                        <td class="text-right">1 year ago</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/audio2.jpg" width="40px" /> </td>
+                                        <td>Leading Lights Welcome Booklet</td>
+                                        <td class="text-right">1 year ago</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/audio1.jpg" width="40px" /> </td>
+                                        <td>Leading Lights Welcome Booklet</td>
+                                        <td class="text-right">1 year ago</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
