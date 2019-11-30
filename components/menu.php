@@ -37,7 +37,7 @@
 </head>
 <body>
 <div class="loader-body" id="loader">
-    <div class="loader"></div>
+    <div class="loader m-auto"></div>
 </div>
 
 <!--check if email Address is verified-->
@@ -68,7 +68,7 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
                     </a>
                     <div class="dropdown-menu dropdown-default dropdown-menu-right text-right " aria-labelledby="navbarDropdownMenuLink-333">
                         <a class="dropdown-item" href="about">About Kingdomlife</a>
-                        <a class="dropdown-item" href="ministers?pastor=john">Pastor Victor Ohurooa</a>
+                        <a class="dropdown-item" href="ministers?pastor=john">Victor C. Uzosike</a>
                         <a class="dropdown-item" href="connect">Connect with us</a>
                         <a class="dropdown-item" href="ministers">ministers / Team</a>
                     </div>
@@ -96,7 +96,7 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
             </ul>
             <ul class="navbar-nav">
                 <li>
-                    <button type="button" class="btn btn-danger rounded mr-3"><small><i class="fas fa-play text-white"></i></small> Worship Online</button>
+                    <button type="button" class="btn btn-danger rounded mr-3"><small><i class="fas fa-play text-white"></i></small> Live</button>
                 </li>
             </ul>
             <?php
@@ -151,12 +151,16 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
                 <form class="text-center border border-light p-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 
                     <p class="h4 mb-3">Sign in</p>
-
-                    <!-- Email -->
-                    <input name="username-email" type="text" id="defaultLoginFormEmail" class="form-control mb-2 rounded" placeholder="Username/ Email Address">
+                    <!--Username or Email -->
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input name="username-email" type="text" class="form-control rounded" placeholder="Username or Email Address" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
 
                     <!-- Password -->
-                    <input type="password" id="defaultLoginFormPassword" class="form-control mb-2 rounded" placeholder="Password">
+                    <input name="password" type="password" id="defaultLoginFormPassword" class="form-control mb-2 rounded" placeholder="Password">
 
                     <div class="d-flex justify-content-center">
                         <div>
@@ -166,11 +170,11 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
                     </div>
 
                     <!-- Sign in button -->
-                    <button class="btn btn-lg btn-primary btn-block rounded my-2" type="submit">Sign in</button>
+                    <button name="login-btn" class="btn btn-lg btn-primary btn-block rounded my-2" type="submit">Sign in</button>
 
                     <!-- Register -->
                     <p>Not a member?
-                        <a href="/?register=true">Register</a>
+                        <a href="?register=true">Register</a>
                     </p>
 
                 </form>
@@ -190,23 +194,83 @@ REGISTER FORM MODAL-->
         <!--        </button>-->
         <div class="modal-content">
             <div class="modal-body">
-                <!-- Default form login -->
+                <?php
+                if (isset($_GET['error']) && $_GET['error'] === 'please fill out the form.'){
+                    $invalid_username = "is-invalid";
+                    $invalid_username_Msg = "<div class=\"invalid-feedback\">".$_GET['error']."</div>";
+                    $invalid_email = "is-invalid";
+                    $invalid_email_Msg = "<div class=\"invalid-feedback\">".$_GET['error']."</div>";
+                    $invalid_phone = "is-invalid";
+                    $invalid_phone_Msg = "<div class=\"invalid-feedback\">".$_GET['error']."</div>";
+                    $invalid_password = "is-invalid";
+                    $invalid_password_Msg = "<div class=\"invalid-feedback\">".$_GET['error']."</div>";
+                }
+
+                if (isset($_GET['error_username']) && $_GET['error_username'] === 'you forgot to fill your username.'){
+                    $invalid_username = "is-invalid";
+                    $invalid_username_Msg = "<div class=\"invalid-feedback\">".$_GET['error_username']."</div>";
+                } else if (isset($_GET['error_username-exist']) && $_GET['error_username-exist'] === 'This username is already used by someone else.'){
+                    $invalid_username = "is-invalid";
+                    $invalid_username_Msg = "<div class=\"invalid-feedback\">".$_GET['error_username-exist']."</div>";
+                }
+
+                if (isset($_GET['error_email']) && $_GET['error_email'] === 'you forgot to fill your email address.'){
+                    $invalid_email = "is-invalid";
+                    $invalid_email_Msg = "<div class=\"invalid-feedback\">".$_GET['error_email']."</div>";
+                } else if (isset($_GET['error_email']) && $_GET['error_email'] === 'invalid Email Address.'){
+                    $invalid_email = "is-invalid";
+                    $invalid_email_Msg = "<div class=\"invalid-feedback\">".$_GET['error_email']."</div>";
+                } else if (isset($_GET['error_email-exist']) && $_GET['error_email-exist'] === 'Email already exist.'){
+                    $invalid_email = "is-invalid";
+                    $invalid_email_Msg = "<div class=\"invalid-feedback\">".$_GET['error_email-exist']."</div>";
+                }
+
+                if (isset($_GET['error_phone']) && $_GET['error_phone'] === 'you forgot to fill your phone.'){
+                    $invalid_phone = "is-invalid";
+                    $invalid_phone_Msg = "<div class=\"invalid-feedback\">".$_GET['error_phone']."</div>";
+                } else if (isset($_GET['error_phone']) && $_GET['error_phone'] === 'invalid Phone Number.'){
+                    $invalid_phone = "is-invalid";
+                    $invalid_phone_Msg = "<div class=\"invalid-feedback\">".$_GET['error_phone']."</div>";
+                }
+
+                if (isset($_GET['error_password']) && $_GET['error_password'] === 'Password should be at least 6 characters & should include at least one uppercase letter'){
+                    $invalid_password = "is-invalid";
+                    $invalid_password_Msg = "<div class=\"invalid-feedback\">".$_GET['error_password']."</div>";
+                } else {
+                    $invalid_password_Msg = "<div class=\"invalid-feedback\">Password must be at least 6 Characters Long</div>";
+                }
+                if (isset($_GET['error_cpassword']) && $_GET['error_cpassword'] === 'Password did not match.'){
+                    $invalid_cpassword = "is-invalid";
+                    $invalid_cpassword_Msg = "<div class=\"invalid-feedback\">".$_GET['error_cpassword']."</div>";
+                }
+                ?>
                 <!-- Default form register -->
                 <form class="text-center border border-light p-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 
                     <p class="h4 mb-3">Join us</p>
-                    <input name="username" type="text" id="defaultRegisterFormFirstName" class="form-control mb-2 rounded" placeholder="Username">
-                    <input name="email" type="email" id="defaultRegisterFormEmail" class="form-control mb-2 rounded" placeholder="Email Address">
-                    <input name="phone" type="text" id="defaultRegisterPhonePassword" class="form-control mb-2 rounded" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input name="username" type="text" class="form-control rounded <?php echo $invalid_username;?>" value="<?php echo $_GET['username'];?>" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        <?php echo $invalid_username_Msg;?>
+                    </div>
+                    <input name="email" type="text" id="defaultRegisterFormEmail" class="form-control mb-2 rounded <?php echo $invalid_email;?>" value="<?php echo $_GET['email'];?>" placeholder="Email Address">
+                    <?php echo $invalid_email_Msg;?>
+                    <input name="phone" type="text" id="defaultRegisterPhonePassword" class="form-control mb-2 rounded <?php echo $invalid_phone;?>" value="<?php echo $_GET['phone'];?>" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                    <?php echo $invalid_phone_Msg;?>
 
                     <!-- Password -->
-                    <input name="password" type="password" id="defaultRegisterFormPassword" class="form-control rounded" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-                    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-1">
-                        At least 6 characters
-                    </small>
-                    <input name="confirm-password" type="password" id="defaultRegisterFormPassword" class="form-control mt-2 mb-2 rounded" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                    <input name="password" type="password" id="defaultRegisterFormPassword" class="form-control rounded <?php echo $invalid_password;?>" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                    <?php echo $invalid_password_Msg;?>
+                    <input name="confirm_password" type="password" id="defaultRegisterFormPassword" class="form-control mt-2 mb-2 rounded <?php echo $invalid_cpassword;?>" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                    <?php echo $invalid_cpassword_Msg;?>
                     <!-- Sign up button -->
                     <button name="register" class="btn btn-lg btn-primary my-2 btn-block rounded" type="submit">Register</button>
+
+                    <p>Already a member?
+                        <a href="?login=true">Login</a>
+                    </p>
 
                     <hr>
 

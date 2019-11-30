@@ -24,7 +24,7 @@
                     <div class="text">
                         <h3 class="mb-4 text-black-50 font-weight-bold">Give Tithes</h3>
                         <p class="text-black-50">Even the all-powerful Pointing has no control about the blind texts.</p>
-                        <button class="btn-5 tithebtn">Give Tithe</button>
+                        <button onclick="location.assign('give.php?give=tithe')" class="btn-5 tithebtn">Give Tithe</button>
                     </div>
                 </div>
             </div>
@@ -41,12 +41,16 @@
                 <hr>
                 <h4 class="font-weight-bold">SUNDAYS</h4>
                 <hr>
-                <h4>7:00AM  |  8:45AM  |  10:30AM</h4>
+                <h4>First service (7:30am - 9:30am)</h4>
+                <h4>Second service (9:30am - 11:30am)</h4>
                 <hr>
-                <h4 class="font-weight-bold"> WEDNESDAYS</h4>
-                <h4>5:00PM</h4>
+                <h4 class="font-weight-bold"> TUESDAY</h4>
+                <h4>Bible Study (5:30pm - 7:00pm)</h4>
+                <hr>
+                <h4 class="font-weight-bold"> FRIDAY </h4>
+                <h4>Family Victory Prayers (5:30pm - 6:30pm)</h4>
                 <div class="justify-content-center align-content-center d-flex mt-5">
-                    <button class="btn-5 directionbtn">Get Direction <i class="fas fa-compass"></i></button>
+                    <button onclick="location.assign('connect')" class="btn-5 directionbtn">Get Direction <i class="fas fa-compass"></i></button>
                 </div>
             </div>
         </div>

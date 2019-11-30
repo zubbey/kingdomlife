@@ -543,3 +543,9 @@ input#givebtn {
     display: inline-block;
     margin-right: 10px
 }
+
+
+/*USER PROFILE*/
+img.mr-4.product {
+    width: 100px;
+}

@@ -17,18 +17,39 @@ require ("./components/menu.php");
         <div class="row d-flex mt-5 contact-info">
             <div class="col-md-12 mb-4">
                 <h2 class="h4">Contact Information</h2>
+                <p>
+                    Kingdom Life Gospel Outreach Ministries
+                    Jesus Cathedral
+                </p>
             </div>
             <div class="w-100"></div>
-            <div class="col-md-3">
-                <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
-            </div>
-            <div class="col-md-3">
-                <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-            </div>
-            <div class="col-md-3">
-                <p><span>Email:</span> <a href="mailto:info@kingdomlifegospel.org">info@kingdomlifegospel.org</a></p>
+            <div class="col">
+                <p><span>LOCATION:</span> Jesus Cathedral No 6 Akwaka Avenue, Off Market Junction,  Orazi Road, Mile 4, Rumueme, Port Harcourt.
+                </p>
+                <p><span>OUR BRANCHES:</span>
+                <div class="d-flex justify-content-between ">
+                    <p class="list-group-item">Kingdom Life Gospel Outreach Ministry (Bayelsa Branch) @  No 22 Hon. Ofoni Crescent, off old assembly quarters, Azikoro road, Ekeki, Yenegoa.</p>
+                    <p class="list-group-item">Kingdom Life Gospel Outreach Ministry (Owerri Branch) @ No 1 Tetlow road behind UBA bank road, Owerri, Imo state.</p>
+                    <p class="list-group-item">Kingdom Life Gospel Outreach Ministry (Akpajo Branch) @ Caywood Brown Foundation, Plot B9 Close B, IPIC Estate, Off Green Village Estate, Akpajo, Port Harcourt).</p>
+                </div>
+                </p>
             </div>
         </div>
+        <div class="row d-flex my-5 contact-info">
+            <div class="col-md-3">
+                <p><span>Phone:</span> <br>
+                    <a href="tel://+2348072992247">+234 807 299 2247</a><br>
+                    <a href="tel://+2348072992247">+234 807 299 2248</a><br>
+                    <a href="tel://+2348072992247">+234 803 309 6872</a>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <p><span>Email:</span><br>
+                    <a href="mailto:kingdomlifegospelchurch@gmail.com">kingdomlifegospelchurch@gmail.com </a><br>
+                    <a href="mailto:vuzosike@yahoo.com">vuzosike@yahoo.com</a></p>
+            </div>
+        </div>
+        <hr>
         <div class="row block-9">
             <div class="col-md-6 pr-md-5">
                 <h4 class="mb-4">Do you have any questions?</h4>

@@ -3,102 +3,78 @@ require_once("./controller/auth_controller.php");
 require ("./components/menu.php");
 ?>
 <!--pastor one-->
-<div class="modal fade" id="pastorModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable" role="document">
+<div class="modal fade bd-example-modal-lg" id="pastorModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
+            <?php
+            $sql = "SELECT * FROM `pageContents` WHERE id = 2";
+            $result = mysqli_query($conn, $sql);
+            while ($contentRow = mysqli_fetch_assoc($result)) {
+                $heading = $contentRow['heading'];
+                $body = $contentRow['body'];
+            }
+            ?>
             <div class="modal-header">
-                <h5 class="modal-title blue-text" id="exampleModalScrollableTitle"><strong>Bishop John Keboba</strong></h5>
+                <h6>About Bishop</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <div class="card card-cascade wider mt-2 mb-3">
 
-                    <!-- Card image -->
-                    <div class="view view-cascade overlay">
-                        <img class="card-img-top" src="https://i.imgur.com/87QA1CS.jpg" alt="Card image cap">
-                        <a href="#!">
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
+                    <div class="row">
+                        <div class="col">
+                            <img class="card-img-top" src="https://i.imgur.com/87QA1CS.jpg" alt="Card image cap">
+                        </div>
+                       <div class="col">
+                           <h3 class="modal-title" id="exampleModalScrollableTitle"><strong><?php echo nl2br($heading);?></strong></h3>
+                       </div>
                     </div>
 
                     <!-- Card content -->
-                    <div class="card-body card-body-cascade text-center">
-                        <p class="card-text text-black">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. dantium, totam rem aperiam. </p>
-                        <p class="card-text text-black">Seper spiciatis unde omnis iste natus sit voluptate ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
-
+                    <div class="card-body text-black">
+                        <h5><?php echo nl2br($body);?></h5>
                     </div>
 
-                </div>
             </div>
         </div>
     </div>
 </div>
 
 <!--pastor one-->
-<div class="modal fade" id="pastorModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable" role="document">
+<div class="modal fade bd-example-modal-lg" id="pastorModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
+            <?php
+            $sql = "SELECT * FROM `pageContents` WHERE id = 3";
+            $result = mysqli_query($conn, $sql);
+            while ($contentRow = mysqli_fetch_assoc($result)) {
+                $heading = $contentRow['heading'];
+                $body = $contentRow['body'];
+            }
+            ?>
             <div class="modal-header">
-                <h5 class="modal-title blue-text" id="exampleModalScrollableTitle"><strong>Mama Ellis keblim</strong></h5>
+                <h6>About Pastor</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <div class="card card-cascade wider mt-2 mb-3">
 
-                    <!-- Card image -->
-                    <div class="view view-cascade overlay">
-                        <img class="card-img-top" src="https://i.imgur.com/87QA1CS.jpg" alt="Card image cap">
-                        <a href="#!">
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
+                <div class="row">
+                    <div class="col">
+                        <img class="card-img-top" src="https://i.imgur.com/zvKKXd5.jpg" alt="Card image cap">
                     </div>
-
-                    <!-- Card content -->
-                    <div class="card-body card-body-cascade text-center">
-                        <p class="card-text text-black">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. dantium, totam rem aperiam. </p>
-                        <p class="card-text text-black">Seper spiciatis unde omnis iste natus sit voluptate ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
-
+                    <div class="col">
+                        <h3 class="modal-title" id="exampleModalScrollableTitle"><strong><?php echo nl2br($heading);?></strong></h3>
                     </div>
-
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!--pastor one-->
-<div class="modal fade" id="pastorModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title blue-text" id="exampleModalScrollableTitle"><strong>Bishop Frank Ojekikema</strong></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="card card-cascade wider mt-2 mb-3">
-
-                    <!-- Card image -->
-                    <div class="view view-cascade overlay">
-                        <img class="card-img-top" src="https://i.imgur.com/87QA1CS.jpg" alt="Card image cap">
-                        <a href="#!">
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-
-                    <!-- Card content -->
-                    <div class="card-body card-body-cascade text-center">
-                        <p class="card-text text-black">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. dantium, totam rem aperiam. </p>
-                        <p class="card-text text-black">Seper spiciatis unde omnis iste natus sit voluptate ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
-
-                    </div>
-
+                <!-- Card content -->
+                <div class="card-body text-black">
+                    <h5><?php echo nl2br($body);?></h5>
                 </div>
+
             </div>
         </div>
     </div>
@@ -118,7 +94,7 @@ require ("./components/menu.php");
 <section class="ftco-section my-lg-5">
     <div class="container">
         <div class="row">
-            <div onclick="location.assign('?pastor=john')" class="col-md-4 col-md-3 pastorcard">
+            <div onclick="location.assign('?pastor=victor')" class="col-md-4 col-md-3 pastorcard">
                 <div class="card card-cascade wider mt-2 mb-3">
 
                     <!-- Card image -->
@@ -132,21 +108,15 @@ require ("./components/menu.php");
                     <!-- Card content -->
                     <div class="card-body card-body-cascade text-center">
                         <h5 class="card-title text-muted">Bishop</h5>
-                        <h3 class="blue-text pb-2"><strong>Frank Ojekikema</strong></h3>
-                        <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
-
-                        <!-- Linkedin -->
-                        <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
-                        <!-- Twitter -->
-                        <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
-                        <!-- Dribbble -->
-                        <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>
+                        <h3 class="blue-text pb-2"><strong>Victor C. Uzosike</strong></h3>
+                        <p class="card-text">Bishop Victor C. Uzosike is the presiding Bishop of Kingdom Life Gospel Outreach Ministries International.
+                            A vibrant and dynamic charismatic prea....</p>
 
                     </div>
 
                 </div>
             </div>
-            <div onclick="location.assign('?pastor=ellis')" class="col-md-4 col-md-3 pastorcard">
+            <div onclick="location.assign('?pastor=esther')" class="col-md-4 col-md-3 pastorcard">
                 <div class="card card-cascade wider mt-2 mb-3">
 
                     <!-- Card image -->
@@ -159,49 +129,15 @@ require ("./components/menu.php");
 
                     <!-- Card content -->
                     <div class="card-body card-body-cascade text-center">
-                        <h5 class="card-title text-muted">Bishop</h5>
-                        <h3 class="blue-text pb-2"><strong>Ellis Elewua</strong></h3>
-                        <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
-
-                        <!-- Linkedin -->
-                        <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
-                        <!-- Twitter -->
-                        <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
-                        <!-- Dribbble -->
-                        <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>
-
-                    </div>
-
-                </div>
-            </div>
-            <div onclick="location.assign('?pastor=frank')" class="col-md-4 col-md-3 pastorcard">
-                <div class="card card-cascade wider mt-2 mb-3">
-
-                    <!-- Card image -->
-                    <div class="view view-cascade overlay">
-                        <img class="card-img-top" src="https://i.imgur.com/XLbttU8.jpg" alt="Card image cap">
-                        <a href="#!">
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-
-                    <!-- Card content -->
-                    <div class="card-body card-body-cascade text-center">
                         <h5 class="card-title text-muted">Pastor</h5>
-                        <h3 class="blue-text pb-2"><strong>Frank Ojekikema</strong></h3>
-                        <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
-
-                        <!-- Linkedin -->
-                        <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
-                        <!-- Twitter -->
-                        <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
-                        <!-- Dribbble -->
-                        <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>
+                        <h3 class="blue-text pb-2"><strong>Mrs. Esther Uzosike </strong></h3>
+                        <p class="card-text">Pastor Mrs. Esther Uzosike is the wife of His Lordship, Bishop Victor Uzosike and First Lady Kingdom Life Gospel Outreach Ministries; A woman of ....</p>
 
                     </div>
 
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -222,13 +158,10 @@ require ("./components/footer.php");
         });
         return result;
     }
-    if (queryParameters().pastor == "john"){
+    if (queryParameters().pastor === "victor"){
         $('#pastorModal1').modal('show');
     }
-    if (queryParameters().pastor == "ellis"){
-        $('#pastorModal2').modal('show');
-    }
-    if (queryParameters().pastor == "frank"){
+    if (queryParameters().pastor === "esther"){
         $('#pastorModal2').modal('show');
     }
 </script>
