@@ -266,17 +266,16 @@ require ("./components/menu.php");
                                 <button type=”submit” id=”submitButton”name=”button”>SUBMIT</button>
                                 <section id=”playAudioHere”></section>
                                 <section id=”bands”></section>
-
-<!--                                <table class="table table-striped">-->
-<!--                                    <tbody>-->
-<!--                                    <tr>-->
-<!--                                        <td><img src="images/audio1.jpg" width="40px" /> </td>-->
-<!--                                        <td>Satellite Church Opening Form</td>-->
-<!--                                        <td class="text-right">21 hours ago</td>-->
-<!--                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i> </button> </td>-->
-<!--                                    </tr>-->
-<!--                                    </tbody>-->
-<!--                                </table>-->
+                                <table class="table table-striped">
+                                    <tbody>
+                                    <tr>
+                                        <td><img src="images/audio1.jpg" width="40px" /> </td>
+                                        <td>Satellite Church Opening Form</td>
+                                        <td class="text-right">21 hours ago</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i> </button> </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
