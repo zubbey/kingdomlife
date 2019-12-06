@@ -3,20 +3,10 @@ require_once("../config/db.php");
 require_once("../controller/user_controller.php");
 ?>
 
-<form action="../controller/youtube_upload.php" method="post" enctype="multipart/form-data">
-    <p>
-        <input type="file" name="video">
-    </p>
-    <p>
-        <input type="text" name="vtitle">
-    </p>
-    <p>
-        <textarea name="vdesc" id="" cols="30" rows="10"></textarea>
-    </p>
-    <p>
-        <input type="text" name="vtags" placeholder="Comma separated values">
-    </p>
-    <p>
-        <input type="submit" name="submit" value="Submit">
-    </p>
+<form name="audio_form" id="audio_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <label>Audio File:</label>
+        <input name="audio_file" id="audio_file" type="file"/>
+        <input type="submit" name="upload_audio" id="Submit" value="Submit"/>
+    </fieldset>
 </form>
