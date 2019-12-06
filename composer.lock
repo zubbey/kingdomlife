@@ -753,8 +753,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "ext-mysqli": "*",
-        "ext-mysql": "*"
+        "ext-mysqli": "*"
     },
     "platform-dev": []
 }
