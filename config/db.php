@@ -1,10 +1,5 @@
 <?php
 
-//b8e5e502d58233
-//e6e8a70e
-//us-cdbr-iron-east-05.cleardb.net/heroku_f1ecc1285a146c2
-//heroku_f1ecc1285a146c2
-
 // set a default environment
 $WEBSITE_ENVIRONMENT = "Development";
 // detect the URL to determine if it's development or production

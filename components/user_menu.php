@@ -13,6 +13,7 @@ exit();
     <title>Home | Kingdom Life Church</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="refresh" content="180" >
 
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
@@ -31,7 +32,7 @@ exit();
     <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="../css/jquery.timepicker.css">
 
-
+    <link rel="stylesheet" href="../css/flickity.min.css">
     <link rel="stylesheet" href="../css/flaticon.css">
     <link rel="stylesheet" href="../css/icomoon.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -83,9 +84,9 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
                     <div class="dropdown-menu dropdown-default dropdown-menu-right text-right " aria-labelledby="navbarDropdownMenuLink-333">
                         <a class="dropdown-item" href="../about">About Kingdomlife</a>
                         <a class="dropdown-item" href="../ministers?pastor=john">Victor C. Uzosike</a>
-                        <a class="dropdown-item" href="../connect">Connect with us</a>
                         <a class="dropdown-item" href="../ministers">ministers / Team</a>
-                        <a class="dropdown-item" href="ministers">Units & their descriptions</a>
+                        <a class="dropdown-item" href="../outreaches">Outreaches</a>
+                        <a class="dropdown-item" href="../units">Units & their descriptions</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -108,8 +109,10 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
                         <a class="dropdown-item" href="../store?tab=other">Others Items</a>
                     </div>
                 </li>
+                <li class="nav-item"><a href="../events" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="../connect" class="nav-link">Contact us</a></li>
             </ul>
-            <li class="nav-item"><a href="connect" class="nav-link">Contact us</a></li>
+
             <ul class="navbar-nav">
                 <li>
                     <button type="button" class="btn btn-danger rounded mr-3"><small><i class="fas fa-play text-white"></i></small> Live</button>

@@ -24,7 +24,7 @@ require ("./components/menu.php");
 
                     <div class="row">
                         <div class="col">
-                            <img class="card-img-top" src="https://i.imgur.com/87QA1CS.jpg" alt="Card image cap">
+                            <img class="card-img-top" src="https://i.imgur.com/87QA1CSl.jpg" alt="Card image cap">
                         </div>
                        <div class="col">
                            <h3 class="modal-title" id="exampleModalScrollableTitle"><strong><?php echo nl2br($heading);?></strong></h3>
@@ -99,7 +99,7 @@ require ("./components/menu.php");
 
                     <!-- Card image -->
                     <div class="view view-cascade overlay">
-                        <img class="card-img-top" src="https://i.imgur.com/87QA1CS.jpg" alt="Card image cap">
+                        <img class="card-img-top pastors" src="https://i.imgur.com/87QA1CSl.jpg" alt="Card image cap">
                         <a href="#!">
                             <div class="mask rgba-white-slight"></div>
                         </a>
@@ -121,7 +121,7 @@ require ("./components/menu.php");
 
                     <!-- Card image -->
                     <div class="view view-cascade overlay">
-                        <img class="card-img-top" src="https://i.imgur.com/zvKKXd5.jpg" alt="Card image cap">
+                        <img class="card-img-top pastors" src="https://i.imgur.com/zvKKXd5.jpg" alt="Card image cap">
                         <a href="#!">
                             <div class="mask rgba-white-slight"></div>
                         </a>

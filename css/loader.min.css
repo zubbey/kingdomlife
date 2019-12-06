@@ -37,8 +37,8 @@
 }
 
 .loader {
-    width: 5%;
-    height: 10%;
+    width: 2%;
+    height: 5%;
     position: relative;
     top: 50%;
     background-image: url(../images/loading.gif);

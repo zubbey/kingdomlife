@@ -1,11 +1,9 @@
-<footer>
-<div class="container">
-    <div class="row mt-5">
-        <div class="col-md-12 text-center">
+<footer class="footer bg-white">
+    <div class="container">
+        <div class="text-center">
             <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> Kingdom Life Gospel Church | All Rights Reserved</p>
         </div>
     </div>
-</div>
 </footer>
 
 
@@ -27,6 +25,7 @@
 <script src="js/google-map.js"></script>
 <script src="js/main.js"></script>
 <script src="js/loader.js"></script>
+<script src="js/flickity.pkgd.min.js"></script>
 <script src="js/app.js"></script>
 
 <script>

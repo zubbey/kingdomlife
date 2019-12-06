@@ -4,6 +4,7 @@
     <title>Home | Kingdom Life Church</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="refresh" content="1800" >
 
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
@@ -22,7 +23,7 @@
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-
+    <link rel="stylesheet" href="css/flickity.min.css">
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
@@ -33,9 +34,8 @@
     <link rel="stylesheet" href="css/custom.css" />
     <link href="images/https://i.imgur.com/1QeMyjh.png" rel="shortcut icon" type="image/x-icon">
     <link href="images/https://i.imgur.com/1QeMyjh.png" rel="apple-touch-icon">
-
 </head>
-<body>
+<body class="bg-light">
 <div class="loader-body" id="loader">
     <div class="loader m-auto"></div>
 </div>
@@ -54,7 +54,7 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
 }
 ?>
 
-<nav class="navbar navbar-expand-lg py-2 m-0" id="ftco-navbar">
+<nav class="navbar navbar-expand-lg py-2 m-0 bg-white" id="ftco-navbar">
     <div class="container">
         <img onclick="location.assign('/')" src="https://i.imgur.com/1QeMyjh.png" height="40" alt="Kingdomlife Gospel">
         <button id="menuicon" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,9 +69,9 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
                     <div class="dropdown-menu dropdown-default dropdown-menu-right text-right " aria-labelledby="navbarDropdownMenuLink-333">
                         <a class="dropdown-item" href="about">About Kingdomlife</a>
                         <a class="dropdown-item" href="ministers?pastor=john">Victor C. Uzosike</a>
-                        <a class="dropdown-item" href="connect">Connect with us</a>
                         <a class="dropdown-item" href="ministers">ministers / Team</a>
-                        <a class="dropdown-item" href="ministers">Units & their descriptions</a>
+                        <a class="dropdown-item" href="outreaches">Outreaches</a>
+                        <a class="dropdown-item" href="units">Units & their descriptions</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -84,16 +84,8 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
                     </div>
                 </li>
                 <li class="nav-item"><a href="give" class="nav-link">Give</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false"><i class="fas fa-shopping-basket"></i> Store
-                    </a>
-                    <div class="dropdown-menu dropdown-default dropdown-menu-right text-right " aria-labelledby="navbarDropdownMenuLink-333">
-<!--                        <a class="dropdown-item" href="store?tab=audio">Audio Messages</a>-->
-                        <a class="dropdown-item" href="store?tab=ebook">Buy Ebooks</a>
-                        <a class="dropdown-item" href="store?tab=other">Others Items</a>
-                    </div>
-                </li>
+                <li class="nav-item"><a href="store" class="nav-link"><i class="fas fa-shopping-basket"></i> Store</a></li>
+                <li class="nav-item"><a href="events" class="nav-link">Events</a></li>
                 <li class="nav-item"><a href="connect" class="nav-link">Contact us</a></li>
             </ul>
             <ul class="navbar-nav">

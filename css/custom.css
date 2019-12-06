@@ -1,9 +1,9 @@
 /*@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');*/
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 * {
     font-family: 'Roboto', sans-serif;
     font-size: 1.01em;
 }
-@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 .nav-link{
     color: #0b0b0b;
     text-transform: capitalize;
@@ -77,9 +77,15 @@ button::after {
 button:hover {
     color: #ed4b22;
 }
-button.donatebtn:hover{
+button.donatebtn{
+    border-color: #ed4b22;
     color: #ed4b22;
+}
+button.donatebtn:hover{
+    color: #c53916;
+    border-color: #c53916;
     transform: scale(1);
+    cursor: pointer;
 }
 button.tithebtn:hover {
     color: rgb(11, 122, 112) !important;
@@ -118,18 +124,64 @@ button.alldonorbtn:hover{
     height: 100%;
     width: 135%;
 }
-
-.celebrate h3{
+.carousel-caption-custom{
+    position: absolute;
+    display: block;
+    left: 10%;
+    right: 10%;
+}
+h3.service-time{
     font-family: 'Pacifico', cursive;
-    font-size: 4rem;
-    color: #0b0b0b;
+    font-size: 3rem;
+    color: #0056b3;
+}
+.img.img-about.align-self-stretch {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+img.card-img-top.homecard {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+img.card-img-top.homecard:hover{
+    transform: none;
+}
+a.nav-link.bg-white.p-3.position-absolute {
+    bottom: 10%;
+    left: 5%;
+    border-radius: 5px;
+}
+a.nav-link.bg-white.p-3.position-absolute:hover{
+    transform: scale(0.98);
 }
 
+.footer{
+    clear:both;
+    position:relative;
+    bottom:0;
+    width: 100%;
+    padding: 10px;
+}
+.card-img-top{
+    transform: none;
+    transition: all ease-in-out 500ms;
+}
+.card-img-top:hover{
+    cursor: pointer;
+    transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    transition: all ease-in-out 500ms;
+}
 /*Minister*/
 .heading {
     font-weight: 700;
     color: #5d4267;
 }
+
 .card.colorful-card .testimonial-card .card-up {
     height: 95px;
 }
@@ -196,6 +248,11 @@ button.alldonorbtn:hover{
     transition: all 0.3s;
     filter: drop-shadow(0 0 0.75rem #d8dfe0);
 }
+img.card-img-top.pastors{
+    width: 100%;
+    height: 232px;
+    object-fit: cover;
+}
 .offering{
     background: #ad5389;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
@@ -225,7 +282,9 @@ button.alldonorbtn:hover{
 input#givebtn {
     font-size: 2rem;
 }
-
+.ftco-section-3 .overlay{
+    background-color: transparent !important;
+}
 /*STORE STYLE*/
 .c_review {
     margin-bottom: 0
@@ -265,7 +324,7 @@ input#givebtn {
 }
 
 .product_item:hover .cp_img {
-    top: -40px
+    top: -10px
 }
 
 .product_item:hover .cp_img img {
@@ -288,18 +347,20 @@ input#givebtn {
     -khtml-transform: translate(-50%);
     width: 100%;
     padding: 15px;
-    transition: all 0.2s ease-in-out
+    transition: all 0.2s ease-in-out;
 }
 
 .product_item .cp_img img {
     transition: all 0.2s ease-in-out;
-    border-radius: 6px
+    border-radius: 6px;
+    height: 400px;
+    object-fit: cover;
 }
 
 .product_item .cp_img .hover {
     display: none;
     text-align: center;
-    margin-top: 2px
+    margin-top: 2px;
 }
 
 .product_item .product_details {
@@ -457,6 +518,43 @@ input#givebtn {
     content: "\f136";
     color: #fff
 }
+.color-1{
+    background: #ed4b22;
+}
+.color-1:hover{
+    color: #fff;
+}
+.carousel-cell.item{
+    width: 28%;
+}
+.carousel {
+    background: #FAFAFA;
+}
+.profile-img{
+    width: 100px;
+}
+
+.flickity-page-dots{
+    display: none;
+}
+.carousel-cell {
+    margin: auto;
+    width: 100%;
+    height: 400px;
+    border-radius: 5px;
+    /*counter-increment: carousel-cell;*/
+}
+
+/* cell number */
+.carousel-cell:before {
+    display: block;
+    text-align: center;
+    /*content: counter(carousel-cell);*/
+    line-height: 200px;
+    font-size: 80px;
+    /*color: white;*/
+}
+
 
 @media screen and (max-width: 996px) {
     .preview {
@@ -544,8 +642,43 @@ input#givebtn {
     margin-right: 10px
 }
 
-
 /*USER PROFILE*/
 img.mr-4.product {
     width: 100px;
+}
+.event-section{
+    background: #efefef;
+    min-height: calc(100vh - 70px);
+}
+.sec-title{
+    font-size: 56px;
+    font-weight: 300;
+    letter-spacing: 0px;
+    line-height: 1.4;
+}
+h1.display-4.event-date {
+    color: #af0d0f;
+}
+
+li.count-day {
+    display: inline-block;
+    font-size: 1em;
+    list-style-type: none;
+    text-transform: uppercase;
+}
+
+li.count-day span {
+    display: block;
+    font-size: 1.5rem;
+    color: #af0d0f;
+    font-weight: 700;
+}
+img.outreaches{
+    width:100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: bottom;
+}
+.home-outreaches{
+    height: 200px !important;
 }

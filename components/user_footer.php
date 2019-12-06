@@ -1,13 +1,10 @@
-<footer>
-<div class="container">
-    <div class="row mt-5">
-        <div class="col-md-12 text-center">
+<footer class="footer">
+    <div class="container">
+        <div class="text-center">
             <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> Kingdom Life Gospel Church | All Rights Reserved</p>
         </div>
     </div>
-</div>
 </footer>
-
 
 <script src="../js/jquery.min.js"></script>
 <script src="../js/jquery-migrate-3.0.1.min.js"></script>
@@ -26,6 +23,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="../js/google-map.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/flickity.pkgd.min.js"></script>
 <script src="../js/loader.js"></script>
 <script src="../js/app.js"></script>
 

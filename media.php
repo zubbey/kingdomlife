@@ -22,7 +22,7 @@ require ("./components/menu.php");
                 <a class="nav-link" id="video-tab" data-toggle="tab" href="#video" role="tab" aria-controls="video" aria-selected="false">Video <span class="badge badge-primary badge-pill">8</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="audio-tab" data-toggle="tab" href="#audio" role="tab" aria-controls="audio" aria-selected="false">Video <span class="badge badge-primary badge-pill">8</span></a>
+                <a class="nav-link" id="audio-tab" data-toggle="tab" href="#audio" role="tab" aria-controls="audio" aria-selected="false">Audio Messages<span class="badge badge-primary badge-pill">8</span></a>
             </li>
         </ul>
         <div class="tab-content mt-3" id="myTabContent">
@@ -257,45 +257,26 @@ require ("./components/menu.php");
                 </div>
             </div>
 
-            <div class="tab-pane fade show active" id="audio" role="tabpanel" aria-labelledby="audio-tab">
+            <div class="tab-pane fade" id="audio" role="tabpanel" aria-labelledby="audio-tab">
                 <div class="container mb-4">
                     <div class="row">
                         <div class="col-12">
                             <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <tbody>
-                                    <tr>
-                                        <td><img src="images/audio1.jpg" width="40px" /> </td>
-                                        <td>Satellite Church Opening Form</td>
-                                        <td class="text-right">21 hours ago</td>
-                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i> </button> </td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="images/audio2.jpg" width="40px" /> </td>
-                                        <td>HomeCell Manual in FRENCH for 19th November, 2019 </td>
-                                        <td class="text-right">3 month ago</td>
-                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i> </td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="images/audio3.png" width="40px" /> </td>
-                                        <td>Leading Lights Welcome Booklet</td>
-                                        <td class="text-right">1 year ago</td>
-                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="images/audio2.jpg" width="40px" /> </td>
-                                        <td>Leading Lights Welcome Booklet</td>
-                                        <td class="text-right">1 year ago</td>
-                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="images/audio1.jpg" width="40px" /> </td>
-                                        <td>Leading Lights Welcome Booklet</td>
-                                        <td class="text-right">1 year ago</td>
-                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                                <input type=”text” id=”trackInput”>
+                                <button type=”submit” id=”submitButton”name=”button”>SUBMIT</button>
+                                <section id=”playAudioHere”></section>
+                                <section id=”bands”></section>
+
+<!--                                <table class="table table-striped">-->
+<!--                                    <tbody>-->
+<!--                                    <tr>-->
+<!--                                        <td><img src="images/audio1.jpg" width="40px" /> </td>-->
+<!--                                        <td>Satellite Church Opening Form</td>-->
+<!--                                        <td class="text-right">21 hours ago</td>-->
+<!--                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i> </button> </td>-->
+<!--                                    </tr>-->
+<!--                                    </tbody>-->
+<!--                                </table>-->
                             </div>
                         </div>
                     </div>
@@ -333,4 +314,35 @@ require ("./components/footer.php");
         $('input[name="anonymous"]')[0].checked = true;
         $('.option').hide();
     }
+
+    let trackInput = document.getElementById(‘trackInput’);
+    let submitButton = document.getElementById(‘submitButton’);
+    submitButton.onclick = searchTracks;
+
+    function searchTracks() {
+        let searchResults = trackInput.value;
+        fetch(‘https://api.soundcloud.com/tracks/?client_id=YOUR_CLIENT_ID HERE' + searchResults).then(function(response) {
+            if (response.status != 200) {
+                console.log(‘Looks like there was a problem. Status Code’ + response.status);
+                return;
+            }
+        response.json().then(function(data) {
+            let track = data;
+            console.log(track);
+    }
+
+        function renderTracks() {
+            return `
+                ${track.map(track =>
+                                `<div class=”box”>
+                <div src=”${track.stream_url}”></div>
+                <button id=”albumBtn” class=”albumButton”><img id=”${track.stream_url}${clientId}” src=”${track.artwork_url}”></img></button>
+                <div id=”songTitle” class=”title”>${track.title}</div>
+                </div>`
+                            )}
+            `
+        }
+        let markup = `${renderTracks()}`;
+        document.getElementById(‘bands’).innerHTML = markup;
+
 </script>

@@ -2,6 +2,7 @@
 require_once("./controller/auth_controller.php");
 require ("./components/menu.php");
 ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="hero-wrap hero-wrap-about" style="background-image: url('https://i.imgur.com/GGFN0an.png'); opacity: .5;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
