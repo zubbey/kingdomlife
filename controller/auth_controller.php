@@ -156,35 +156,18 @@ if (isset($_POST['login-btn'])) {
 }
 
 //UPLOAD AUDIO FILE
-$name = $_FILES['audioFile']['name'];
 
-$tmp_name = $_FILES['audioFile']['tmp_name'];
+if (isset($_POST['audio-btn'])) {
 
-$submitbutton = $_POST['submit'];
+    $filename = strtolower($_POST['fileName']);
+    $description = mysqli_real_escape_string($conn, $_POST['description_entered']);
 
-$position = strpos($name, ".");
-
-$fileextension = substr($name, $position + 1);
-
-$fileextension = strtolower($fileextension);
-
-$description = $_POST['description_entered'];
-
-if (isset($name)) {
-    echo "uploading</br>";
-    $path = 'videos/';
-
-    if (!empty($name)) {
-        if (move_uploaded_file($tmp_name, $path . $name)) {
-            header("Location: ?Uploaded=true");
-        } else {
-            header("Location: ?error=fail");
-        }
+    if (!empty($filename) || !empty($description)) {
+        mysqli_query($conn, "INSERT INTO `audio` (description, filename)
+        VALUES ('$description', '$filename')");
+        header("Location: ?success=true");
+    } else {
+        header("Location: ?error=empty");
     }
-}
-
-if (!empty($description)) {
-    mysqli_query($conn, "INSERT INTO `audio` (description, filename)
-        VALUES ('$description', '$name')");
 }
 mysqli_close($conn);
