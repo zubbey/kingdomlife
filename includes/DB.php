@@ -5,10 +5,10 @@ class DB {
 	
 	function __construct(){
 		// Database configuration
-		$dbHost = 'localhost';
-		$dbUsername = 'root';
-		$dbPassword = 'Inno070687';
-		$dbName = 'kingdomlife_database';
+		$dbHost = 'us-cdbr-iron-east-05.cleardb.net';
+		$dbUsername = 'b8e5e502d58233';
+		$dbPassword = 'e6e8a70e';
+		$dbName = 'heroku_f1ecc1285a146c2';
 		
 		// Connect database
 		$conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
