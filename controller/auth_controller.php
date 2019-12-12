@@ -159,7 +159,7 @@ if (isset($_POST['login-btn'])) {
 
 if (isset($_POST['audio-btn'])) {
 
-    $filename = strtolower($_POST['fileName']);
+    $filename = $_POST['fileName'];
     $description = mysqli_real_escape_string($conn, $_POST['description_entered']);
 
     if (!empty($filename) || !empty($description)) {
