@@ -21,10 +21,9 @@ if (isset($name)) {
 
     if (!empty($name)){
         if (move_uploaded_file($tmp_name, $path.$name)) {
-            echo 'Uploaded!';
-
+            header("Location: admin-dashboard?uploaded=true");
         } else{
-            echo 'Could not upload';
+            header("Location: admin-dashboard?uploaded=false");
         }
     }
 }

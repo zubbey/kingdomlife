@@ -2,16 +2,14 @@
 require_once("./controller/auth_controller.php");
 require ("./components/menu.php");
 ?>
-    <div class="container mt-5">
-    <form action="audio-upload.php" method='post' enctype="multipart/form-data">
+<div class="container mt-5">
+    <form   class="md-form" action="audio-upload.php" method='post' enctype="multipart/form-data">
+        <div class="file-field">
         <label for="inputDescription">Title: </label>
         <input name="description_entered" type="text" id="inputDescription" class="form-control mb-2" aria-describedby="passwordHelpBlock">
-        <div class="custom-file">
-            <input name="file" type="file" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile">Choose file</label>
-        </div>
+            <input name="file" type="file" id="customFile" class="w-100 font-weight-bold">
         <input type="submit" name="submit" value="Upload" class="btn btn-lg btn-primary rounded"/>
-
+        </div>
     </form>
 
 <hr>
