@@ -1,22 +1,36 @@
 <?php
+require ('config/db.php');
 //UPLOAD AUDIO FILE
-if(isset($_POST['Submit']))
-{
-    $file_name = $_FILES['audio_file']['name'];
+$name= $_FILES['file']['name'];
 
-    if($_FILES['audio_file']['type']=='audio/mpeg' || $_FILES['audio_file']['type']=='audio/mpeg3' || $_FILES['audio_file']['type']=='audio/x-mpeg3' || $_FILES['audio_file']['type']=='audio/mp3' || $_FILES['audio_file']['type']=='audio/x-wav' || $_FILES['audio_file']['type']=='audio/wav')
-    {
-        $new_file_name=$_FILES['audio_file']['name'];
+$tmp_name= $_FILES['file']['tmp_name'];
 
-        // Where the file is going to be placed
-        $target_path = "videos/".$new_file_name;
+$submitbutton= $_POST['submit'];
 
-        //target path where u want to store file.
+$position= strpos($name, ".");
 
-        //following function will move uploaded file to audios folder.
-        if(move_uploaded_file($_FILES['audio_file']['tmp_name'], $target_path)) {
+$fileextension= substr($name, $position + 1);
 
-            //insert query if u want to insert file
+$fileextension= strtolower($fileextension);
+
+$description= $_POST['description_entered'];
+
+if (isset($name)) {
+
+    $path= 'Uploads/';
+
+    if (!empty($name)){
+        if (move_uploaded_file($tmp_name, $path.$name)) {
+            echo 'Uploaded!';
+
         }
     }
 }
+
+if(!empty($description)){
+    mysqli_query($conn, "INSERT INTO audio (description, filename)
+VALUES ('$description', '$name')");
+}
+
+
+mysqli_close($conn);
