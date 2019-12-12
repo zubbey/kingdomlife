@@ -181,8 +181,6 @@ if (isset($name)) {
             header("Location: ?error=fail");
         }
     }
-} else{
-    header("Location: ?error=filenameEmpty");
 }
 
 if (!empty($description)) {
