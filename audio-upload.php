@@ -1,34 +1,22 @@
 <?php
 //UPLOAD AUDIO FILE
-if(isset($_POST['audio-btn']))
+if(isset($_POST['Submit']))
 {
-echo "uploadin..";
-    $path = "videos/"; //file to place within the server
-    $valid_formats1 = array("mp3", "ogg", "flac"); //list of file extention to be accepted
-    if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST")
-    {
-        $file1 = $_FILES['file1']['name']; //input file name in this code is file1
-        $size = $_FILES['file1']['size'];
+    $file_name = $_FILES['audio_file']['name'];
 
-        if(strlen($file1))
-        {
-            list($txt, $ext) = explode(".", $file1);
-            if(in_array($ext,$valid_formats1))
-            {
-                $actual_image_name = $txt.".".$ext;
-                $tmp = $_FILES['file1']['tmp_name'];
-                if(move_uploaded_file($tmp, $path.$actual_image_name))
-                {
-                    header("Location: admin-dashboard?msg=uploaded");
-                }
-                else
-                    echo "failed";
-            }
-        }else{
-            echo "error 2";
+    if($_FILES['audio_file']['type']=='audio/mpeg' || $_FILES['audio_file']['type']=='audio/mpeg3' || $_FILES['audio_file']['type']=='audio/x-mpeg3' || $_FILES['audio_file']['type']=='audio/mp3' || $_FILES['audio_file']['type']=='audio/x-wav' || $_FILES['audio_file']['type']=='audio/wav')
+    {
+        $new_file_name=$_FILES['audio_file']['name'];
+
+        // Where the file is going to be placed
+        $target_path = "videos/".$new_file_name;
+
+        //target path where u want to store file.
+
+        //following function will move uploaded file to audios folder.
+        if(move_uploaded_file($_FILES['audio_file']['tmp_name'], $target_path)) {
+
+            //insert query if u want to insert file
         }
-    } else{
-        echo "error 1";
     }
 }
-?>
