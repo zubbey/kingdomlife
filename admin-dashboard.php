@@ -6,7 +6,7 @@ require ("./components/menu.php");
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post' enctype="multipart/form-data">
         <label>Title: </label> <input class="form-control mb-2" type="text" name="description_entered"/>
-        <input class="w-100 font-weight-bold" type="file" name="file"/>
+        <input class="w-100 font-weight-bold" type="file" name="audioFile"/>
         <input class="btn btn-lg btn-primary rounded" type="submit" name="submit" value="Upload"/>
     </form>
 
