@@ -126,13 +126,54 @@ require_once("./components/youtube.php");
             </div>
 
             <div class="tab-pane fade" id="audio" role="tabpanel" aria-labelledby="audio-tab">
-                <div class="container mb-4">
-                    <div class="row">
-                        <div class="col-12">
-                            <div id="mep_0" class="mejs-container mejs-container-keyboard-inactive wp-audio-shortcode mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 681.047px; height: 40px; min-width: 240px;"><div class="mejs-inner"><div class="mejs-mediaelement"><mediaelementwrapper id="audio-30766-1"><audio class="wp-audio-shortcode" id="audio-30766-1_html5" preload="none" style="width: 100%; height: 100%;" src="https://allnaijaentertainment.com/wp-content/uploads/2018/11/Michael_Jackson_Earth_Song-_-AllNaijaEntertainment.com_.mp3?_=1"><source type="audio/mpeg" src="https://allnaijaentertainment.com/wp-content/uploads/2018/11/Michael_Jackson_Earth_Song-_-AllNaijaEntertainment.com_.mp3?_=1"><a href="https://allnaijaentertainment.com/wp-content/uploads/2018/11/Michael_Jackson_Earth_Song-_-AllNaijaEntertainment.com_.mp3">https://allnaijaentertainment.com/wp-content/uploads/2018/11/Michael_Jackson_Earth_Song-_-AllNaijaEntertainment.com_.mp3</a></audio></mediaelementwrapper></div><div class="mejs-layers"><div class="mejs-poster mejs-layer" style="display: none; width: 100%; height: 100%;"></div></div><div class="mejs-controls"><div class="mejs-button mejs-playpause-button mejs-play"><button type="button" aria-controls="mep_0" title="Play" aria-label="Play" tabindex="0"></button></div><div class="mejs-time mejs-currenttime-container" role="timer" aria-live="off"><span class="mejs-currenttime">00:00</span></div><div class="mejs-time-rail"><span class="mejs-time-total mejs-time-slider" role="slider" tabindex="0" aria-label="Time Slider" aria-valuemin="0" aria-valuemax="NaN" aria-valuenow="0" aria-valuetext="00:00"><span class="mejs-time-buffering" style="display: none;"></span><span class="mejs-time-loaded"></span><span class="mejs-time-current"></span><span class="mejs-time-hovered no-hover"></span><span class="mejs-time-handle"><span class="mejs-time-handle-content"></span></span><span class="mejs-time-float" style="display: none; left: 0px;"><span class="mejs-time-float-current">00:00</span><span class="mejs-time-float-corner"></span></span></span></div><div class="mejs-time mejs-duration-container"><span class="mejs-duration">00:00</span></div><div class="mejs-button mejs-volume-button mejs-mute"><button type="button" aria-controls="mep_0" title="Mute" aria-label="Mute" tabindex="0"></button></div><a class="mejs-horizontal-volume-slider" href="javascript:void(0);" aria-label="Volume Slider" aria-valuemin="0" aria-valuemax="100" role="slider"><span class="mejs-offscreen">Use Up/Down Arrow keys to increase or decrease volume.</span><div class="mejs-horizontal-volume-total"><div class="mejs-horizontal-volume-current" style="left: 0px; width: 100%;"></div><div class="mejs-horizontal-volume-handle" style="left: 100%;"></div></div></a></div></div></div>
+                <link rel="stylesheet" href="css/audio.css">
+
+                <div class="page">
+                    <div class="player-wrap" data-url="//archive.org/download/mythium/JLS_ATI" data-title="All This Is - Joe L.'s Studio">
+                        <div class="button">Play</div>
+                        <div class="info">
+                            <h1>Album: Mythium</h1>
+                            <p class="action">&nbsp;</p>
+                            <p class="title ellipsis"></p>
+                        </div>
+                        <div class="player">
+                            <audio preload></audio>
+                            <div class="playpause">
+                                <div class="play"><svg viewBox="0 0 14 14"><path d="M0,0 L0,14 L11,7 L0,0 Z"/></svg></div>
+                                <div class="pause"><svg viewBox="0 0 14 14"><path d="M0,14 L4,14 L4,0 L0,0 L0,14 L0,14 Z M8,0 L8,14 L12,14 L12,0 L8,0 L8,0 Z"/></svg></div>
+                            </div>
+                            <div class="timer">
+                                <div class="current">0:00:00</div>
+                                <div>/</div>
+                                <div class="duration">0:00:00</div>
+                            </div>
+                            <div><input type="range" min="0" max="100" step=".1" value="0" class="seek"></div>
+                            <div class="prev"><svg viewBox="0 0 12 12"><path d="M3.5,6 L12,12 L12,0 L3.5,6 Z M0,0 L0,12 L2,12 L2,0 L0,0 L0,0 Z"/></svg></div>
+                            <div class="next"><svg viewBox="0 0 12 12"><path d="M0,12 L8.5,6 L0,0 L0,12 L0,12 Z M10,0 L10,12 L12,12 L12,0 L10,0 L10,0 Z"/></svg></div>
                         </div>
                     </div>
+                    <div class="playlist-wrap">
+
+                            <?php
+                            $result= mysqli_query($conn, "SELECT description, filename FROM audio ORDER BY ID desc" )
+                            or die("SELECT Error: ".mysqli_error());
+
+                            echo "<ol>";
+                            while ($row = mysqli_fetch_array($result)){
+                                $files_field= $row['filename'];
+                                $files_show= "audio/$files_field";
+                                $descriptionvalue= $row['description'];
+                                echo "<li>";
+                                echo "<a href='".$files_show."'>".$descriptionvalue."</a>";
+                                print "</li>";
+                            }
+                            print "</ol>";
+
+                            ?>
+<!--                            <li><a href="audio/ABOVE%20ONLY">Above Only</a></li>-->
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -140,6 +181,7 @@ require_once("./components/youtube.php");
 <?php
 require ("./components/footer.php");
 ?>
+<script src="js/audio.js"></script>
 <script>
     //################# CHECK URL PARAM FUNCTION ##################
     function queryParameters () {
@@ -162,5 +204,8 @@ require ("./components/footer.php");
     if (queryParameters().tab === "audio"){
         $('#audio-tab')[0].click();
     }
+
+
+    // AUDIO QUERY
 
 </script>
