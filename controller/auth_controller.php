@@ -169,5 +169,5 @@ if (isset($_POST['audio-btn'])) {
     } else {
         header("Location: ?error=empty");
     }
+    mysqli_close($conn);
 }
-mysqli_close($conn);
