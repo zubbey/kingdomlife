@@ -195,7 +195,6 @@ if (isset($_GET['no_account']) && $_GET['no_account'] === 'No user found with th
                     <p>Not a member?
                         <a href="?register=true">Register</a>
                     </p>
-
                 </form>
             </div>
         </div>
