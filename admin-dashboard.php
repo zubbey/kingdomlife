@@ -10,7 +10,7 @@ require ("./components/menu.php");
     print "<table border=1>\n";
     while ($row = mysqli_fetch_array($result)){
         $files_field= $row['filename'];
-        $files_show= "uploads/$files_field";
+        $files_show= "audio/$files_field";
         $descriptionvalue= $row['description'];
         print "<tr>\n";
         print "\t<td>\n";
