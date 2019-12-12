@@ -64,7 +64,6 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
     <span aria-hidden="true">&times;</span>
   </button>
   </div>
-</div>
     ';
 }
 ?>
@@ -122,7 +121,7 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-user"></i> <?php echo $_SESSION['username'];?>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right text-right dropdown-default"
                          aria-labelledby="navbarDropdownMenuLink-333">

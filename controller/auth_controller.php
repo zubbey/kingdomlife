@@ -109,12 +109,11 @@ if (isset($_POST['login-btn'])) {
     $username_email = $_POST['username-email'];
     $password = $_POST['password'];
     if (empty($username_email)) {
-        $errors['empty_username'] = "you forgot to fill your username.";
+        $errors['empty_username'] = "you forgot to fill your username";
         header("Location: ?login=true&username_error=".$errors['empty_username']."&username=".$username_email);
-    }
-    if (empty($password)) {
-        $errors['password'] = "you forgot to fill your password.";
-        header("Location: ?login=true&username_error=".$errors['password']."&username=".$username_email);
+    }else if (empty($password)) {
+        $errors['empty_password'] = "you forgot to fill your password";
+        header("Location: ?login=true&password_error=".$errors['empty_password']."&username=".$username_email);
     }
     if (count($errors) == 0) {
 
@@ -146,8 +145,8 @@ if (isset($_POST['login-btn'])) {
                 $_SESSION['loginlog'] = "you logged in at " . date("h:i a");
                 header('location: users/profile.php?success=true');
             } else {
-                $errors['no_account'] = "No user found with this credentials.";
-                header("Location: ?login=true&username_error=" . $errors['no_account'] . "&username=" . $username_email);
+                $errors['no_account'] = "No user found with this credentials";
+                header("Location: ?login=true&no_account=" . $errors['no_account'] . "&username=" . $username_email);
             }
         } else {
             $error = $conn->errno . ' ' . $conn->error;

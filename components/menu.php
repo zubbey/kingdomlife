@@ -41,18 +41,18 @@
 </div>
 
 <!--check if email Address is verified-->
-<?php
-if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
-    echo '
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Hello '.$_SESSION['username'].',</strong> please check your email to verify your account or <a href="?resendmail=true">click this link</a>.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-    ';
-}
-?>
+    <?php
+    if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
+        echo '
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Hello '.$_SESSION['username'].',</strong> please check your email to verify your account or <a href="?resendmail=true">click this link</a>.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+        ';
+    }
+    ?>
 
 <nav class="navbar navbar-expand-lg py-2 m-0 bg-white" id="ftco-navbar">
     <div class="container">
@@ -81,6 +81,7 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
                     <div class="dropdown-menu dropdown-default dropdown-menu-right text-right " aria-labelledby="navbarDropdownMenuLink-333">
                         <a class="dropdown-item" href="media?tab=picture">Pictures</a>
                         <a class="dropdown-item" href="media?tab=video">Videos</a>
+                        <a class="dropdown-item" href="media?tab=audio">Audio Messages</a>
                     </div>
                 </li>
                 <li class="nav-item"><a href="give" class="nav-link">Give</a></li>
@@ -134,28 +135,52 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
 
 <!--LOGIN MODAL-->
 
+<?php
+if (isset($_GET['username_error']) && $_GET['username_error'] === 'you forgot to fill your username'){
+    $invalid_username = "is-invalid";
+    $invalid_username_Msg = "<div class=\"invalid-feedback\">".$_GET['username_error']."</div>";
+}
+if (isset($_GET['password_error']) && $_GET['password_error'] === 'you forgot to fill your password'){
+    $invalid_password = "is-invalid";
+    $invalid_password_Msg = "<div class=\"invalid-feedback\">".$_GET['password_error']."</div>";
+}
+if (isset($_GET['no_account']) && $_GET['no_account'] === 'No user found with this credentials'){
+    $invalid_username = "is-invalid";
+    $invalid_password = "is-invalid";
+    $invalid_entry_Msg = "<small class=\"invalid-feedback d-block\">".$_GET['no_account']."</small>";
+}
+?>
+
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
 <!--        <button type="button" class="float-lg-right close" data-dismiss="modal" aria-label="Close">-->
 <!--            <span class="rounded-circle" aria-hidden="true">&times;</span>-->
 <!--        </button>-->
+
         <div class="modal-content">
             <div class="modal-body">
                 <!-- Default form login -->
+
                 <form class="text-center border border-light p-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 
-                    <p class="h4 mb-3">Sign in</p>
+                    <p class="h4 mb-3">Sign in<br><?php echo $invalid_entry_Msg;?></p>
                     <!--Username or Email -->
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">@</span>
                         </div>
-                        <input name="username-email" type="text" class="form-control rounded" placeholder="Username or Email Address" aria-label="Username" aria-describedby="basic-addon1">
+                        <input name="username-email" type="text" class="form-control rounded <?php echo $invalid_username;?>" placeholder="Username or Email Address" aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $_GET['username'];?>">
+                        <?php echo $invalid_username_Msg;?>
                     </div>
 
                     <!-- Password -->
-                    <input name="password" type="password" id="defaultLoginFormPassword" class="form-control mb-2 rounded" placeholder="Password">
-
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                        </div>
+                        <input name="password" type="password" id="defaultLoginFormPassword" class="form-control rounded <?php echo $invalid_password;?>" placeholder="Password">
+                        <?php echo $invalid_password_Msg;?>
+                    </div>
                     <div class="d-flex justify-content-center">
                         <div>
                             <!-- Forgot password -->

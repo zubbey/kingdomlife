@@ -1,6 +1,7 @@
 <?php
 require_once("./controller/auth_controller.php");
 require ("./components/menu.php");
+require_once("./components/youtube.php");
 ?>
 <div class="hero-wrap hero-wrap-about" style="background-image: url('https://i.imgur.com/GGFN0an.png'); opacity: .5;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
@@ -100,159 +101,26 @@ require ("./components/menu.php");
             </div>
 
             <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<!--                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">-->
                 <div class="container">
                     <div class="row clearfix">
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="card product_item">
-                                <div class="body">
-                                    <div class="cp_img">
-                                        <img src="images/productvideo.jpg" alt="Product" class="img-fluid">
-                                    </div>
-                                    <div class="product_details">
-                                        <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                        <ul class="product_price list-unstyled">
-                                            <li class="old_price text-muted">Two day ago</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="card product_item">
-                                <div class="body">
-                                    <div class="cp_img">
-                                        <img src="images/productvideo2.jpeg" alt="Product" class="img-fluid">
-                                    </div>
-                                    <div class="product_details">
-                                        <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                        <ul class="product_price list-unstyled">
-                                            <li class="old_price text-muted">Two day ago</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="card product_item">
-                                <div class="body">
-                                    <div class="cp_img">
-                                        <img src="images/productvideo.jpg" alt="Product" class="img-fluid">
-                                    </div>
-                                    <div class="product_details">
-                                        <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                        <ul class="product_price list-unstyled">
-                                            <li class="old_price text-muted">Two day ago</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="card product_item">
-                                <div class="body">
-                                    <div class="cp_img">
-                                        <img src="images/productvideo.jpg" alt="Product" class="img-fluid">
-                                    </div>
-                                    <div class="product_details">
-                                        <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                        <ul class="product_price list-unstyled">
-                                            <li class="old_price text-muted">Two day ago</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="card product_item">
-                                <div class="body">
-                                    <div class="cp_img">
-                                        <img src="images/productvideo2.jpeg" alt="Product" class="img-fluid">
-                                    </div>
-                                    <div class="product_details">
-                                        <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                        <ul class="product_price list-unstyled">
-                                            <li class="old_price text-muted">Two day ago</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="card product_item">
-                                <div class="body">
-                                    <div class="cp_img">
-                                        <img src="images/productvideo.jpg" alt="Product" class="img-fluid">
-                                    </div>
-                                    <div class="product_details">
-                                        <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                        <ul class="product_price list-unstyled">
-                                            <li class="old_price text-muted">Two day ago</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="card product_item">
-                                <div class="body">
-                                    <div class="cp_img">
-                                        <img src="images/productvideo.jpg" alt="Product" class="img-fluid">
-                                    </div>
-                                    <div class="product_details">
-                                        <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                        <ul class="product_price list-unstyled">
-                                            <li class="old_price text-muted">Two day ago</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="card product_item">
-                                <div class="body">
-                                    <div class="cp_img">
-                                        <img src="images/productvideo.jpg" alt="Product" class="img-fluid">
-                                    </div>
-                                    <div class="product_details">
-                                        <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                        <ul class="product_price list-unstyled">
-                                            <li class="old_price text-muted">Two day ago</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="card product_item">
-                                <div class="body">
-                                    <div class="cp_img">
-                                        <img src="images/productvideo.jpg" alt="Product" class="img-fluid">
-                                    </div>
-                                    <div class="product_details">
-                                        <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                        <ul class="product_price list-unstyled">
-                                            <li class="old_price text-muted">Two day ago</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="card product_item">
-                                <div class="body">
-                                    <div class="cp_img">
-                                        <img src="images/productvideo2.jpeg" alt="Product" class="img-fluid">
-                                    </div>
-                                    <div class="product_details">
-                                        <h5><a href="ec-product-detail.html">Wood Simple Clock</a></h5>
-                                        <ul class="product_price list-unstyled">
-                                            <li class="old_price text-muted">Two day ago</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                            foreach($videoList->items as $item){
+                                //Embed video
+                                if(isset($item->id->videoId)){
+                                    echo '
+                                    <div class="col m-auto">
+                                        <div class="card">
+                                            <div class="card-body m-auto youtube-video mb-3" style="width: 320px; height: 100%">
+                                                <iframe width="280" height="150" src="https://www.youtube.com/embed/'.$item->id->videoId.'" frameborder="0" allowfullscreen></iframe>
+                                                <div class="card-title"><h5>'. $item->snippet->title .'</h5></div>
+                                                <p class="card-text">'. $item->snippet->publishedAt .'</p>
+                                            </div>
+                                        </div>
+                                    </div>';
+                                }
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -261,22 +129,7 @@ require ("./components/menu.php");
                 <div class="container mb-4">
                     <div class="row">
                         <div class="col-12">
-                            <div class="table-responsive">
-                                <input type=”text” id=”trackInput”>
-                                <button type=”submit” id=”submitButton”name=”button”>SUBMIT</button>
-                                <section id=”playAudioHere”></section>
-                                <section id=”bands”></section>
-                                <table class="table table-striped">
-                                    <tbody>
-                                    <tr>
-                                        <td><img src="images/audio1.jpg" width="40px" /> </td>
-                                        <td>Satellite Church Opening Form</td>
-                                        <td class="text-right">21 hours ago</td>
-                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-arrow-alt-circle-down"></i> </button> </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <div id="mep_0" class="mejs-container mejs-container-keyboard-inactive wp-audio-shortcode mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 681.047px; height: 40px; min-width: 240px;"><div class="mejs-inner"><div class="mejs-mediaelement"><mediaelementwrapper id="audio-30766-1"><audio class="wp-audio-shortcode" id="audio-30766-1_html5" preload="none" style="width: 100%; height: 100%;" src="https://allnaijaentertainment.com/wp-content/uploads/2018/11/Michael_Jackson_Earth_Song-_-AllNaijaEntertainment.com_.mp3?_=1"><source type="audio/mpeg" src="https://allnaijaentertainment.com/wp-content/uploads/2018/11/Michael_Jackson_Earth_Song-_-AllNaijaEntertainment.com_.mp3?_=1"><a href="https://allnaijaentertainment.com/wp-content/uploads/2018/11/Michael_Jackson_Earth_Song-_-AllNaijaEntertainment.com_.mp3">https://allnaijaentertainment.com/wp-content/uploads/2018/11/Michael_Jackson_Earth_Song-_-AllNaijaEntertainment.com_.mp3</a></audio></mediaelementwrapper></div><div class="mejs-layers"><div class="mejs-poster mejs-layer" style="display: none; width: 100%; height: 100%;"></div></div><div class="mejs-controls"><div class="mejs-button mejs-playpause-button mejs-play"><button type="button" aria-controls="mep_0" title="Play" aria-label="Play" tabindex="0"></button></div><div class="mejs-time mejs-currenttime-container" role="timer" aria-live="off"><span class="mejs-currenttime">00:00</span></div><div class="mejs-time-rail"><span class="mejs-time-total mejs-time-slider" role="slider" tabindex="0" aria-label="Time Slider" aria-valuemin="0" aria-valuemax="NaN" aria-valuenow="0" aria-valuetext="00:00"><span class="mejs-time-buffering" style="display: none;"></span><span class="mejs-time-loaded"></span><span class="mejs-time-current"></span><span class="mejs-time-hovered no-hover"></span><span class="mejs-time-handle"><span class="mejs-time-handle-content"></span></span><span class="mejs-time-float" style="display: none; left: 0px;"><span class="mejs-time-float-current">00:00</span><span class="mejs-time-float-corner"></span></span></span></div><div class="mejs-time mejs-duration-container"><span class="mejs-duration">00:00</span></div><div class="mejs-button mejs-volume-button mejs-mute"><button type="button" aria-controls="mep_0" title="Mute" aria-label="Mute" tabindex="0"></button></div><a class="mejs-horizontal-volume-slider" href="javascript:void(0);" aria-label="Volume Slider" aria-valuemin="0" aria-valuemax="100" role="slider"><span class="mejs-offscreen">Use Up/Down Arrow keys to increase or decrease volume.</span><div class="mejs-horizontal-volume-total"><div class="mejs-horizontal-volume-current" style="left: 0px; width: 100%;"></div><div class="mejs-horizontal-volume-handle" style="left: 100%;"></div></div></a></div></div></div>
                         </div>
                     </div>
                 </div>
@@ -300,48 +153,14 @@ require ("./components/footer.php");
         });
         return result;
     }
-    if (queryParameters().give == "offering"){
-        $('#offeringModal').modal('show');
+    if (queryParameters().tab === "picture"){
+        $('#picture-tab')[0].click();
     }
-    if (queryParameters().give == "tithe"){
-        $('#titheModal').modal('show');
+    if (queryParameters().tab === "video"){
+        $('#video-tab')[0].click();
     }
-    if (queryParameters().give == "donation" || queryParameters().anonymous == "user"){
-        $('#donationModal').modal('show');
+    if (queryParameters().tab === "audio"){
+        $('#audio-tab')[0].click();
     }
-    if (queryParameters().anonymous == "user"){
-        $('input[name="anonymous"]')[0].checked = true;
-        $('.option').hide();
-    }
-
-    let trackInput = document.getElementById(‘trackInput’);
-    let submitButton = document.getElementById(‘submitButton’);
-    submitButton.onclick = searchTracks;
-
-    function searchTracks() {
-        let searchResults = trackInput.value;
-        fetch(‘https://api.soundcloud.com/tracks/?client_id=YOUR_CLIENT_ID HERE' + searchResults).then(function(response) {
-            if (response.status != 200) {
-                console.log(‘Looks like there was a problem. Status Code’ + response.status);
-                return;
-            }
-        response.json().then(function(data) {
-            let track = data;
-            console.log(track);
-    }
-
-        function renderTracks() {
-            return `
-                ${track.map(track =>
-                                `<div class=”box”>
-                <div src=”${track.stream_url}”></div>
-                <button id=”albumBtn” class=”albumButton”><img id=”${track.stream_url}${clientId}” src=”${track.artwork_url}”></img></button>
-                <div id=”songTitle” class=”title”>${track.title}</div>
-                </div>`
-                            )}
-            `
-        }
-        let markup = `${renderTracks()}`;
-        document.getElementById(‘bands’).innerHTML = markup;
 
 </script>
