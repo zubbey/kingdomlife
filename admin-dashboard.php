@@ -27,6 +27,7 @@ require ("./components/menu.php");
     ?>
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post' enctype="multipart/form-data">
+        <h4>Add Audio files</h4>
         <label>Title: </label>
         <input class="form-control mb-2" type="text" name="description_entered"/>
 
@@ -38,6 +39,7 @@ require ("./components/menu.php");
     <hr>
     <div class="row mt-3">
         <div class="col">
+            <h6>Added audio</h6>
             <?php
             require ('config/db.php');
             $result = mysqli_query($conn, "SELECT description, filename FROM audio ORDER BY id desc" );
@@ -49,6 +51,7 @@ require ("./components/menu.php");
                     echo "<li class='d-flex align-items-center justify-content-between'>";
                     echo "<a href='".$files_show.".mp3'>$description</a> <span class='badge badge-success'>Added</span>";
                     echo "</li>";
+//                    echo "<button onclick='' class='badge badge-danger'>Delete</button>";
                 }
                 echo "</ul>";
             ?>
