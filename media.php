@@ -1,7 +1,6 @@
 <?php
 require_once("./controller/auth_controller.php");
 require ("./components/menu.php");
-require_once("./components/youtube.php");
 ?>
 <div class="hero-wrap hero-wrap-about" style="background-image: url('https://i.imgur.com/GGFN0an.png'); opacity: .5;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
@@ -23,7 +22,7 @@ require_once("./components/youtube.php");
                 <a class="nav-link" id="video-tab" data-toggle="tab" href="#video" role="tab" aria-controls="video" aria-selected="false">Video <span class="badge badge-primary badge-pill">8</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="audio-tab" data-toggle="tab" href="#audio" role="tab" aria-controls="audio" aria-selected="false">Audio Messages<span class="badge badge-primary badge-pill">8</span></a>
+                <a class="nav-link" id="audio-tab" data-toggle="tab" href="#audio" role="tab" aria-controls="audio" aria-selected="false">Audio Messages<span id="totalAudio" class="badge badge-primary badge-pill"></span></a>
             </li>
         </ul>
         <div class="tab-content mt-3" id="myTabContent">
@@ -101,10 +100,10 @@ require_once("./components/youtube.php");
             </div>
 
             <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
-<!--                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">-->
                 <div class="container">
                     <div class="row clearfix">
                         <?php
+                        require_once("./components/youtube.php");
                             foreach($videoList->items as $item){
                                 //Embed video
                                 if(isset($item->id->videoId)){
@@ -132,9 +131,9 @@ require_once("./components/youtube.php");
                     <div class="player-wrap" data-url="//archive.org/download/mythium/JLS_ATI" data-title="All This Is - Joe L.'s Studio">
                         <div class="button">Play</div>
                         <div class="info">
-                            <h1>Album: Mythium</h1>
+                            <div class="pt-3"><h4 class="font-weight-bold text-info">Kingdomlife Audio Massages</h4></div>
                             <p class="action">&nbsp;</p>
-                            <p class="title ellipsis"></p>
+                            <p class="title ellipsis text-info"></p>
                         </div>
                         <div class="player">
                             <audio preload></audio>
@@ -152,7 +151,7 @@ require_once("./components/youtube.php");
                             <div class="next"><svg viewBox="0 0 12 12"><path d="M0,12 L8.5,6 L0,0 L0,12 L0,12 Z M10,0 L10,12 L12,12 L12,0 L10,0 L10,0 Z"/></svg></div>
                         </div>
                     </div>
-                    <div class="playlist-wrap">
+                    <div class="playlist-wrap pt-5">
 
                             <?php
                             $result= mysqli_query($conn, "SELECT description, filename FROM audio ORDER BY ID desc" )
@@ -163,14 +162,13 @@ require_once("./components/youtube.php");
                                 $files_field= $row['filename'];
                                 $files_show= "audio/$files_field";
                                 $descriptionvalue= $row['description'];
-                                echo "<li>";
-                                echo "<a href='".$files_show."'>".$descriptionvalue."</a>";
+                                echo "<li id='track'>";
+                                echo "<a href='".$files_show."' class='text-white-50'>".$descriptionvalue."</a>";
                                 print "</li>";
                             }
                             print "</ol>";
 
                             ?>
-<!--                            <li><a href="audio/ABOVE%20ONLY">Above Only</a></li>-->
                     </div>
                 </div>
 
@@ -205,6 +203,10 @@ require ("./components/footer.php");
         $('#audio-tab')[0].click();
     }
 
+    $(document).ready(() => {
+        let countDiv = $('ol #track').length; // Result: 3
+        $('#totalAudio').html(countDiv);
+    });
 
     // AUDIO QUERY
 

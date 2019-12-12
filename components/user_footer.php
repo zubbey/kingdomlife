@@ -1,5 +1,4 @@
-<footer class="footer" style="position: absolute; bottom: 0;>
-    <div class="container">
+<footer class="footer"">
         <div class="text-center">
             <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> Kingdom Life Gospel Church | All Rights Reserved</p>
         </div>

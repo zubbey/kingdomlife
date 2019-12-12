@@ -1,13 +1,4 @@
 /* >> reset */
-html, body, div, span, h1, p, a, ol, li, audio {
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
-}
-
 ol {
   list-style: none;
   margin: 0;
@@ -15,27 +6,10 @@ ol {
 }
 ol li {
   margin: 0;
-  list-style: decimal outside;
-}
-
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent;
-}
-
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+  list-style: -moz-ethiopic-numeric;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  padding: 5px 0;
-  background: #111 none;
-  font: 20px/24px "Helvetica", "Arial", sans-serif;
   color: #eee;
 }
 
@@ -48,12 +22,10 @@ a:focus, a:active, a:hover, a:visited {
 a[href] {
   color: #ddd;
   outline: 0 none;
-  text-decoration: underline;
 }
 a[href]:active, a[href]:visited {
   color: #ddd;
   outline: 0 none;
-  text-decoration: underline;
 }
 a[href]:hover, a[href]:focus {
   color: #bbb;
@@ -76,12 +48,13 @@ a[href]:hover, a[href]:focus {
 /* Audio Player */
 .player-wrap {
   position: relative;
-  margin: 0 0 1em;
   padding: 0;
   background-color: #222;
 }
 .player-wrap.enabled {
-  padding-bottom: 4em;
+  padding-bottom: 1em;
+  background: url("https://i.imgur.com/3Ifgmd7.jpg") no-repeat;
+  background-size: cover;
 }
 .player-wrap .button {
   float: left;
@@ -104,9 +77,6 @@ a[href]:hover, a[href]:focus {
 .player-wrap .info {
   margin-left: 10em;
 }
-.player-wrap h1 {
-  padding: 1.5em 0;
-}
 .player-wrap .action {
   font-style: italic;
 }
@@ -119,7 +89,7 @@ a[href]:hover, a[href]:focus {
   width: 100%;
   height: 1em;
   background-color: #333;
-  font-size: 2em;
+  font-size: 1em;
   box-sizing: border-box;
 }
 .player-wrap.enabled .player {
@@ -174,7 +144,6 @@ a[href]:hover, a[href]:focus {
   display: inline-block;
   height: 100%;
   vertical-align: top;
-  font-size: 0.45em;
 }
 .player-wrap .seek {
   box-sizing: border-box;

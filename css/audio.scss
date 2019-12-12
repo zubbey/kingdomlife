@@ -1,14 +1,5 @@
 /* >> reset */
 
-html, body, div, span, h1, p, a, ol, li, audio {
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
-}
-
 ol {
   list-style: none;
   margin: 0;
@@ -16,28 +7,11 @@ ol {
 
   li {
     margin: 0;
-    list-style: decimal outside;
+    list-style: -moz-ethiopic-numeric;
   }
 }
 
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent;
-}
-
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  padding: 5px 0;
-  background: #111 none;
-  font: 20px/24px 'Helvetica', 'Arial', sans-serif;
   color: #eee;
 }
 
@@ -51,12 +25,12 @@ a {
   &[href] {
     color: #ddd;
     outline: 0 none;
-    text-decoration: underline;
+    //text-decoration: underline;
 
     &:active, &:visited {
       color: #ddd;
       outline: 0 none;
-      text-decoration: underline;
+      //text-decoration: underline;
     }
 
     &:hover, &:focus {
@@ -85,12 +59,14 @@ a {
 
 .player-wrap {
   position: relative;
-  margin: 0 0 1em;
+  //margin: 0 0 1em;
   padding: 0;
   background-color: #222;
 
   &.enabled {
-    padding-bottom: 4em;
+    padding-bottom: 1em;
+    background: url("https://i.imgur.com/3Ifgmd7.jpg") no-repeat;
+    background-size: cover;
   }
 
   .button {
@@ -119,7 +95,7 @@ a {
   }
 
   h1 {
-    padding: 1.5em 0;
+    //padding: 1.5em 0;
   }
 
   .action {
@@ -135,7 +111,7 @@ a {
     width: 100%;
     height: 1em;
     background-color: #333;
-    font-size: 2em;
+    font-size: 1em;
     box-sizing: border-box;
   }
 
@@ -203,7 +179,6 @@ a {
       display: inline-block;
       height: 100%;
       vertical-align: top;
-      font-size: .45em;
     }
   }
 

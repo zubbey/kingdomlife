@@ -3,7 +3,6 @@
 $API_key    = 'AIzaSyDqqSxsrleDH83p6Uf60YpDuHxDlfWnCgc';
 $channelID  = 'UCUpOJeFIjT8Xx8Aux-OcT8w';
 $maxResults = 50;
-
 $videoList = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$channelID.'&maxResults='.$maxResults.'&key='.$API_key.''));
 //YouTube Video ID – $item->id->videoId
 //YouTube Video Publish Date – $item->snippet->publishedAt
