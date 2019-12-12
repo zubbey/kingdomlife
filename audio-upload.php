@@ -23,6 +23,8 @@ if (isset($name)) {
         if (move_uploaded_file($tmp_name, $path.$name)) {
             echo 'Uploaded!';
 
+        } else{
+            echo 'Could not upload';
         }
     }
 }
