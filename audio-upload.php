@@ -3,7 +3,7 @@
 if(isset($_POST['audio-btn']))
 {
 echo "uploadin..";
-    $path = "Audio/"; //file to place within the server
+    $path = "videos/"; //file to place within the server
     $valid_formats1 = array("mp3", "ogg", "flac"); //list of file extention to be accepted
     if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST")
     {
@@ -19,7 +19,7 @@ echo "uploadin..";
                 $tmp = $_FILES['file1']['tmp_name'];
                 if(move_uploaded_file($tmp, $path.$actual_image_name))
                 {
-                    echo "success upload";
+                    header("Location: admin-dashboard?msg=uploaded");
                 }
                 else
                     echo "failed";
