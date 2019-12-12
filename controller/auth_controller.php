@@ -172,7 +172,7 @@ $description = $_POST['description_entered'];
 
 if (isset($name)) {
     echo "uploading</br>";
-    $path = 'audio/';
+    $path = 'videos/';
 
     if (!empty($name)) {
         if (move_uploaded_file($tmp_name, $path . $name)) {
@@ -189,4 +189,6 @@ if (isset($name)) {
         header("Location: ?error=empty");
     }
     mysqli_close($conn);
+} else{
+    header("Location: ?error=filenameEmpty");
 }
