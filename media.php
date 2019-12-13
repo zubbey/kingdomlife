@@ -1,6 +1,6 @@
 <?php
 require_once("./controller/auth_controller.php");
-require_once("./controller/youtube.php");
+//require_once("./controller/youtube.php");
 require ("./components/menu.php");
 ?>
 <link rel="stylesheet" href="css/audio.css">
