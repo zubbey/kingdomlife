@@ -9,6 +9,10 @@ if (isset($_GET['offeringAmount'])){
     $amount = $_GET['offeringAmount'];
 } else if (isset($_GET['titheAmount'])){
     $amount = $_GET['titheAmount'];
+} else if (isset($_GET['partnerAmount'])){
+    $amount = $_GET['partnerAmount'];
+} else if (isset($_GET['firstfruitAmount'])){
+    $amount = $_GET['firstfruitAmount'];
 }
 ?>
 
@@ -329,6 +333,15 @@ require ("./components/footer.php");
         $('.option').hide();
     }
     if (queryParameters().offeringAmount){
+        $('#paybtn')[0].click();
+    }
+    if (queryParameters().titheAmount){
+        $('#paybtn')[0].click();
+    }
+    if (queryParameters().partnerAmount){
+        $('#paybtn')[0].click();
+    }
+    if (queryParameters().firstfruitAmount){
         $('#paybtn')[0].click();
     }
 </script>
