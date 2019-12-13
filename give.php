@@ -80,6 +80,36 @@ if (isset($_GET['offeringAmount'])){
     </div>
 </div>
 
+<div class="modal fade" id="firstfruitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="deep-grey-text pb-1">First Fruit</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="rounded-circle" aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
+                    <div class="form-group"> <!-- left unspecified, .bmd-form-group will be automatically added (inspect the code) -->
+                        <div class="border-bottom"></div>
+                        <input name="firstfruitAmount" type="text" class="form-control" placeholder="Enter Amount Eg: &#8358;1,000">
+                    </div>
+                    <div class="text-center mb-4">
+                        <?php
+                        if (isset($_SESSION['user_session'])){
+                            echo '<button name="firstfruitBtn" type="submit" class="btn-lg btn-danger btn-block z-depth-2">Give firstfruit</button>';
+                        } else{
+                            echo '<button onclick="location.assign(\'?register=true\')" type="button" class="btn-lg btn-danger btn-block z-depth-2">Give firstfruit</button>';
+                        }
+                        ?>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" id="donationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -132,35 +162,6 @@ if (isset($_GET['offeringAmount'])){
     </div>
 </div>
 
-<div class="modal fade" id="firstfruitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="deep-grey-text pb-1">First Fruit</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span class="rounded-circle" aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
-                    <div class="form-group"> <!-- left unspecified, .bmd-form-group will be automatically added (inspect the code) -->
-                        <div class="border-bottom"></div>
-                        <input name="firstfruitAmount" type="text" class="form-control" placeholder="Enter Amount Eg: &#8358;1,000">
-                    </div>
-                    <div class="text-center mb-4">
-                        <?php
-                        if (isset($_SESSION['user_session'])){
-                            echo '<button name="firstfruitBtn" type="submit" class="btn-lg btn-danger btn-block z-depth-2">Give firstfruit</button>';
-                        } else{
-                            echo '<button onclick="location.assign(\'?register=true\')" type="button" class="btn-lg btn-danger btn-block z-depth-2">Give firstfruit</button>';
-                        }
-                        ?>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
     <div class="hero-wrap hero-wrap-about" style="background-image: url('https://i.imgur.com/GGFN0an.png'); opacity: .5;" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
