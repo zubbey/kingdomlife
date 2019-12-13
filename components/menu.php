@@ -91,7 +91,7 @@
             </ul>
             <ul class="navbar-nav">
                 <li>
-                    <button type="button" class="btn btn-danger rounded mr-3"><small><i class="fas fa-play text-white"></i></small> Live</button>
+                    <button onclick="comingSoon()" type="button" class="btn btn-danger rounded mr-3"><small><i class="fas fa-play text-white"></i></small> Live</button>
                 </li>
             </ul>
             <?php
@@ -102,7 +102,7 @@
                 echo '
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-user"></i> '.$_SESSION['username'].'
                     </a>
                 ';
                 echo '

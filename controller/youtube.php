@@ -1,6 +1,7 @@
 <?php
+require_once ('./config/constants.php');
 //Get videos from channel by YouTube Data API
-$API_key    = 'AIzaSyDqqSxsrleDH83p6Uf60YpDuHxDlfWnCgc';
+$API_key    = 'GOOGLE_API_KEY';
 $channelID  = 'UCUpOJeFIjT8Xx8Aux-OcT8w';
 $maxResults = 50;
 $videoList = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$channelID.'&maxResults='.$maxResults.'&key='.$API_key.''));

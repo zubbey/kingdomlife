@@ -2,6 +2,7 @@
 require_once("./controller/auth_controller.php");
 require ("./components/menu.php");
 ?>
+<script src="https://js.paystack.co/v1/inline.js"></script>
     <div class="hero-wrap hero-wrap-about" style="background-image: url('https://i.imgur.com/GGFN0an.png'); opacity: .5;" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -40,7 +41,11 @@ require ("./components/menu.php");
                                     echo "<h3 class='title text-dots'><a href='#'>".$row["name"]."</a></h3>";
                                     echo "<hr>";
                                     echo "<div class='action-wrap'>";
-                                    echo "<button class='btn color-1 btn-sm rounded float-right'> Order Now </button>";
+                                    if (isset($_SESSION['user_session'])){
+                                        echo "<button onclick=\"payWithPaystack('".$row["amount"]."')\" class='btn color-1 btn-sm rounded float-right'> Order Now </button>";
+                                    } else{
+                                        echo "<button onclick=\"location.assign('?register=true')\" class='btn color-1 btn-sm rounded float-right'> Order Now </button>";
+                                    }
                                     echo "<div class='price-wrap h5'>";
                                     echo "<span class='price-new text-black'>&#8358;".number_format($row["amount"])."</span>";
                                     echo "</div>";
@@ -90,6 +95,35 @@ require ("./components/menu.php");
 <?php
 require ("./components/footer.php");
 ?>
+<!--PAYMENT GATEWAY-->
+<script>
+    function payWithPaystack(bookAmount){
+        var handler = PaystackPop.setup({
+            key: 'pk_test_e95beb6f47a4393ac5bceae21f4a0551fe91c396',
+            email: '<?php echo $_SESSION['email'];?>',
+            amount: bookAmount * 100,
+            currency: "NGN",
+            ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+            metadata: {
+                custom_fields: [
+                    {
+                        display_name: "Mobile Number",
+                        variable_name: "mobile_number",
+                        value: "<?php echo $_SESSION['phone'];?>"
+                    }
+                ]
+            },
+            callback: function(response){
+                alert('success. transaction ref is ' + response.reference);
+            },
+            onClose: function(){
+                alert('window closed');
+            }
+        });
+        handler.openIframe();
+    }
+</script>
+
 <script>
     //################# CHECK URL PARAM FUNCTION ##################
     function queryParameters () {

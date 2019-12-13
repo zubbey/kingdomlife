@@ -1,6 +1,5 @@
 <?php
 require ("../components/user_menu.php");
-
 ?>
 
 <!--UPLOAD DATA-->
@@ -44,6 +43,12 @@ require ("../components/user_menu.php");
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="aboutme-tab" data-toggle="tab" href="#aboutme" role="tab" aria-controls="aboutme" aria-selected="false">About me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="aboutme-tab" data-toggle="tab" href="#aboutme" role="tab" aria-controls="aboutme" aria-selected="false">Testimonies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="aboutme-tab" data-toggle="tab" href="#aboutme" role="tab" aria-controls="aboutme" aria-selected="false">Prayer Request</a>
                         </li>
                     </ul>
                 </div>
@@ -144,5 +149,23 @@ require("../components/user_footer.php");
     }
     if (queryParameters().add === "true"){
         $('#additemModal').modal('show');
+    }
+
+    if (queryParameters().success === "true"){
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 8000,
+            timerProgressBar: true,
+            onOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+        Toast.fire({
+            icon: 'success',
+            title: 'Signed in successfully'
+        })
     }
 </script>

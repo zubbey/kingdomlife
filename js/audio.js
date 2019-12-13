@@ -24,7 +24,7 @@ if (jsPlayer) {
     };
 
     jsPlayer.playClicked = function jsPlayerPlayClicked(){
-        jsPlayer.button.style.visibility = 'hidden';
+        jsPlayer.button.style.visibility = 'visible';
         jsPlayer.pause.style.display = 'block';
         jsPlayer.play.style.display = 'none';
         jsPlayer.playing = true;

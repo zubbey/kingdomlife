@@ -58,11 +58,10 @@ exit();
 if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
     echo '
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <div class="container">
-  <strong>Hello '.$_SESSION['username'].',</strong> please check your email to verify your account or <a href="?resendmail=true">click this link</a>.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
+        <strong>Hello '.$_SESSION['username'].',</strong> please check your email to verify your account or <a href="?resendmail=true">click this link</a>.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
   </div>
     ';
 }
@@ -97,7 +96,7 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
                         <a class="dropdown-item" href="../media?tab=video">Videos</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="give" class="nav-link">Give</a></li>
+                <li class="nav-item"><a href="../give" class="nav-link">Give</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false"><i class="fas fa-shopping-basket"></i> Store
@@ -114,7 +113,7 @@ if (isset($_SESSION['user_session']) && $_SESSION['verifed'] == 0){
 
             <ul class="navbar-nav">
                 <li>
-                    <button type="button" class="btn btn-danger rounded mr-3"><small><i class="fas fa-play text-white"></i></small> Live</button>
+                    <button onclick="comingSoon()" type="button" class="btn btn-danger rounded mr-3"><small><i class="fas fa-play text-white"></i></small> Live</button>
                 </li>
             </ul>
             <ul class="navbar-nav ml-3 nav-flex-icons">

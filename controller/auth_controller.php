@@ -1,7 +1,7 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-session_start();
 require ('config/db.php');
 //require_once ('./controllers/emailControl.php');
 date_default_timezone_set("Africa/Lagos");
@@ -170,4 +170,17 @@ if (isset($_POST['audio-btn'])) {
         header("Location: ?error=empty");
     }
     mysqli_close($conn);
+}
+
+
+//HANDLE ALL PAYMENT
+
+//if (isset($_GET['offeringAmount'])){
+//    $amount = $_GET['offeringAmount'];
+//    echo "<script>payWithPaystack()</script>";
+////    header("Location: ?amount=".$amount);
+//}
+
+if (isset($_GET['anonymousEmail'])){
+    $_SESSION['email'] = $_GET['anonymousEmail'];
 }

@@ -269,7 +269,11 @@ img.card-img-top.pastors{
     background: -webkit-linear-gradient(to bottom, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
+.firstfruit{
+    background: #3fb93e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #54c72e, #b98b0a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #54c72e, #b98b0a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 .card .card-image i {
     position: absolute;
     top: 30%;
@@ -280,7 +284,7 @@ img.card-img-top.pastors{
     transition: .15s all ease;
 }
 input#givebtn {
-    font-size: 2rem;
+    font-size: 1.4rem;
 }
 .ftco-section-3 .overlay{
     background-color: transparent !important;

@@ -26,12 +26,9 @@ require ("./components/menu.php");
                 </a>
                 <div class="col-md-6">
                     <div class="card-block">
-                        <h2 class="card-title mt-0"><strong>PRAYER STORM 2019</strong></h2>
+                        <h2 class="card-title mt-0"><strong>Prayer Storm 2019</strong></h2>
                         <p class="text-secondary mb-0">
-                            <strong>Wake up before the devil</strong>
-                        </p>
-                        <p class="text-secondary mb-0">
-                            <strong>Throughout December 2019, Fasting till 2:00pm</strong>
+                            <strong>Take 2020 before it comes through prayer and fasting. Join us everyday in December by 6 a.m. – 7 a.m., as we take dominion and prophesy God’s blessings into the new year. God bless you!</strong>
                         </p>
                         <p class="text-secondary">
                             Time:
@@ -57,6 +54,88 @@ require ("./components/menu.php");
                 </div>
             </div>
 
+        </div>
+    </div>
+
+    <div class="row py-5">
+        <div class="col-md-12">
+            <div class="row p-5 bg-white rounded mt-3">
+                <div class="col-md-2">
+                    <h1 class="display-4 event-date">15th<br><strong>Dec</strong></h1>
+                </div>
+                <a href="#" class="col-md-4 no-padding color-gray-darker c6 td-hover-none" data-target="#modalIMG" data-toggle="modal">
+                    <img class="img-fluid preview-thumbnail" src="https://i.imgur.com/mjki2fC.jpg">
+                </a>
+                <div class="col-md-6">
+                    <div class="card-block">
+                        <h2 class="card-title mt-0"><strong>Thanksgiving Service 2019</strong></h2>
+                        <p class="text-secondary mb-0">
+                            <strong>Thanksgiving is the best way to move from one phase to the other. As we move from 2019 into 2020, come and thank God not just for His mercies, blessings and faithfulness for the year 2019, but for all He has set in place for you for 2020.</strong>
+                        </p>
+
+                        <p class="text-secondary">
+                            Time:
+                            <strong>6:00 am - 7:00 am</strong>
+                        </p>
+                        <p class="text-secondary">
+                            Venue:
+                            <strong>Jesus Cathedral</strong><br>
+                            Off Market junction Oroazi Road, Mile 4 Rumueme, Port Harcourt.
+                        </p>
+                        <hr>
+                        <div>
+                            <p class="text-secondary" id="head">Countdown to Thanksgiving Service:</p>
+                            <ul class="p-0 m-o">
+                                <li class="count-day pr-4"><span id="days"></span>days</li>
+                                <li class="count-day pr-4"><span id="hours"></span>Hours</li>
+                                <li class="count-day pr-4"><span id="minutes"></span>Minutes</li>
+                                <li class="count-day pr-4"><span id="seconds"></span>Seconds</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row py-5">
+        <div class="col-md-12">
+            <div class="row p-5 bg-white rounded mt-3">
+                <div class="col-md-2">
+                    <h1 class="display-4 event-date">1st<br><strong>Jan</strong></h1>
+                </div>
+                <a href="#" class="col-md-4 no-padding color-gray-darker c6 td-hover-none" data-target="#modalIMG" data-toggle="modal">
+                    <img class="img-fluid preview-thumbnail" src="https://i.imgur.com/mjki2fC.jpg">
+                </a>
+                <div class="col-md-6">
+                    <div class="card-block">
+                        <h2 class="card-title mt-0"><strong>Feast of Overflow 2020</strong></h2>
+                        <p class="text-secondary mb-0">
+                            <strong>2020 is a year God has set out to give dominion to His children in every sphere of life. Come join us on the 1st of January as we thank God for the new year and feast into the abundance God has prepared for us in the year 2020!</strong>
+                        </p>
+
+                        <p class="text-secondary">
+                            Time:
+                            <strong>6:00 am - 7:00 am</strong>
+                        </p>
+                        <p class="text-secondary">
+                            Venue:
+                            <strong>Jesus Cathedral</strong><br>
+                            Off Market junction Oroazi Road, Mile 4 Rumueme, Port Harcourt.
+                        </p>
+                        <hr>
+                        <div>
+                            <p class="text-secondary" id="head">Countdown to Feast of Overflow:</p>
+                            <ul class="p-0 m-o">
+                                <li class="count-day pr-4"><span id="days"></span>days</li>
+                                <li class="count-day pr-4"><span id="hours"></span>Hours</li>
+                                <li class="count-day pr-4"><span id="minutes"></span>Minutes</li>
+                                <li class="count-day pr-4"><span id="seconds"></span>Seconds</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -97,10 +176,9 @@ require ("./components/footer.php");
                 document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
 
             //do something later when date is reached
-            //if (distance < 0) {
-            //  clearInterval(x);
-            //  'IT'S MY BIRTHDAY!;
-            //}
+            if (distance < 0) {
+             clearInterval(x);
+            }
 
         }, second);
 

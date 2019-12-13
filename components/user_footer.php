@@ -24,6 +24,7 @@
 <script src="../js/main.js"></script>
 <script src="../js/flickity.pkgd.min.js"></script>
 <script src="../js/loader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script src="../js/app.js"></script>
 
 <script>
@@ -43,6 +44,14 @@
     }
     if (queryParameters().register === "true"){
         $('#registerModal').modal('show');
+    }
+    function comingSoon(){
+        Swal.fire({
+            icon: 'warning',
+            title: 'Coming Soon!',
+            showConfirmButton: false,
+            timer: 2000
+        })
     }
 </script>
 </body>

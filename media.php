@@ -1,7 +1,9 @@
 <?php
 require_once("./controller/auth_controller.php");
+require_once("./controller/youtube.php");
 require ("./components/menu.php");
 ?>
+<link rel="stylesheet" href="css/audio.css">
 <div class="hero-wrap hero-wrap-about" style="background-image: url('https://i.imgur.com/GGFN0an.png'); opacity: .5;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
@@ -30,66 +32,66 @@ require ("./components/menu.php");
                 <section class="ftco-section ftco-gallery">
                     <div class="container">
                         <div class="d-md-flex">
-                            <a href="https://i.imgur.com/46EPoqu.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/46EPoqu.jpg);">
+                            <a href="https://i.imgur.com/46EPoqum.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/46EPoqu.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
                             </a>
-                            <a href="https://i.imgur.com/dOmxT16.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/dOmxT16.jpg);">
+                            <a href="https://i.imgur.com/dOmxT16m.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/dOmxT16.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
                             </a>
-                            <a href="https://i.imgur.com/59nWr5j.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/59nWr5j.jpg);">
+                            <a href="https://i.imgur.com/59nWr5jm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/59nWr5j.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
                             </a>
-                            <a href="https://i.imgur.com/UpHBv5j.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/UpHBv5j.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="d-md-flex">
-                            <a href="https://i.imgur.com/xcsCbgx.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/xcsCbgx.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="https://i.imgur.com/n3SgnhX.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/n3SgnhX.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="https://i.imgur.com/nlGnXqT.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/nlGnXqT.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="https://i.imgur.com/t56kVk6.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/t56kVk6.jpg);">
+                            <a href="https://i.imgur.com/UpHBv5jm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/UpHBv5j.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
                             </a>
                         </div>
                         <div class="d-md-flex">
-                            <a href="https://i.imgur.com/2exSZLc.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/2exSZLc.jpg);">
+                            <a href="https://i.imgur.com/xcsCbgxm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/xcsCbgx.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
                             </a>
-                            <a href="https://i.imgur.com/BnzrknA.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/BnzrknA.jpg);">
+                            <a href="https://i.imgur.com/n3SgnhXm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/n3SgnhX.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
                             </a>
-                            <a href="https://i.imgur.com/NRnkQh6.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/NRnkQh6.jpg);">
+                            <a href="https://i.imgur.com/nlGnXqTm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/nlGnXqT.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
                             </a>
-                            <a href="https://i.imgur.com/zvKKXd5.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/zvKKXd5.jpg);">
+                            <a href="https://i.imgur.com/t56kVk6m.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/t56kVk6.jpg);">
+                                <div class="icon d-flex justify-content-center align-items-center">
+                                    <span class="icon-search"></span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="d-md-flex">
+                            <a href="https://i.imgur.com/2exSZLcm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/2exSZLc.jpg);">
+                                <div class="icon d-flex justify-content-center align-items-center">
+                                    <span class="icon-search"></span>
+                                </div>
+                            </a>
+                            <a href="https://i.imgur.com/BnzrknAm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/BnzrknA.jpg);">
+                                <div class="icon d-flex justify-content-center align-items-center">
+                                    <span class="icon-search"></span>
+                                </div>
+                            </a>
+                            <a href="https://i.imgur.com/NRnkQh6m.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/NRnkQh6.jpg);">
+                                <div class="icon d-flex justify-content-center align-items-center">
+                                    <span class="icon-search"></span>
+                                </div>
+                            </a>
+                            <a href="https://i.imgur.com/zvKKXd5m.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/zvKKXd5.jpg);">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="icon-search"></span>
                                 </div>
@@ -103,7 +105,6 @@ require ("./components/menu.php");
                 <div class="container">
                     <div class="row clearfix">
                         <?php
-                        require_once("./components/youtube.php");
                             foreach($videoList->items as $item){
                                 //Embed video
                                 if(isset($item->id->videoId)){
@@ -125,11 +126,9 @@ require ("./components/menu.php");
             </div>
 
             <div class="tab-pane fade" id="audio" role="tabpanel" aria-labelledby="audio-tab">
-                <link rel="stylesheet" href="css/audio.css">
-
                 <div class="page">
                     <div class="player-wrap" data-url="//archive.org/download/mythium/JLS_ATI" data-title="All This Is - Joe L.'s Studio">
-                        <div class="button">Play</div>
+                        <div id="bigPlay" class="button">Play</div>
                         <div class="info">
                             <div class="pt-3"><h4 class="font-weight-bold text-info">Kingdomlife Audio Massages</h4></div>
                             <p class="action">&nbsp;</p>
@@ -141,11 +140,11 @@ require ("./components/menu.php");
                                 <div class="play"><svg viewBox="0 0 14 14"><path d="M0,0 L0,14 L11,7 L0,0 Z"/></svg></div>
                                 <div class="pause"><svg viewBox="0 0 14 14"><path d="M0,14 L4,14 L4,0 L0,0 L0,14 L0,14 Z M8,0 L8,14 L12,14 L12,0 L8,0 L8,0 Z"/></svg></div>
                             </div>
-                            <div class="timer">
+                            <small class="timer small">
                                 <div class="current">0:00:00</div>
                                 <div>/</div>
                                 <div class="duration">0:00:00</div>
-                            </div>
+                            </small>
                             <div><input type="range" min="0" max="100" step=".1" value="0" class="seek"></div>
                             <div class="prev"><svg viewBox="0 0 12 12"><path d="M3.5,6 L12,12 L12,0 L3.5,6 Z M0,0 L0,12 L2,12 L2,0 L0,0 L0,0 Z"/></svg></div>
                             <div class="next"><svg viewBox="0 0 12 12"><path d="M0,12 L8.5,6 L0,0 L0,12 L0,12 Z M10,0 L10,12 L12,12 L12,0 L10,0 L10,0 Z"/></svg></div>
@@ -154,7 +153,7 @@ require ("./components/menu.php");
                     <div class="playlist-wrap pt-5">
 
                             <?php
-                            $result= mysqli_query($conn, "SELECT description, filename FROM audio ORDER BY ID desc" )
+                            $result= mysqli_query($conn, "SELECT description, filename FROM audio ORDER BY id desc" )
                             or die("SELECT Error: ".mysqli_error());
 
                             echo "<ol>";
@@ -162,9 +161,16 @@ require ("./components/menu.php");
                                 $files_field= $row['filename'];
                                 $files_show= "audio/$files_field";
                                 $descriptionvalue= $row['description'];
-                                echo "<li id='track'>";
-                                echo "<a href='".$files_show."' class='text-white-50'>".$descriptionvalue."</a>";
-                                print "</li>";
+                                echo "<li id='track' class='py-3'>";
+                                echo "<a href='".$files_show."'>".$descriptionvalue."</a>
+                                <span class='text-black px-3 float-right' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' data-toggle='tooltip' data-placement='left' title='Click to Download'>
+                                    <i class='fas fa-ellipsis-v'></i>
+                                </span>
+                                <div class='dropdown-menu'>
+                                    <a class='dropdown-item text-left' href='".$files_show.".mp3' download><i class='fas fa-file-download'></i> Download</a>
+                                </div>
+                                ";
+                                echo "</li>";
                             }
                             print "</ol>";
 
@@ -206,6 +212,10 @@ require ("./components/footer.php");
     $(document).ready(() => {
         let countDiv = $('ol #track').length; // Result: 3
         $('#totalAudio').html(countDiv);
+
+        $('#bigPlay').on('click', () =>{
+            $('#bigPlay').html('playing');
+        })
     });
 
     // AUDIO QUERY

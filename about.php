@@ -66,172 +66,172 @@ require ("./components/menu.php");
     </section>
 
     <!--DONATORS -->
-<section id="body" class="ftco-section">
-    <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-7 heading-section ftco-animate text-center">
-                <h2 class="mb-4">All Donations</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            </div>
-        </div>
-    </div>
-
-<!--        FIRST ROW-->
-<div class="container">
-    <div class="row content">
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/12.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="#"> Chukwuma Omerain</a></h3>
-                        <span class="position">Donated on 20th Nov, 2019</span>
-                        <div class="text">
-                            <p>Donated <br> <span>&#8358;450,000</span> for <a href="#">Children Needs Food</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/11.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="#">patrick Edidi</a></h3>
-                        <span class="position">Donated on 10 Jan, 2020</span>
-                        <div class="text">
-                            <p>Donated <br>  <span>&#8358;5,000,000</span> for <a href="#">Back to School</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/10.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="#">Peter Egike</a></h3>
-                        <span class="position">Donated on 1'st Fab, 2020</span>
-                        <div class="text">
-                            <p>Donated <br>  <span>&#8358;1,200,000</span> for <a href="#">Help Mama campaign</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<!--        SECOND ROW-->
-    <div class="row content">
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/05.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="#"> Chukwuma Omerain</a></h3>
-                        <span class="position">Donated on 20th Nov, 2019</span>
-                        <div class="text">
-                            <p>Donated <br> <span>&#8358;450,000</span> for <a href="#">Children Needs Food</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/06.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="#">patrick Edidi</a></h3>
-                        <span class="position">Donated on 10 Jan, 2020</span>
-                        <div class="text">
-                            <p>Donated <br>  <span>&#8358;5,000,000</span> for <a href="#">Back to School</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/07.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="#">Peter Egike</a></h3>
-                        <span class="position">Donated on 1'st Fab, 2020</span>
-                        <div class="text">
-                            <p>Donated <br>  <span>&#8358;1,200,000</span> for <a href="#">Help Mama campaign</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<!--        Third Row-->
-    <div class="row content">
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/12.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="#"> Chukwuma Omerain</a></h3>
-                        <span class="position">Donated on 20th Nov, 2019</span>
-                        <div class="text">
-                            <p>Donated <br> <span>&#8358;450,000</span> for <a href="#">Children Needs Food</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/10.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="#">patrick Edidi</a></h3>
-                        <span class="position">Donated on 10 Jan, 2020</span>
-                        <div class="text">
-                            <p>Donated <br>  <span>&#8358;5,000,000</span> for <a href="#">Back to School</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-            <div class="staff">
-                <div class="d-flex mb-4">
-                    <div class="img" style="background-image: url(images/profile/10.jpg);"></div>
-                    <div class="info ml-4">
-                        <h3><a href="#">Peter Egike</a></h3>
-                        <span class="position">Donated on 1'st Fab, 2020</span>
-                        <div class="text">
-                            <p>Donated <br>  <span>&#8358;1,200,000</span> for <a href="#">Help Mama campaign</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-        <div class="row mt-5">
-            <div class="col text-center">
-                <div class="block-27">
-                    <article id="pagin">
-                        <nav>
-                            <ul>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a class="" href="#">2</a></li>
-                                <li><a class="" href="#">3</a></li>
-                            </ul>
-                        </nav>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!--<section id="body" class="ftco-section">-->
+<!--    <div class="container">-->
+<!--        <div class="row justify-content-center mb-5 pb-3">-->
+<!--            <div class="col-md-7 heading-section ftco-animate text-center">-->
+<!--                <h2 class="mb-4">All Donations</h2>-->
+<!--                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--<!--        FIRST ROW-->-->
+<!--<div class="container">-->
+<!--    <div class="row content">-->
+<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
+<!--            <div class="staff">-->
+<!--                <div class="d-flex mb-4">-->
+<!--                    <div class="img" style="background-image: url(images/profile/12.jpg);"></div>-->
+<!--                    <div class="info ml-4">-->
+<!--                        <h3><a href="#"> Chukwuma Omerain</a></h3>-->
+<!--                        <span class="position">Donated on 20th Nov, 2019</span>-->
+<!--                        <div class="text">-->
+<!--                            <p>Donated <br> <span>&#8358;450,000</span> for <a href="#">Children Needs Food</a></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
+<!--            <div class="staff">-->
+<!--                <div class="d-flex mb-4">-->
+<!--                    <div class="img" style="background-image: url(images/profile/11.jpg);"></div>-->
+<!--                    <div class="info ml-4">-->
+<!--                        <h3><a href="#">patrick Edidi</a></h3>-->
+<!--                        <span class="position">Donated on 10 Jan, 2020</span>-->
+<!--                        <div class="text">-->
+<!--                            <p>Donated <br>  <span>&#8358;5,000,000</span> for <a href="#">Back to School</a></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
+<!--            <div class="staff">-->
+<!--                <div class="d-flex mb-4">-->
+<!--                    <div class="img" style="background-image: url(images/profile/10.jpg);"></div>-->
+<!--                    <div class="info ml-4">-->
+<!--                        <h3><a href="#">Peter Egike</a></h3>-->
+<!--                        <span class="position">Donated on 1'st Fab, 2020</span>-->
+<!--                        <div class="text">-->
+<!--                            <p>Donated <br>  <span>&#8358;1,200,000</span> for <a href="#">Help Mama campaign</a></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--<!--        SECOND ROW-->-->
+<!--    <div class="row content">-->
+<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
+<!--            <div class="staff">-->
+<!--                <div class="d-flex mb-4">-->
+<!--                    <div class="img" style="background-image: url(images/profile/05.jpg);"></div>-->
+<!--                    <div class="info ml-4">-->
+<!--                        <h3><a href="#"> Chukwuma Omerain</a></h3>-->
+<!--                        <span class="position">Donated on 20th Nov, 2019</span>-->
+<!--                        <div class="text">-->
+<!--                            <p>Donated <br> <span>&#8358;450,000</span> for <a href="#">Children Needs Food</a></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
+<!--            <div class="staff">-->
+<!--                <div class="d-flex mb-4">-->
+<!--                    <div class="img" style="background-image: url(images/profile/06.jpg);"></div>-->
+<!--                    <div class="info ml-4">-->
+<!--                        <h3><a href="#">patrick Edidi</a></h3>-->
+<!--                        <span class="position">Donated on 10 Jan, 2020</span>-->
+<!--                        <div class="text">-->
+<!--                            <p>Donated <br>  <span>&#8358;5,000,000</span> for <a href="#">Back to School</a></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
+<!--            <div class="staff">-->
+<!--                <div class="d-flex mb-4">-->
+<!--                    <div class="img" style="background-image: url(images/profile/07.jpg);"></div>-->
+<!--                    <div class="info ml-4">-->
+<!--                        <h3><a href="#">Peter Egike</a></h3>-->
+<!--                        <span class="position">Donated on 1'st Fab, 2020</span>-->
+<!--                        <div class="text">-->
+<!--                            <p>Donated <br>  <span>&#8358;1,200,000</span> for <a href="#">Help Mama campaign</a></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--<!--        Third Row-->-->
+<!--    <div class="row content">-->
+<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
+<!--            <div class="staff">-->
+<!--                <div class="d-flex mb-4">-->
+<!--                    <div class="img" style="background-image: url(images/profile/12.jpg);"></div>-->
+<!--                    <div class="info ml-4">-->
+<!--                        <h3><a href="#"> Chukwuma Omerain</a></h3>-->
+<!--                        <span class="position">Donated on 20th Nov, 2019</span>-->
+<!--                        <div class="text">-->
+<!--                            <p>Donated <br> <span>&#8358;450,000</span> for <a href="#">Children Needs Food</a></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
+<!--            <div class="staff">-->
+<!--                <div class="d-flex mb-4">-->
+<!--                    <div class="img" style="background-image: url(images/profile/10.jpg);"></div>-->
+<!--                    <div class="info ml-4">-->
+<!--                        <h3><a href="#">patrick Edidi</a></h3>-->
+<!--                        <span class="position">Donated on 10 Jan, 2020</span>-->
+<!--                        <div class="text">-->
+<!--                            <p>Donated <br>  <span>&#8358;5,000,000</span> for <a href="#">Back to School</a></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
+<!--            <div class="staff">-->
+<!--                <div class="d-flex mb-4">-->
+<!--                    <div class="img" style="background-image: url(images/profile/10.jpg);"></div>-->
+<!--                    <div class="info ml-4">-->
+<!--                        <h3><a href="#">Peter Egike</a></h3>-->
+<!--                        <span class="position">Donated on 1'st Fab, 2020</span>-->
+<!--                        <div class="text">-->
+<!--                            <p>Donated <br>  <span>&#8358;1,200,000</span> for <a href="#">Help Mama campaign</a></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!---->
+<!--        <div class="row mt-5">-->
+<!--            <div class="col text-center">-->
+<!--                <div class="block-27">-->
+<!--                    <article id="pagin">-->
+<!--                        <nav>-->
+<!--                            <ul>-->
+<!--                                <li class="active"><a href="#">1</a></li>-->
+<!--                                <li><a class="" href="#">2</a></li>-->
+<!--                                <li><a class="" href="#">3</a></li>-->
+<!--                            </ul>-->
+<!--                        </nav>-->
+<!--                    </article>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <?php
 require ("./components/footer.php");
 ?>
