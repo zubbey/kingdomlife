@@ -1,10 +1,10 @@
 <section class="ftco-counter ftco-intro mb-lg-5" id="section-counter">
     <div class="container">
         <div class="row no-gutters">
-            <div class="col-md-5 counter-wrap ftco-animate shadow rounded">
+            <div class="col counter-wrap ftco-animate shadow rounded">
                 <img class="card-img-top homecard" src="https://i.imgur.com/mV1ZMC9.jpg" alt="Outreaches">
             </div>
-            <div class="col-md d-flex justify-content-center counter-wrap ftco-animate shadow rounded">
+            <div class="col d-flex justify-content-center counter-wrap ftco-animate shadow rounded">
                 <div class="block-18 color-2 align-items-stretch">
                     <div class="text">
                         <h3 class="mb-4 text-white font-weight-bold">Join us today</h3>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 counter-wrap ftco-animate shadow rounded">
+            <div class="col counter-wrap ftco-animate shadow rounded">
                 <img class="card-img-top homecard" src="https://i.imgur.com/aZx8VuB.jpg" alt="Units">
             </div>
         </div>
