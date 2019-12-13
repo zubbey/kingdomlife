@@ -17,9 +17,9 @@ require ("./components/menu.php");
 <section class="ftco-section contact-section ftco-degree-bg my-3">
     <div class="container">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="picture-tab" data-toggle="tab" href="#picture" role="tab" aria-controls="picture" aria-selected="true">Latest Pictures <span class="badge badge-primary badge-pill">5</span></a>
-            </li>
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link active" id="picture-tab" data-toggle="tab" href="#picture" role="tab" aria-controls="picture" aria-selected="true">Latest Pictures <span class="badge badge-primary badge-pill">5</span></a>-->
+<!--            </li>-->
             <li class="nav-item">
                 <a class="nav-link" id="video-tab" data-toggle="tab" href="#video" role="tab" aria-controls="video" aria-selected="false">Video <span class="badge badge-primary badge-pill">8</span></a>
             </li>
@@ -28,78 +28,78 @@ require ("./components/menu.php");
             </li>
         </ul>
         <div class="tab-content mt-3" id="myTabContent">
-            <div class="tab-pane fade show active" id="picture" role="tabpanel" aria-labelledby="picture-tab">
-                <section class="ftco-section ftco-gallery">
-                    <div class="container">
-                        <div class="d-md-flex">
-                            <a href="https://i.imgur.com/46EPoqum.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/46EPoqu.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="https://i.imgur.com/dOmxT16m.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/dOmxT16.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="https://i.imgur.com/59nWr5jm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/59nWr5j.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="https://i.imgur.com/UpHBv5jm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/UpHBv5j.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="d-md-flex">
-                            <a href="https://i.imgur.com/xcsCbgxm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/xcsCbgx.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="https://i.imgur.com/n3SgnhXm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/n3SgnhX.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="https://i.imgur.com/nlGnXqTm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/nlGnXqT.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="https://i.imgur.com/t56kVk6m.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/t56kVk6.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="d-md-flex">
-                            <a href="https://i.imgur.com/2exSZLcm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/2exSZLc.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="https://i.imgur.com/BnzrknAm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/BnzrknA.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="https://i.imgur.com/NRnkQh6m.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/NRnkQh6.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                            <a href="https://i.imgur.com/zvKKXd5m.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/zvKKXd5.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search"></span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            </div>
+<!--            <div class="tab-pane fade show active" id="picture" role="tabpanel" aria-labelledby="picture-tab">-->
+<!--                <section class="ftco-section ftco-gallery">-->
+<!--                    <div class="container">-->
+<!--                        <div class="d-md-flex">-->
+<!--                            <a href="https://i.imgur.com/46EPoqum.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/46EPoqu.jpg);">-->
+<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
+<!--                                    <span class="icon-search"></span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                            <a href="https://i.imgur.com/dOmxT16m.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/dOmxT16.jpg);">-->
+<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
+<!--                                    <span class="icon-search"></span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                            <a href="https://i.imgur.com/59nWr5jm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/59nWr5j.jpg);">-->
+<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
+<!--                                    <span class="icon-search"></span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                            <a href="https://i.imgur.com/UpHBv5jm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/UpHBv5j.jpg);">-->
+<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
+<!--                                    <span class="icon-search"></span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="d-md-flex">-->
+<!--                            <a href="https://i.imgur.com/xcsCbgxm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/xcsCbgx.jpg);">-->
+<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
+<!--                                    <span class="icon-search"></span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                            <a href="https://i.imgur.com/n3SgnhXm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/n3SgnhX.jpg);">-->
+<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
+<!--                                    <span class="icon-search"></span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                            <a href="https://i.imgur.com/nlGnXqTm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/nlGnXqT.jpg);">-->
+<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
+<!--                                    <span class="icon-search"></span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                            <a href="https://i.imgur.com/t56kVk6m.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/t56kVk6.jpg);">-->
+<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
+<!--                                    <span class="icon-search"></span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="d-md-flex">-->
+<!--                            <a href="https://i.imgur.com/2exSZLcm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/2exSZLc.jpg);">-->
+<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
+<!--                                    <span class="icon-search"></span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                            <a href="https://i.imgur.com/BnzrknAm.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/BnzrknA.jpg);">-->
+<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
+<!--                                    <span class="icon-search"></span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                            <a href="https://i.imgur.com/NRnkQh6m.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/NRnkQh6.jpg);">-->
+<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
+<!--                                    <span class="icon-search"></span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                            <a href="https://i.imgur.com/zvKKXd5m.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(https://i.imgur.com/zvKKXd5.jpg);">-->
+<!--                                <div class="icon d-flex justify-content-center align-items-center">-->
+<!--                                    <span class="icon-search"></span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </section>-->
+<!--            </div>-->
 
             <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
                 <div class="container">

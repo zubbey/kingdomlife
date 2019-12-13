@@ -79,7 +79,7 @@
                        aria-haspopup="true" aria-expanded="false">Media
                     </a>
                     <div class="dropdown-menu dropdown-default dropdown-menu-right text-right " aria-labelledby="navbarDropdownMenuLink-333">
-                        <a class="dropdown-item" href="media?tab=picture">Pictures</a>
+<!--                        <a class="dropdown-item" href="media?tab=picture">Pictures</a>-->
                         <a class="dropdown-item" href="media?tab=video">Videos</a>
                         <a class="dropdown-item" href="media?tab=audio">Audio Messages</a>
                     </div>
