@@ -76,8 +76,8 @@
                     echo "<div class='card-body'>";
                     echo "<h6 class='card-title font-weight-bold'>".$row["heading"]."</h6>";
                     echo "</div>";
-                    echo "<div class='card-footer text-muted'>Posted on <span>".$row["postDate"]."</span>";
-                    echo "</div>";
+//                    echo "<div class='card-footer text-muted'>Posted on <span>".$row["postDate"]."</span>";
+//                    echo "</div>";
                     echo "</div>";
                     echo "</div>";
                 }
