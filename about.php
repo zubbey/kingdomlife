@@ -1,30 +1,43 @@
 <?php
 require_once("./controller/auth_controller.php");
-require ("./components/menu.php");
-?>
-    <div class="hero-wrap hero-wrap-about" style="background-image: url('https://i.imgur.com/GGFN0an.png'); opacity: .5;" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-                <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-                    <h1 class="mb-3 bread py-3 font-weight-bold" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">About Us</h1>
-                </div>
-            </div>
-        </div>
-    </div>
+require("./components/menu.php");
 
-    <section class="ftco-section my-lg-5">
+
+$sql = "SELECT * FROM pageContents WHERE id = 1";
+$result = mysqli_query($conn, $sql);
+$contentRow = mysqli_fetch_assoc($result);
+$about_heading = $contentRow['heading'];
+$about_body = nl2br($contentRow['body']);
+$result->close();
+
+?>
+    <div class="page-header">
         <div class="container">
-            <div class="row d-flex">
-                <div class="col-md-4 ftco-animate">
-                    <?php
-                        $sql = "SELECT `file` FROM `pictures` WHERE id = 1";
-                        $result = mysqli_query($conn, $sql);
-                        while ($pic = mysqli_fetch_array($result)){
-                            echo "<div class='img img-about align-self-stretch' style='background-image: url(".$pic['file']."); width: 100%;'></div>";
-                        }
-                    ?>
-                    <!-- Categories Widget -->
+            <div class="row">
+                <div class="col-12">
+                    <h1>About Us</h1>
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .page-header -->
+
+    <div class="welcome-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-8 order-2 order-lg-1">
+                    <div class="welcome-content">
+                        <header class="entry-header">
+                            <h2 class="entry-title"><?php echo $about_heading;?></h2>
+                        </header><!-- .entry-header -->
+
+                        <div class="entry-content mt-5">
+                            <p><?php echo $about_body;?></p>
+                        </div><!-- .entry-content -->
+                    </div><!-- .welcome-content -->
+                </div><!-- .col -->
+
+                <div class="col-12 col-lg-4 order-1 order-lg-2">
+                    <img src="https://i.imgur.com/mV1ZMC9.jpg" alt="welcome">
                     <div class="card my-4">
                         <h5 class="card-header">Outreaches</h5>
                         <div class="card-body">
@@ -39,227 +52,88 @@ require ("./components/menu.php");
                                                 echo "<li><a href='outreaches.php#".$row["id"]."' class='list-group-item'>" . $row['heading'] . "</a></li>";
                                             }
                                         }
-                                        $result->close();
                                         ?>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .home-page-icon-boxes -->
+    <div class="help-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
+                    <h2>Worship with us today</h2>
 
-                <div class="col-md-8 pl-md-5 ftco-animate">
-                    <?php
-                    $sql = "SELECT * FROM `pageContents` WHERE id = 1";
-                    $result = mysqli_query($conn, $sql);
-                    while ($contentRow = mysqli_fetch_assoc($result)) {
-                        echo "<h2><strong>".$contentRow['heading']."</strong></h2>";
-                        echo "<p>".nl2br($contentRow['body'])."</p>";
-                    }
-                    ?>
+                    <a class="btn orange-border" href="contact?direction=true"><i class="icon_pin"></i> Get Direction</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+<div class="about-testimonial">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="coL-12 col-lg-6">
+                <div class="section-heading">
+                    <h2 class="entry-title">Testimonies</h2>
+                </div><!-- .section-heading -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+        <?php
 
-    <section class="ftco-counter ftco-intro my-lg-5" id="section-counter">
-    </section>
+        $Query = "SELECT * FROM `testimonies` WHERE `status` = 1";
 
-    <!--DONATORS -->
-<!--<section id="body" class="ftco-section">-->
-<!--    <div class="container">-->
-<!--        <div class="row justify-content-center mb-5 pb-3">-->
-<!--            <div class="col-md-7 heading-section ftco-animate text-center">-->
-<!--                <h2 class="mb-4">All Donations</h2>-->
-<!--                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!---->
-<!--<!--        FIRST ROW-->-->
-<!--<div class="container">-->
-<!--    <div class="row content">-->
-<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
-<!--            <div class="staff">-->
-<!--                <div class="d-flex mb-4">-->
-<!--                    <div class="img" style="background-image: url(images/profile/12.jpg);"></div>-->
-<!--                    <div class="info ml-4">-->
-<!--                        <h3><a href="#"> Chukwuma Omerain</a></h3>-->
-<!--                        <span class="position">Donated on 20th Nov, 2019</span>-->
-<!--                        <div class="text">-->
-<!--                            <p>Donated <br> <span>&#8358;450,000</span> for <a href="#">Children Needs Food</a></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
-<!--            <div class="staff">-->
-<!--                <div class="d-flex mb-4">-->
-<!--                    <div class="img" style="background-image: url(images/profile/11.jpg);"></div>-->
-<!--                    <div class="info ml-4">-->
-<!--                        <h3><a href="#">patrick Edidi</a></h3>-->
-<!--                        <span class="position">Donated on 10 Jan, 2020</span>-->
-<!--                        <div class="text">-->
-<!--                            <p>Donated <br>  <span>&#8358;5,000,000</span> for <a href="#">Back to School</a></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
-<!--            <div class="staff">-->
-<!--                <div class="d-flex mb-4">-->
-<!--                    <div class="img" style="background-image: url(images/profile/10.jpg);"></div>-->
-<!--                    <div class="info ml-4">-->
-<!--                        <h3><a href="#">Peter Egike</a></h3>-->
-<!--                        <span class="position">Donated on 1'st Fab, 2020</span>-->
-<!--                        <div class="text">-->
-<!--                            <p>Donated <br>  <span>&#8358;1,200,000</span> for <a href="#">Help Mama campaign</a></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--<!--        SECOND ROW-->-->
-<!--    <div class="row content">-->
-<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
-<!--            <div class="staff">-->
-<!--                <div class="d-flex mb-4">-->
-<!--                    <div class="img" style="background-image: url(images/profile/05.jpg);"></div>-->
-<!--                    <div class="info ml-4">-->
-<!--                        <h3><a href="#"> Chukwuma Omerain</a></h3>-->
-<!--                        <span class="position">Donated on 20th Nov, 2019</span>-->
-<!--                        <div class="text">-->
-<!--                            <p>Donated <br> <span>&#8358;450,000</span> for <a href="#">Children Needs Food</a></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
-<!--            <div class="staff">-->
-<!--                <div class="d-flex mb-4">-->
-<!--                    <div class="img" style="background-image: url(images/profile/06.jpg);"></div>-->
-<!--                    <div class="info ml-4">-->
-<!--                        <h3><a href="#">patrick Edidi</a></h3>-->
-<!--                        <span class="position">Donated on 10 Jan, 2020</span>-->
-<!--                        <div class="text">-->
-<!--                            <p>Donated <br>  <span>&#8358;5,000,000</span> for <a href="#">Back to School</a></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
-<!--            <div class="staff">-->
-<!--                <div class="d-flex mb-4">-->
-<!--                    <div class="img" style="background-image: url(images/profile/07.jpg);"></div>-->
-<!--                    <div class="info ml-4">-->
-<!--                        <h3><a href="#">Peter Egike</a></h3>-->
-<!--                        <span class="position">Donated on 1'st Fab, 2020</span>-->
-<!--                        <div class="text">-->
-<!--                            <p>Donated <br>  <span>&#8358;1,200,000</span> for <a href="#">Help Mama campaign</a></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!---->
-<!--<!--        Third Row-->-->
-<!--    <div class="row content">-->
-<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
-<!--            <div class="staff">-->
-<!--                <div class="d-flex mb-4">-->
-<!--                    <div class="img" style="background-image: url(images/profile/12.jpg);"></div>-->
-<!--                    <div class="info ml-4">-->
-<!--                        <h3><a href="#"> Chukwuma Omerain</a></h3>-->
-<!--                        <span class="position">Donated on 20th Nov, 2019</span>-->
-<!--                        <div class="text">-->
-<!--                            <p>Donated <br> <span>&#8358;450,000</span> for <a href="#">Children Needs Food</a></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
-<!--            <div class="staff">-->
-<!--                <div class="d-flex mb-4">-->
-<!--                    <div class="img" style="background-image: url(images/profile/10.jpg);"></div>-->
-<!--                    <div class="info ml-4">-->
-<!--                        <h3><a href="#">patrick Edidi</a></h3>-->
-<!--                        <span class="position">Donated on 10 Jan, 2020</span>-->
-<!--                        <div class="text">-->
-<!--                            <p>Donated <br>  <span>&#8358;5,000,000</span> for <a href="#">Back to School</a></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">-->
-<!--            <div class="staff">-->
-<!--                <div class="d-flex mb-4">-->
-<!--                    <div class="img" style="background-image: url(images/profile/10.jpg);"></div>-->
-<!--                    <div class="info ml-4">-->
-<!--                        <h3><a href="#">Peter Egike</a></h3>-->
-<!--                        <span class="position">Donated on 1'st Fab, 2020</span>-->
-<!--                        <div class="text">-->
-<!--                            <p>Donated <br>  <span>&#8358;1,200,000</span> for <a href="#">Help Mama campaign</a></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!---->
-<!---->
-<!--        <div class="row mt-5">-->
-<!--            <div class="col text-center">-->
-<!--                <div class="block-27">-->
-<!--                    <article id="pagin">-->
-<!--                        <nav>-->
-<!--                            <ul>-->
-<!--                                <li class="active"><a href="#">1</a></li>-->
-<!--                                <li><a class="" href="#">2</a></li>-->
-<!--                                <li><a class="" href="#">3</a></li>-->
-<!--                            </ul>-->
-<!--                        </nav>-->
-<!--                    </article>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
+        if ($result = $conn->query($Query)) {
+            /* fetch associative array */
+            while ($row = $result->fetch_assoc()) {
+                $id = $row['userid'];
+                $UserQuery = "SELECT * FROM `members` WHERE `id` = '$id'";
+                if ($result = $conn->query($UserQuery)){
+                    $userRow = $result->fetch_assoc();
+                    $username = $userRow["username"];
+                    $userid = $userRow["id"];
+                }
+
+                echo '
+                    <div style="height: 100% !important;" class="carousel" data-flickity=\'{ "wrapAround": true, "autoPlay": 5000, "groupCells": 1, "freeScroll": true }\'>
+                    <div class="carousel-cell">
+                        <div class="row">
+                            <div class="col col-6 col-4 m-auto">
+                                <div class=" text-center">
+                                    <div class="entry-footer align-items-center mt-5">
+                                        <img src="./images/uploads/profile' . $userid . '.jpg?' . mt_rand() . '" class="rounded-circle" height="150px" alt="'.$username.'">
+                                        <h4>@'.$username.'</h4>
+                                    </div>
+                                    <div class="">
+                                        <p class="comment more">'.$row['testimony'].'</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                ';
+            }
+        }
+        ?>
+        <div class="row mt-5">
+            <div class="coL-12 m-auto">
+                <div class="entry-footer">
+                    <?php
+                    if (isset($_SESSION['user_session'])){
+                        echo '<a href="users/profile?mystory=true" class="btn gradient-bg mr-2">Share your Testimony</a>';
+                    } else{
+                        echo '<a href="?register=true" class="btn gradient-bg mr-2">Share your Testimony</a>';
+                    }
+                    ?>
+                </div><!-- .entry-footer -->
+            </div>
+        </div>
+    </div>
+</div>
 <?php
-require ("./components/footer.php");
+require("./components/footer.php");
 ?>
-<script>
-
-    var nombrePage = $(".content").length;
-
-    showPage = function(pagination) {
-        if (pagination < 0 || pagination >= nombrePage) return;
-
-        $(".content").hide().eq(pagination).show();
-        $("#pagin li").removeClass("active").eq(pagination).addClass("active");
-    }
-
-    // Go to Left
-    $(".prev").click(function() {
-        showPage($("#pagin ul .active").index() - 1);
-    });
-
-    // Go to Right
-    $(".next").click(function() {
-        showPage($("#pagin ul .active").index() + 1);
-    });
-
-    $("#pagin ul a").click(function(e) {
-        e.preventDefault();
-        showPage($(this).parent().index());
-    });
-
-    showPage(0)
-</script>
