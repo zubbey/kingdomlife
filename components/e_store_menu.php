@@ -54,9 +54,9 @@
     </style>
 </head>
 <body class="single-page">
-<div id="preloader">
-    <div id="status">&nbsp;</div>
-</div>
+<!--<div id="preloader">-->
+<!--    <div id="status">&nbsp;</div>-->
+<!--</div>-->
 <!--check if email Address is verified-->
 <?php
 if (isset($_SESSION['user_session']) && $_SESSION['verified'] < 1){
