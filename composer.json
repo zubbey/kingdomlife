@@ -1,7 +1,0 @@
-{
-    "require": {
-        "phpmailer/phpmailer": "^6.1",
-      "ext-mysqli": "*",
-        "vlucas/phpdotenv": "^4.1"
-    }
-}
