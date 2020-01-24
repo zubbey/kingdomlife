@@ -2,7 +2,7 @@
 //require __DIR__ . '../../vendor/autoload.php';
 //
 //$dotenv = new Dotenv\Dotenv(__DIR__, '.env');
-$dotenv->load();
+//$dotenv->load();
 // set a default environment
 $WEBSITE_ENVIRONMENT = "Development";
 // detect the URL to determine if it's development or production
