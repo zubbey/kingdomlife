@@ -107,7 +107,7 @@ $result->close();
                                 <div class=" text-center">
                                     <div class="entry-footer align-items-center mt-5">
                                         <img src="./images/uploads/profile' . $userid . '.jpg?' . mt_rand() . '" class="rounded-circle" height="150px" alt="'.$username.'">
-                                        <h4>@'.$username.'</h4>
+                                        <h6>@'.$username.'</h6>
                                     </div>
                                     <div class="">
                                         <p class="comment more">'.sanitize($row['testimony']).'</p>

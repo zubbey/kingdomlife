@@ -115,7 +115,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'postempty'){
                         <div class="testimonial-cont text-center">
                             <div class="entry-footer align-items-center mt-5">
                                 <img src="./images/uploads/profile' . $userid . '.jpg?' . mt_rand() . '" class="rounded-circle" height="100px" alt="'.$username.'">
-                                <h3>@'.$username.'</h3>
+                                <h6>@'.$username.'</h6>
                             </div>
                             <div class="">
                                 <p class="font-weight-light comment more"  style="font-size: 15px" >'.sanitize($row['testimony']).'</p>
