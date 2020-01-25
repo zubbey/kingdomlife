@@ -1,5 +1,3 @@
-const google_key = config.GOOGLE_KEY;
-const pk_key = config.PAYSTACK_PUBLIC_KEY;
 (function($) {
     // 'use strict';
 
@@ -169,6 +167,9 @@ const pk_key = config.PAYSTACK_PUBLIC_KEY;
     });
 })(jQuery);
 
+
+
+
 $(document).ready(function () {
     $('.home-page-audio').mouseenter(function () {
         $(this).toggleClass('changed');
@@ -307,7 +308,13 @@ jQuery(window).load(function() {
 // will fade out the whole DIV that covers the website.
     jQuery("#preloader").delay(1000).fadeOut("slow");
 });
-
+// $(document).ready(function() {
+//     $('input[type="submit"]').click(function() {
+//         $(this).append('<span><input class="btn gradient-bg" type="submit" name="contact" value="Send"><img height="20" src="./loading.svg"></span>')
+//         // $(this).css('display', 'none');
+//         // $('<img>').attr('src', './loading.svg').insertAfter($(this));
+//     });
+// });
 // GOOGLE MAP
 function myMap() {
     var mapProp= {

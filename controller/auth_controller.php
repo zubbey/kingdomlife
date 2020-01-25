@@ -529,6 +529,17 @@ if (isset($_GET['checkout'])){
     }
 }
 
+//CONTACT US FORM
+if (isset($_GET['contact'])){
+    $fullname = $_GET['fullname'];
+    $email = $_GET['email'];
+    $phone = $_GET['phone'];
+    $msg = $_GET['message'];
+    $contactMsg = $msg.' <br/> Here is '.$fullname.': Mobile Number' .$phone;
+    sendcontactadminMail($contactMsg, $email);
+//    echo $contactMsg;
+}
+
 // CODE TO LOGOUT A USER
 if (isset($_GET['logout'])) {
     $id = $_SESSION['user_id'];

@@ -1,16 +1,6 @@
 <?php
 require_once("./controller/auth_controller.php");
 require("./components/menu.php");
-
-if (isset($_GET['contact'])){
-    $fullname = $_GET['fullname'];
-    $email = $_GET['email'];
-    $phone = $_GET['phone'];
-    $msg = $_GET['message'];
-    $contactMsg = $msg.' <br/> Here is '.$fullname.': Mobile Number' .$phone;
-    sendcontactadminMail($contactMsg, $email);
-//    echo $contactMsg;
-}
 ?>
 
     <div class="page-header">
@@ -107,4 +97,8 @@ if (isset($_GET['contact'])){
 <?php
 require("./components/footer.php");
 ?>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key={google_key}&callback=myMap" type="text/javascript"></script>
+<script>
+    // APIKEYS
+    const google_key = config.GOOGLE_KEY;
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={google_key}&callback=googleMap" type="text/javascript"></script>

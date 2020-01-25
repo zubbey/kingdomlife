@@ -258,6 +258,7 @@
 
 </script>
 <script>
+    const pk_key = config.PAYSTACK_PUBLIC_KEY;
     function payWithPaystack(){
         var handler = PaystackPop.setup({
             key: pk_key,

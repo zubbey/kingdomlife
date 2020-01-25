@@ -81,7 +81,6 @@ require("./components/menu.php");
 
                     <div id="video" class="tab-content">
                         <div class="container">
-                            <h5>video title</h5>
                             <div id="results" class="row">
 
                             </div>
@@ -113,4 +112,6 @@ require("./components/footer.php");
             }
         );
     });
+    // APIKEYS
+    const google_key = config.GOOGLE_KEY;
 </script>
