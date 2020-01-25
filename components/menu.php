@@ -51,9 +51,9 @@ if (isset($_GET['resetpassword']) && $_GET['resetpassword'] === 'true'){
     <script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
 <body class="single-page">
-<!--<div id="preloader">-->
-<!--    <div id="status">&nbsp;</div>-->
-<!--</div>-->
+<div class="d-none" id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
 <!--check if email Address is verified-->
 <?php
 if (isset($_SESSION['user_session']) && $_SESSION['verified'] < 1){

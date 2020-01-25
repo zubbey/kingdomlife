@@ -308,13 +308,8 @@ jQuery(window).load(function() {
 // will fade out the whole DIV that covers the website.
     jQuery("#preloader").delay(1000).fadeOut("slow");
 });
-// $(document).ready(function() {
-//     $('input[type="submit"]').click(function() {
-//         $(this).append('<span><input class="btn gradient-bg" type="submit" name="contact" value="Send"><img height="20" src="./loading.svg"></span>')
-//         // $(this).css('display', 'none');
-//         // $('<img>').attr('src', './loading.svg').insertAfter($(this));
-//     });
-// });
+// LOADING WHEN BTN CLICKS
+
 // GOOGLE MAP
 function myMap() {
     var mapProp= {
@@ -333,6 +328,7 @@ const contact_nav = document.querySelector("li.contact");
 const connect_nav = document.querySelector("li.connect");
 const sign_in_nav = document.querySelector("li.sign-in");
 const account_nav = document.querySelector("li.profile");
+const loading = document.querySelector("#preloader");
 
 
 let body = document.querySelector("body");
@@ -368,6 +364,7 @@ if(contact){
     title_el.innerHTML = "Contact | kingdomlifegospel.org";
     body.classList.add("about-page");
     contact_nav.classList.add("current-menu-item");
+    loading.classList.remove("d-none");
 }
 if(media){
     title_el.innerHTML = "Media | kingdomlifegospel.org";
@@ -378,10 +375,12 @@ if(give){
     title_el.innerHTML = "Give | kingdomlifegospel.org";
     body.classList.add("about-page");
     give_nav.classList.add("current-menu-item");
+    loading.classList.remove("d-none");
 }
 if(e_store){
     title_el.innerHTML = "E Store | kingdomlifegospel.org";
     body.classList.add("store-page");
+    loading.classList.remove("d-none");
 }
 if(events){
     title_el.innerHTML = "Events | kingdomlifegospel.org";
@@ -392,16 +391,19 @@ if(prayer_request){
     title_el.innerHTML = "Prayer Request | kingdomlifegospel.org";
     connect_nav.classList.add("current-menu-item");
     body.classList.add("testimony-page");
+    loading.classList.remove("d-none");
 }
 if(testimony){
     title_el.innerHTML = "Testimony | kingdomlifegospel.org";
     connect_nav.classList.add("current-menu-item");
     body.classList.add("testimony-page");
+    loading.classList.remove("d-none");
 }
 if(bulletin){
     title_el.innerHTML = "Bulletins | kingdomlifegospel.org";
     connect_nav.classList.add("current-menu-item");
     body.classList.add("testimony-page");
+    loading.classList.remove("d-none");
 }
 if(units){
     title_el.innerHTML = "Units | kingdomlifegospel.org";
@@ -424,4 +426,5 @@ if(outreaches){
 }
 if(profile){
     account_nav.classList.add("current-menu-item");
+    loading.classList.remove("d-none");
 }

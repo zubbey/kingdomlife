@@ -66,7 +66,7 @@ require("./components/menu.php");
                                     <textarea class="form-control" name="message" rows="10" cols="6" placeholder="Messages" required></textarea>
             
                                     <span>
-                                        <input class="btn gradient-bg" type="submit" name="contact" value="Send">
+                                        <input id="btn" class="btn gradient-bg" type="submit" name="contact" value="Send">
                                     </span>
                                 </form>';
                         } else {
@@ -77,7 +77,7 @@ require("./components/menu.php");
                                     <textarea class="form-control" name="message" rows="10" cols="6" placeholder="Messages" required></textarea>
             
                                     <span>
-                                        <input class="btn gradient-bg" type="submit" name="contact" value="Send">
+                                        <input id="btn" class="btn gradient-bg" type="submit" name="contact" value="Send">
                                     </span>
                                 </form>';
                         }

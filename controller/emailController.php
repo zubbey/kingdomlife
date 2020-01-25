@@ -18,8 +18,8 @@ function sendVerificationEmail($userEmail, $token){
         $mail->isSMTP();                                            // Send using SMTP
         $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $mail->Username   = 'media.kingdomlife@gmail.com';                     // SMTP username
-        $mail->Password   = 'KLGospel@2019';                               // SMTP password
+        $mail->Username   = 'coloredigit@gmail.com';                     // SMTP username
+        $mail->Password   = 'Inno070687';                               // SMTP password
         $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
         $mail->Port       = 465;// TCP port to connect to
 
@@ -488,8 +488,8 @@ function resetpasswordMail($email, $token){
         $mail->isSMTP();                                            // Send using SMTP
         $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $mail->Username   = 'media.kingdomlife@gmail.com';                     // SMTP username
-        $mail->Password   = 'KLGospel@2019';                               // SMTP password
+        $mail->Username   = 'coloredigit@gmail.com';                     // SMTP username
+        $mail->Password   = 'Inno070687';                               // SMTP password
         $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
         $mail->Port       = 465;// TCP port to connect to
 
@@ -965,8 +965,8 @@ function sendcontactadminMail($contactMsg, $contactEmail){
         $mail->isSMTP();                                            // Send using SMTP
         $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $mail->Username   = 'media.kingdomlife@gmail.com';                     // SMTP username
-        $mail->Password   = 'KLGospel@2019';                               // SMTP password
+        $mail->Username   = 'coloredigit@gmail.com';                     // SMTP username
+        $mail->Password   = 'Inno070687';                               // SMTP password
         $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
         $mail->Port       = 465;// TCP port to connect to
 

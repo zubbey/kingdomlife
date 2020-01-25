@@ -111,17 +111,14 @@ if (isset($_POST['register'])) {
         if ($result){
 
             //INSERT INTO PROFILE IMAGE
-            $sql = "SELECT `*` FROM `members` WHERE `username` = '$username' LIMIT 1";
+            $sql = "SELECT * FROM members WHERE username = '$username' LIMIT 1";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
                 while ($user = mysqli_fetch_assoc($result)){
-                    $id = $user['id'];
+                    $user_id = $user['id'];
                     $status = 0;
-                    $sql = "INSERT INTO `profileimg` (userid, status) VALUES (?, ?)";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->bind_param('ii', $id, $status);
-                    $stmt->execute();
+                    $sql = mysqli_query($conn, "INSERT INTO profileimg (userid, status) VALUES ('$user_id', '$status')");
                 }
                 sendVerificationEmail($email, $token);
             } else {
