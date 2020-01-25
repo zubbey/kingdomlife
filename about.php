@@ -83,26 +83,27 @@ $result->close();
                 </div><!-- .section-heading -->
             </div><!-- .col -->
         </div><!-- .row -->
-        <?php
+        <div style="height: 100% !important;" class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 5000, "groupCells": 1, "freeScroll": true }'>
+            <?php
 
-        $Query = "SELECT * FROM `testimonies` WHERE `status` = 1";
+            $Query = "SELECT * FROM `testimonies` WHERE `status` = 1";
 
-        if ($result = $conn->query($Query)) {
-            /* fetch associative array */
-            while ($row = $result->fetch_assoc()) {
-                $id = $row['userid'];
-                $UserQuery = "SELECT * FROM `members` WHERE `id` = '$id'";
-                if ($result = $conn->query($UserQuery)){
-                    $userRow = $result->fetch_assoc();
-                    $username = $userRow["username"];
-                    $userid = $userRow["id"];
-                }
+            if ($result = $conn->query($Query)) {
+                /* fetch associative array */
+                while ($row = $result->fetch_assoc()) {
+                    $id = $row['userid'];
+                    $UserQuery = "SELECT * FROM `members` WHERE `id` = '$id'";
+                    if ($userResult = $conn->query($UserQuery)){
+                        $userRow = $userResult->fetch_assoc();
+                        $username = $userRow["username"];
+                        $userid = $userRow["id"];
+                    }
 
-                echo '
-                    <div style="height: 100% !important;" class="carousel" data-flickity=\'{ "wrapAround": true, "autoPlay": 5000, "groupCells": 1, "freeScroll": true }\'>
+                    echo '
+
                     <div class="carousel-cell">
                         <div class="row">
-                            <div class="col col-6 col-4 m-auto">
+                            <div id="testimony-content-box" class="col col-6 col-4 m-auto">
                                 <div class=" text-center">
                                     <div class="entry-footer align-items-center mt-5">
                                         <img src="./images/uploads/profile' . $userid . '.jpg?' . mt_rand() . '" class="rounded-circle" height="150px" alt="'.$username.'">
@@ -115,11 +116,11 @@ $result->close();
                             </div>
                         </div>
                     </div>
-                </div>
                 ';
+                }
             }
-        }
-        ?>
+            ?>
+        </div>
         <div class="row mt-5">
             <div class="coL-12 m-auto">
                 <div class="entry-footer">

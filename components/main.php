@@ -291,6 +291,7 @@
                 </div><!-- .section-heading -->
             </div><!-- .col -->
         </div><!-- .row -->
+        <div style="height: 100% !important;" class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 5000, "groupCells": 1, "freeScroll": true }'>
         <?php
 
         $Query = "SELECT * FROM `testimonies` WHERE `status` = 1";
@@ -300,14 +301,14 @@
             while ($row = $result->fetch_assoc()) {
                 $id = $row['userid'];
                 $UserQuery = "SELECT * FROM `members` WHERE `id` = '$id'";
-                if ($result = $conn->query($UserQuery)){
-                    $userRow = $result->fetch_assoc();
+                if ($userResult = $conn->query($UserQuery)){
+                    $userRow = $userResult->fetch_assoc();
                     $username = $userRow["username"];
                     $userid = $userRow["id"];
                 }
 
                 echo '
-                    <div style="height: 100% !important;" class="carousel" data-flickity=\'{ "wrapAround": true, "autoPlay": 5000, "groupCells": 1, "freeScroll": true }\'>
+
                     <div class="carousel-cell">
                         <div class="row">
                             <div id="testimony-content-box" class="col col-6 col-4 m-auto">
@@ -323,11 +324,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
                 ';
             }
         }
         ?>
+        </div>
         <div class="row mt-5">
             <div class="coL-12 m-auto">
                 <div class="entry-footer">

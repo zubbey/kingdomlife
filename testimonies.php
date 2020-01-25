@@ -105,8 +105,8 @@ if (isset($_GET['error']) && $_GET['error'] === 'postempty'){
             while ($row = $result->fetch_assoc()) {
                 $id = $row['userid'];
                 $UserQuery = "SELECT * FROM `members` WHERE `id` = '$id'";
-                if ($result = $conn->query($UserQuery)){
-                    $userRow = $result->fetch_assoc();
+                if ($userResult = $conn->query($UserQuery)){
+                    $userRow = $userResult->fetch_assoc();
                     $username = $userRow["username"];
                     $userid = $userRow["id"];
                 }

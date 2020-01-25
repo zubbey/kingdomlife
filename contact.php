@@ -71,7 +71,7 @@ require("./components/menu.php");
                                 </form>';
                         } else {
                             echo '<form class="contact-form" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="GET">
-                                    <input class="form-control" name="fullname" type="text" placeholder="Full Name" required>
+                                    <input class="form-control form-control-lg" name="fullname" type="text" placeholder="Full Name" required>
                                     <input class="form-control" name="email" type="email" placeholder="Email Address" required>
                                     <input class="form-control" name="phone" type="tel" placeholder="Phone Number" required>
                                     <textarea class="form-control" name="message" rows="10" cols="6" placeholder="Messages" required></textarea>
