@@ -60,10 +60,10 @@ require("./components/menu.php");
                     <?php
                         if (isset($_SESSION['user_session'])){
                             echo '<form class="contact-form" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="GET">
-                                    <input class="form-control" name="fullname" type="text" placeholder="Full Name" value="'.$_SESSION['username'].'" required>
-                                    <input class="form-control" name="email" type="email" placeholder="Email Address" value="'.$_SESSION['email'].'" required>
-                                    <input class="form-control" name="phone" type="tel" placeholder="Phone Number" value="'.$_SESSION['phone'].'" required>
-                                    <textarea class="form-control" name="message" rows="10" cols="6" placeholder="Messages" required></textarea>
+                                    <input class="form-control form-control-lg" name="fullname" type="text" placeholder="Full Name" value="'.$_SESSION['username'].'" required>
+                                    <input class="form-control form-control-lg" name="email" type="email" placeholder="Email Address" value="'.$_SESSION['email'].'" required>
+                                    <input class="form-control form-control-lg  mb-2" name="phone" type="tel" placeholder="Phone Number" value="'.$_SESSION['phone'].'" required>
+                                    <textarea class="form-control form-control-lg" name="message" rows="10" cols="6" placeholder="Messages" required></textarea>
             
                                     <span>
                                         <input id="btn" class="btn gradient-bg" type="submit" name="contact" value="Send">
@@ -72,9 +72,9 @@ require("./components/menu.php");
                         } else {
                             echo '<form class="contact-form" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="GET">
                                     <input class="form-control form-control-lg" name="fullname" type="text" placeholder="Full Name" required>
-                                    <input class="form-control" name="email" type="email" placeholder="Email Address" required>
-                                    <input class="form-control" name="phone" type="tel" placeholder="Phone Number" required>
-                                    <textarea class="form-control" name="message" rows="10" cols="6" placeholder="Messages" required></textarea>
+                                    <input class="form-control form-control-lg" name="email" type="email" placeholder="Email Address" required>
+                                    <input class="form-control form-control-lg mb-2" name="phone" type="tel" placeholder="Phone Number" required>
+                                    <textarea class="form-control form-control-lg" name="message" rows="10" cols="6" placeholder="Messages" required></textarea>
             
                                     <span>
                                         <input id="btn" class="btn gradient-bg" type="submit" name="contact" value="Send">

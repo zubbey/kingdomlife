@@ -532,7 +532,7 @@ if (isset($_GET['contact'])){
     $email = $_GET['email'];
     $phone = $_GET['phone'];
     $msg = $_GET['message'];
-    $contactMsg = $msg.' <br/> Here is '.$fullname.': Mobile Number' .$phone;
+    $contactMsg = $msg.' <br/><br/><br/>'.$fullname.' Contact Line:'.'  '.$phone;
     sendcontactadminMail($contactMsg, $email);
 //    echo $contactMsg;
 }

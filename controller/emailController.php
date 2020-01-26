@@ -1118,7 +1118,7 @@ function sendcontactadminMail($contactMsg, $contactEmail){
                     <tr>
                         <td>
                             <div style="overflow:hidden;display:none;font-size:1px;color:#ffffff;line-height:1px;font-family:Arial;maxheight:0px;max-width:0px;opacity:0;">
-                            From Kingdom Life Gospel Outreach Ministry Headquarters
+                            From Kingdom Life Gospel Outreach Ministry Online Member
                             </div>
                         </td>
                     </tr>
@@ -1174,7 +1174,7 @@ function sendcontactadminMail($contactMsg, $contactEmail){
             
                                         <div style="line-height: 35px">
             
-                                            VERIFY YOUR MEMBERSHIP ACCOUNT
+                                            MAIL FROM ONLINE MEMBER 
             
                                         </div>
                                     </td>
@@ -1200,9 +1200,9 @@ function sendcontactadminMail($contactMsg, $contactEmail){
             
                                 <tr>
                                     <td align="center">
-                                        <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
+                                        <table border="0" width="400" align="left" cellpadding="0" cellspacing="0" class="container590">
                                             <tr>
-                                                <td align="center" style="color: #888888; font-size: 16px; font-family: \'Work Sans\', Calibri, sans-serif; line-height: 24px;">
+                                                <td align="left" style="color: #888888; font-size: 16px; font-family: \'Work Sans\', Calibri, sans-serif; line-height: 24px;">
             
             
                                                     <div style="line-height: 24px">
