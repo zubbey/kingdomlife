@@ -98,7 +98,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'emptyinput'){
                                 <div class="total text-right">Total price: <h4> &#8358;<span class="total-cart"></span></h4></div>
                                 <div class="modal-footer m-0 p-0">
                                     <button type="button" class="btn btn-outline" data-dismiss="modal">Continue Shopping</button>
-                                    <button type='submit' class='btn gradient-bg' name='checkout' value="Success">Checkout</button>
+                                    <button type='submit' class='btn gradient-bg' id="checkout" name='checkout' value="Success">Checkout</button>
                                 </div>
                             </div>
                         </div>
