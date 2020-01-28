@@ -482,7 +482,7 @@ function sendVerificationEmail($userEmail, $token){
         $mail->send();
 
     } catch (Exception $e) {
-//         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
 
@@ -953,7 +953,7 @@ function emailUpdate($userEmail, $token){
         $mail->send();
 
     } catch (Exception $e) {
-//         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
 
@@ -1415,7 +1415,7 @@ function changedusernameMail($userEmail, $username){
         $mail->send();
 
     } catch (Exception $e) {
-//         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
 
@@ -1877,7 +1877,7 @@ function passwordChangeMail($email){
         unset($_SESSION['updatedpassword']);
 
     } catch (Exception $e) {
-//         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
 
@@ -2339,7 +2339,7 @@ function testimonyMail($email){
         unset($_SESSION['testimonyposted']);
 
     } catch (Exception $e) {
-//         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
 
@@ -2810,7 +2810,7 @@ function prayerrequestMail($email, $prayer){
         unset($_SESSION['prayerrequestposted']);
 
     } catch (Exception $e) {
-//         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
 
@@ -3273,7 +3273,7 @@ function offeringsMail($email, $offering){
         unset($_SESSION['offeringsposted']);
 
     } catch (Exception $e) {
-//         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
 
@@ -3745,6 +3745,6 @@ function orderssMail($email, $deliveryAddress){
         unset($_SESSION['ordersposted']);
 
     } catch (Exception $e) {
-//         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }

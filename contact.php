@@ -62,22 +62,22 @@ require("./components/menu.php");
                             echo '<form class="contact-form" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="GET">
                                     <input class="form-control form-control-lg" name="fullname" type="text" placeholder="Full Name" value="'.$_SESSION['username'].'" required>
                                     <input class="form-control form-control-lg" name="email" type="email" placeholder="Email Address" value="'.$_SESSION['email'].'" required>
-                                    <input class="form-control form-control-lg  mb-2" name="phone" type="tel" placeholder="Phone Number" value="'.$_SESSION['phone'].'" required>
+                                    <input class="form-control   mb-2" name="phone" type="tel" placeholder="Phone Number" value="'.$_SESSION['phone'].'" required>
                                     <textarea class="form-control form-control-lg" name="message" rows="10" cols="6" placeholder="Messages" required></textarea>
             
                                     <span>
-                                        <input id="btn" class="btn gradient-bg" type="submit" name="contact" value="Send">
+                                    <button name="contact" type="submit" class="btn gradient-bg has-spinner" id="btn" ><span><i class="icon-spin icon-refresh"></i></span> Send Message</button>
                                     </span>
                                 </form>';
                         } else {
                             echo '<form class="contact-form" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="GET">
                                     <input class="form-control form-control-lg" name="fullname" type="text" placeholder="Full Name" required>
                                     <input class="form-control form-control-lg" name="email" type="email" placeholder="Email Address" required>
-                                    <input class="form-control form-control-lg mb-2" name="phone" type="tel" placeholder="Phone Number" required>
+                                    <input class="form-control  mb-2" name="phone" type="tel" placeholder="Phone Number" required>
                                     <textarea class="form-control form-control-lg" name="message" rows="10" cols="6" placeholder="Messages" required></textarea>
             
                                     <span>
-                                        <input id="btn" class="btn gradient-bg" type="submit" name="contact" value="Send">
+                                    <button name="contact" type="submit" class="btn gradient-bg has-spinner" id="btn" ><span class="spinner"><i class="icon-spin icon-refresh"></i></span> Send Message</button>
                                     </span>
                                 </form>';
                         }
@@ -93,12 +93,11 @@ require("./components/menu.php");
             </div><!-- .row -->
         </div><!-- .container -->
     </div>
-
 <?php
 require("./components/footer.php");
 ?>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={google_key}&callback=googleMap" type="text/javascript"></script>
 <script>
     // APIKEYS
     const google_key = config.GOOGLE_KEY;
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key={google_key}&callback=googleMap" type="text/javascript"></script>

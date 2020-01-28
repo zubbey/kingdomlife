@@ -176,7 +176,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'passwordnotmatch'){
                                 <hr class="my-4">
                                 <p class="mb-1"><?php echo $_SESSION['phone'];?></p>
                                 <p><?php echo $_SESSION['email'];?></p>
-                                <p class="mb-0 text-black font-weight-bold"><a class="text-secondary mr-3" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false"><i class="icon_pencil-edit"></i> Edit Profile</a></p>
+                                <p class="mb-0 text-black font-weight-bold"><a class="text-secondary mr-3" data-toggle="modal" data-target="#edit-profile-modal" href="#"><i class="icon_pencil-edit"></i> Edit Profile</a></p>
                             </div>
                         </div>
                     </div>

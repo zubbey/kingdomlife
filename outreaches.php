@@ -29,8 +29,8 @@ require("./components/menu.php");
                         echo "<div id='".$row["id"]."' class='card mb-4'>";
                         echo "<img onclick=\"location.assign('?imageid=".$row["id"]."')\" class='card-img-top outreaches' src='".$row["image"]."' alt='Card image cap'>";
                         echo "<div class='card-body'>";
-                        echo "<h2 class='card-title font-weight-bold'>".$row["heading"]."</h2>";
-                        echo "<p class='card-text comment more'>".nl2br($row["body"])."</p>";
+                        echo "<h2 class='card-title font-weight-bold'>".sanitize($row["heading"])."</h2>";
+                        echo "<p class='card-text comment more'>".sanitize($row["body"])."</p>";
                         echo "</div>";
                         echo "</div>";
                     }
@@ -65,10 +65,9 @@ require("./components/menu.php");
 
                                     if ($result = $conn->query($sql)) {
                                         while ($row = $result->fetch_assoc()) {
-                                            echo "<li><a href='#".$row["id"]."' class='list-group-item'>" . $row['heading'] . "</a></li>";
+                                            echo "<li><a href='#".$row["id"]."' class='list-group-item'>" . sanitize($row['heading']) . "</a></li>";
                                         }
                                     }
-                                    $result->close();
                                     ?>
                                 </ul>
                             </div>

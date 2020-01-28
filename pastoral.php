@@ -29,11 +29,11 @@ require("./components/menu.php");
         
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title text-dark m-0">'.$row['heading'].'</h3>
+                                            <h3 class="entry-title text-dark m-0">'.sanitize($row['heading']).'</h3>
                                         </header><!-- .entry-header -->
         
                                         <div class="entry-content text-dark">
-                                            <p class="comment more">'.nl2br($body).'</p>
+                                            <p class="comment more">'. sanitize($body) .'</p>
                                         </div>
                                     </div>
                                 </div>

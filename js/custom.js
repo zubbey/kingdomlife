@@ -309,8 +309,14 @@ jQuery(window).load(function() {
     jQuery("#preloader").delay(1000).fadeOut("slow");
 });
 // LOADING WHEN BTN CLICKS
-
-// GOOGLE MAP
+var $loading = $('.spinner').hide();
+$(document)
+    .ajaxStart(function () {
+        $loading.show();
+    })
+    .ajaxStop(function () {
+        $loading.hide();
+    });// GOOGLE MAP
 function myMap() {
     var mapProp= {
         center:new google.maps.LatLng(4.832504, -6.990813),

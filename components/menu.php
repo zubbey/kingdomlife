@@ -223,7 +223,7 @@ if (isset($_GET['no_account']) && $_GET['no_account'] === 'No user found with th
                     </div>
 
                     <!-- Sign in button -->
-                    <button name="login-btn" class="btn gradient-bg btn-block my-2" type="submit">Sign in</button>
+                    <button name="login-btn" id="btn" class="btn gradient-bg btn-block my-2" type="submit">Sign in</button>
 
                     <!-- Register -->
                     <p>Not a member?
@@ -325,7 +325,7 @@ if (isset($_GET['no_account']) && $_GET['no_account'] === 'No user found with th
                     <input name="confirm_password" type="password" id="confirmPassword" class="form-control m-0 p-4 <?php echo $invalid_cpassword;?>" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
                     <?php echo $invalid_cpassword_Msg;?>
                     <!-- Sign up button -->
-                    <button name="register" class="btn gradient-bg btn-block my-2" type="submit">Create Account</button>
+                    <button name="register" id="btn" class="btn gradient-bg btn-block my-2" type="submit">Create Account</button>
 
                     <p>Already a member?
                         <a href="?login=true" class="highlight-color">Sign in</a>
@@ -379,7 +379,7 @@ if (isset($_GET['no_account']) && $_GET['no_account'] === 'No user found with th
                         <?php echo $invalid_email_Msg;?>
                     </div>
                     <!-- Sign in button -->
-                    <button name="forgotten-password-btn" class="btn gradient-bg btn-block my-2" type="submit">Reset Password</button>
+                    <button name="forgotten-password-btn" id="btn" class="btn gradient-bg btn-block my-2" type="submit">Reset Password</button>
                     <p>Back to Login?
                         <a href="?login=true" class="highlight-color">Sign in</a>
                     </p>
@@ -424,7 +424,7 @@ if (isset($_GET['no_account']) && $_GET['no_account'] === 'No user found with th
                         <?php echo $invalid_cpassword_Msg;?>
                     </div>
                     <!-- Sign in button -->
-                    <button name="reset-password-btn" class="btn gradient-bg btn-block my-2" type="submit">Reset</button>
+                    <button name="reset-password-btn" id="btn" class="btn gradient-bg btn-block my-2" type="submit">Reset</button>
                 </form>
             </div>
         </div>

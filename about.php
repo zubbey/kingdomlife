@@ -2,15 +2,6 @@
 require_once("./controller/auth_controller.php");
 require("./components/menu.php");
 
-
-$sql = "SELECT * FROM pageContents WHERE id = 1";
-$result = mysqli_query($conn, $sql);
-$contentRow = mysqli_fetch_assoc($result);
-$about_heading = $contentRow['heading'];
-$body = sanitize($contentRow['body']);
-$about_body = nl2br($body);
-$result->close();
-
 ?>
     <div class="page-header">
         <div class="container">
@@ -27,15 +18,24 @@ $result->close();
             <div class="row">
                 <div class="col-12 col-lg-8 order-2 order-lg-1">
                     <div class="welcome-content">
-                        <header class="entry-header">
-                            <h2 class="entry-title"><?php echo $about_heading;?></h2>
-                        </header><!-- .entry-header -->
+                        <?php
+                        $sql = "SELECT * FROM pageContents WHERE id = 1 LIMIT 1";
+                        $result = mysqli_query($conn, $sql);
+                        while ($contentRow = mysqli_fetch_assoc($result)){
+                           echo '
+                            <header class="entry-header">
+                                <h2 class="entry-title">'. $contentRow['heading'] .'</h2>
+                            </header>
+    
+                            <div class="entry-content mt-5">
+                                <p>'. nl2br(sanitize($contentRow['body'])) .'</p>
+                            </div>
+                           ';
+                        }
+                        ?>
 
-                        <div class="entry-content mt-5">
-                            <p><?php echo $about_body;?></p>
-                        </div><!-- .entry-content -->
-                    </div><!-- .welcome-content -->
-                </div><!-- .col -->
+                    </div>
+                </div>
 
                 <div class="col-12 col-lg-4 order-1 order-lg-2">
                     <img src="https://i.imgur.com/mV1ZMC9.jpg" alt="welcome">
@@ -50,7 +50,7 @@ $result->close();
 
                                         if ($result = $conn->query($sql)) {
                                             while ($row = $result->fetch_assoc()) {
-                                                echo "<li><a href='outreaches.php#".$row["id"]."' class='list-group-item'>" . $row['heading'] . "</a></li>";
+                                                echo "<li><a href='outreaches.php#".$row["id"]."' class='list-group-item'>" . sanitize($row['heading']) . "</a></li>";
                                             }
                                         }
                                         ?>
