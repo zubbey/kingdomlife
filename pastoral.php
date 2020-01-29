@@ -28,11 +28,11 @@ require("./components/menu.php");
         
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title text-dark m-0">'. str_replace("'","''",$row["heading"]) .'</h3>
+                                            <h3 class="entry-title text-dark m-0">'. mysqli_real_escape_string($conn, stripslashes($row['heading'])) .'</h3>
                                         </header><!-- .entry-header -->
         
                                         <div class="entry-content text-dark">
-                                            <p class="comment more">'. str_replace("'","''",$row["body"]) .'</p>
+                                            <p class="comment more">'. mysqli_real_escape_string($conn, stripslashes($row['body'])) .'</p>
                                         </div>
                                     </div>
                                 </div>

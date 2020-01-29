@@ -29,8 +29,8 @@ require("./components/menu.php");
                         echo "<div id='".$row["id"]."' class='card mb-4'>";
                         echo "<img onclick=\"location.assign('?imageid=".$row["id"]."')\" class='card-img-top outreaches' src='".$row["image"]."' alt='Card image cap'>";
                         echo "<div class='card-body'>";
-                        echo "<h2 class='card-title font-weight-bold'>".sanitize($row["heading"])."</h2>";
-                        echo "<p class='card-text comment more'>".str_replace("'","''",$row["body"])."</p>";
+                        echo "<h2 class='card-title font-weight-bold'>".mysqli_real_escape_string($conn, stripslashes($row['heading']))."</h2>";
+                        echo "<p class='card-text comment more'>".mysqli_real_escape_string($conn, stripslashes($row['body']))."</p>";
                         echo "</div>";
                         echo "</div>";
                     }

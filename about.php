@@ -24,8 +24,7 @@ require("./components/menu.php");
                         while ($contentRow = mysqli_fetch_assoc($result)){
                             $heading = $contentRow['heading'];
                             $heading = str_replace("'","''",$heading);
-                            $body = sanitize($contentRow['body']);
-                            $body = str_replace("'","''",$body);
+                            $body = mysqli_real_escape_string($conn, stripslashes(nl2br($contentRow['body'])));
                         }
                         ?>
 
@@ -34,7 +33,7 @@ require("./components/menu.php");
                         </header>
 
                         <div class="entry-content mt-5">
-                            <p><?php echo nl2br($body);?></p>
+                            <p><?php echo $body;?></p>
                         </div>
 
                     </div>
