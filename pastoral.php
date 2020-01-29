@@ -28,11 +28,17 @@ require("./components/menu.php");
         
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title text-dark m-0">'. mysqli_real_escape_string($conn, stripslashes($row['heading'])) .'</h3>
+                                            <h3 class="entry-title text-dark m-0">MEET THE FIRST LADY OF KINGDOM LIFE GOSPEL OUTREACH MINISTRIES INT’L.</h3>
                                         </header><!-- .entry-header -->
         
                                         <div class="entry-content text-dark">
-                                            <p class="comment more">'. mysqli_real_escape_string($conn, stripslashes($row['body'])) .'</p>
+                                            <p class="comment more">
+                                            Pastor Mrs. Esther Uzosike is the wife of His Lordship, Bishop Victor Uzosike and First Lady Kingdom Life Gospel Outreach Ministries; A woman of prayer, strong in the word, a sought after international speaker, She is the Vice President of Spirit Filled Network of Gospel Ministers and a lecturer at the Spirit Filled Bible Institute, Port Harcourt. 
+
+                                            A woman of rare grace and unassuming charisma, Pastor Esther actively reaches out to the individual woman through the following ministries : The Widows Outreach, Kingdom Brides (Singles), Family Breakthrough service for healing, deliverance, breaking of family ancient barriers, supernatural conception and delivery which holds at Kingdom Life Gospel Outreach Ministry, every Wednesday by 10:00 am and a co-host, alongside her husband Bishop Victor to the annual Seize the Moment Program targeted to encourage Christian singles to interact with one another and locate their spouses. 
+                                             
+                                            Pastor Esther, the author of a bestselling book Solution by Revelation, is blessed with seven wonderful children. 
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

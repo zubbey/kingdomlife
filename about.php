@@ -19,21 +19,29 @@ require("./components/menu.php");
                 <div class="col-12 col-lg-8 order-2 order-lg-1">
                     <div class="welcome-content">
                         <?php
-                        $sql = "SELECT * FROM pageContents WHERE id = 1 LIMIT 1";
-                        $result = mysqli_query($conn, $sql);
-                        while ($contentRow = mysqli_fetch_assoc($result)){
-                            $heading = $contentRow['heading'];
-                            $heading = str_replace("'","''",$heading);
-                            $body = mysqli_real_escape_string($conn, stripslashes(nl2br($contentRow['body'])));
-                        }
+//                        $sql = "SELECT * FROM pageContents WHERE id = 1 LIMIT 1";
+//                        $result = mysqli_query($conn, $sql);
+//                        while ($contentRow = mysqli_fetch_assoc($result)){
+//                            $heading = $contentRow['heading'];
+//                            $heading = str_replace("'","''",$heading);
+//                            $body = mysqli_real_escape_string($conn, stripslashes(nl2br($contentRow['body'])));
+//                        }
                         ?>
 
                         <header class="entry-header">
-                            <h2 class="entry-title"><?php echo $heading;?></h2>
+                            <h2 class="entry-title">Welcome to Kingdom Life Gospel Outreach Ministries</h2>
                         </header>
 
                         <div class="entry-content mt-5">
-                            <p><?php echo $body;?></p>
+                            <p>
+                                Kingdom Life Gospel Outreach Ministries is a dynamic commission through which God has reached and transformed the destinies of people in Nigeria, Africa and beyond since it was birthed in November 1994.  Our Headquarter Church, Jesus Cathedral, has a beautiful and inviting auditorium that sits over 4000 adults.
+                            </p>
+                            <p>
+                                It also has a Children’s Church and a Teens/Youth Center to ensure that the spiritual needs of your entire family are met.  Presided over by the anointed and dynamic Apostle of Destiny and God’s Battle Axe, Bishop Victor Uzosike, Jesus Cathedral is also supervises branches of the Church in major cities of Nigeria, Europe and the United States of America.  Kingdom Life Gospel Outreach Ministries is giving light to our generation with the message of salvation, healing and deliverance with the mandate of spreading the gospel all over the world through crusades, revivals and outreaches (Matthew 24:14, Mark 1:15). 
+                            </p>
+                            <p>
+                                This message is woven into the four pillars of the church. These pillars, which constitute our core mandate are: Discovering of Destiny, Recovering of Destiny, Fulfillment of Destiny, and Leaving a Legacy on earth (Daniel 7:27).
+                            </p>
                         </div>
 
                     </div>
