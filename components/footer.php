@@ -67,12 +67,12 @@
                         </ul>
                     </div><!-- .foot-contact -->
 
-                    <div class="subscribe-form">
-                        <form class="d-flex flex-wrap align-items-center">
-                            <input type="email" placeholder="Your email">
-                            <input type="submit" value="send">
-                        </form><!-- .flex -->
-                    </div><!-- .search-widget -->
+<!--                    <div class="subscribe-form">-->
+<!--                        <form class="d-flex flex-wrap align-items-center">-->
+<!--                            <input type="email" placeholder="Your email">-->
+<!--                            <input type="submit" value="send">-->
+<!--                        </form>-->
+<!--                    </div>-->
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
@@ -106,7 +106,7 @@
 <script type='text/javascript' src='js/custom.js'></script>
 <script>
     $(document).ready(function() {
-        var showChar = 150;
+        var showChar = 350;
         var ellipsestext = "...";
         var moretext = "Read More";
         var lesstext = "Show less";

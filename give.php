@@ -292,10 +292,10 @@ if (isset($_GET['payment']) && $_GET['payment'] === 'true'){
     </div><!-- .container -->
 </div><!-- .page-header -->
 
-    <div class="col-md-4 mx-auto text-center my-5">
-        <h6 class="font-weight-bold">KINGDOM LIFE GOSPEL OUTREACH MINISTRIES</h6>
-        <h6>ACCESS BANK: <span class="highlight-color">0041709140</span></h6>
-        <h6>FIRST BANK: <span class="highlight-color">2005297612</span></h6>
+    <div class="col-md-8 mx-auto text-center my-5">
+        <h2 class="font-weight-bold">KINGDOM LIFE GOSPEL OUTREACH MINISTRIES</h2>
+        <h3>ACCESS BANK: <span class="highlight-color">0041709140</span></h3>
+        <h3>FIRST BANK: <span class="highlight-color">2005297612</span></h3>
     </div>
 
     <section class="ftco-section contact-section ftco-degree-bg my-lg-5">
@@ -343,7 +343,7 @@ if (isset($_GET['payment']) && $_GET['payment'] === 'true'){
                             <i class="fas fa-pepper-hot"></i>
                         </div>
                         <div class="card-body white">
-                            <p class="text-muted">Help to see the world in a better shape</p>
+                            <p class="text-muted"></p>
                         </div>
                     </div>
                 </div>

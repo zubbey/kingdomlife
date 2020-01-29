@@ -49,9 +49,10 @@ require("./components/menu.php");
                             </li>
                         </ul>
                         <ul class="contact-social d-flex flex-wrap align-items-center">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://facebook.com/klgoministries" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/klgoministries" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://instagram.com/klgoministries" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UC39-qgyOK0Fxj21jW-IFX9Q" target="_blank"><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div><!-- .col -->
@@ -85,9 +86,10 @@ require("./components/menu.php");
 
                 </div><!-- .col -->
 
-                <div class="col-12">
+                <div id="get_direction" class="col-12">
+                    <h4>Get Direction</h4>
                     <div class="contact-gmap my-lg-5">
-                        <div id="googleMap"></div>
+                        <div id="googleMap" style="width:100%;height:400px;"></div>
                     </div>
                 </div>
             </div><!-- .row -->
@@ -96,8 +98,16 @@ require("./components/menu.php");
 <?php
 require("./components/footer.php");
 ?>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key={google_key}&callback=googleMap" type="text/javascript"></script>
 <script>
     // APIKEYS
-    const google_key = config.GOOGLE_KEY;
+    const google_key = config.KINGDOMLIFE_KEY;
+    function myMap() {
+        var mapProp= {
+            center:new google.maps.LatLng(4.832502,6.990813),
+            zoom:5,
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key={google_key}&callback=myMap"></script>

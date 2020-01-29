@@ -38,7 +38,7 @@
             </div>
 
             <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-                <div onclick="location.assign('store')" class="icon-box">
+                <div onclick="window.open('store', '_blank')" class="icon-box">
                     <figure class="d-flex justify-content-center">
                         <img src="images/ebook.png" alt="" height="100px">
                         <img src="images/ebook-white.png" alt="" height="100px">
@@ -49,10 +49,11 @@
                     </header>
 
                     <div class="entry-content">
-                        <p>“…Daniel understood by the books”
-                            Daniel 9:2
+                        <p>“…Daniel understood by the books” <span>Daniel 9:2</span></p>
+                            <p>
                             Enhance your knowledge of God’s word today.
-                            Visit our E-store for materials to reinforce your work in the Lord’s vineyard.</p>
+                            Visit our E-store for materials to reinforce your work in the Lord’s vineyard.
+                            </p>
                     </div>
                 </div>
             </div>
@@ -100,7 +101,7 @@
                 <div class="section-heading">
                     <h1 class="entry-title">Service time</h1>
                     <div class="entry-footer my-5">
-                        <a href="contact?direction=true" class="btn orange-border mr-2"><i class="icon_pin"></i> Get Direction</a>
+                        <a href="contact#get_direction" class="btn orange-border mr-2"><i class="icon_pin"></i> Get Direction</a>
                     </div><!-- .entry-footer -->
                 </div><!-- .section-heading -->
             </div><!-- .col -->
@@ -109,35 +110,36 @@
                 <div class="milestones d-flex flex-wrap justify-content-between">
                     <div class="col-12 col-lg-4 mt-5 mt-lg-0">
                         <div class="counter-box">
+                            <h2 class="entry-title">SUNDAY</h2><!-- entry-title -->
                             <div class="services">
                                 <h5 class="">First service</h5>
                                 <h1 class="counter-k highlight-color">(<span class="start-counter" data-to="7" data-speed="2000"></span>:30am - 9:30am)</h1>
                                 <h5 class="">Second service</h5>
                                 <h1 class="counter-k highlight-color">(<span class="start-counter" data-to="9" data-speed="2000"></span>:30am - 11:30am)</h1>
                             </div>
-                            <h2 class="entry-title">SUNDAYS</h2><!-- entry-title -->
                         </div><!-- counter-box -->
                     </div><!-- .col -->
 
                     <div class="col-12 col-lg-4 mt-5 mt-lg-0">
                         <div class="counter-box">
+                            <h2 class="entry-title">TUESDAY</h2><!-- entry-title -->
                             <div class="services">
                                 <h5>Bible Study</h5>
                                 <h1 class="counter-k highlight-color">(<span class="start-counter" data-to="5" data-speed="2000"></span>:30pm - 7:00pm)</h1>
                             </div>
-                            <h2 class="entry-title">TUESDAY</h2><!-- entry-title -->
                         </div><!-- counter-box -->
                     </div><!-- .col -->
 
                     <div class="col-12 col-lg-4 mt-5 mt-lg-0">
                         <div class="counter-box">
+                            <h2 class="entry-title">FRIDAY</h2><!-- entry-title -->
                             <div class="services">
                                 <h5>Family Victory Prayers</h5>
-                                <h1 class="counter-k highlight-color">(<span class="start-counter" data-to="7" data-speed="2000"></span>:30pm - 6:30pm)</h1>
+                                <h1 class="counter-k highlight-color">(<span class="start-counter" data-to="5" data-speed="2000"></span>:30pm - 7:00pm)</h1>
                             </div>
-                            <h2 class="entry-title">FRIDAY</h2><!-- entry-title -->
                         </div><!-- counter-box -->
                     </div><!-- .col -->
+
                 </div><!-- .milestones -->
             </div><!-- .col -->
         </div><!-- .row -->
@@ -334,9 +336,9 @@
                 <div class="entry-footer">
                     <?php
                         if (isset($_SESSION['user_session'])){
-                            echo '<a href="users/profile?mystory=true" class="btn gradient-bg mr-2">Share your Testimony</a>';
+                            echo '<a href="testimonies" class="btn orange-border mr-2">View All Testimonies</a> <a href="users/profile?mystory=true" class="btn gradient-bg mr-2">Share your Testimony</a>';
                         } else{
-                            echo '<a href="?register=true" class="btn gradient-bg mr-2">Share your Testimony</a>';
+                            echo '<a href="testimonies" class="btn orange-border mr-2">View All Testimonies</a> <a href="?register=true" class="btn gradient-bg mr-2">Share your Testimony</a>';
                         }
                     ?>
                 </div><!-- .entry-footer -->

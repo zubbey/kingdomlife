@@ -103,11 +103,13 @@ require("./components/footer.php");
                 part : 'snippet',
                 channelId : 'UCUpOJeFIjT8Xx8Aux-OcT8w', // You can get one from Advanced settings on YouTube
                 type : 'video',
-                maxResults : 50,
+                maxResults : 10,
                 key: google_key},
             function(data) {
                 $.each( data.items, function( i, item ) {
-                    $('#results').append('<div class="col-6 col-md-4"><iframe width="100%" height="200" src="https://www.youtube.com/embed/{item.id.videoId}" frameborder="0" allowfullscreen><div class="py-lg-4">'+ item.snippet.title +'</div></iframe></div>');
+                    let video_id = item.id.videoId;
+                    // $('#results').append('https://www.youtube.com/embed/'+item.id.videoId);
+                    $('#results').append('<div class="col-6 col-md-4"><iframe width="100%" height="200" src="https://www.youtube.com/embed/'+ video_id +'" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>');
                 })
             }
         );
