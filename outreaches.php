@@ -30,7 +30,7 @@ require("./components/menu.php");
                         echo "<img onclick=\"location.assign('?imageid=".$row["id"]."')\" class='card-img-top outreaches' src='".$row["image"]."' alt='Card image cap'>";
                         echo "<div class='card-body'>";
                         echo "<h2 class='card-title font-weight-bold'>".sanitize($row["heading"])."</h2>";
-                        echo "<p class='card-text comment more'>".sanitize($row["body"])."</p>";
+                        echo "<p class='card-text comment more'>".str_replace("'","''",$row["body"])."</p>";
                         echo "</div>";
                         echo "</div>";
                     }

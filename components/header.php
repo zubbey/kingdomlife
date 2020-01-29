@@ -21,10 +21,10 @@
 <!--                                <h1>Welcome to</h1>-->
 <!--                                <h4>Kingdom Life Gospel Outreach Ministries!</h4>-->
 <!--                            </header>-->
-                            <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
+                            <footer class="entry-footer d-flex flex-wrap align-items-center mt-5 get-involved">
                             <?php
                                 if (!isset($_SESSION['user_session'])){
-                                    echo '<a href="?register=true" class="btn gradient-bg mr-2">Get Involved</a>';
+                                    echo '<a href="?register=true" class="btn gradient-bg mr-2 get-involved">Get Involved</a>';
                                 }
                             ?>
 <!--                                <a href="about" class="btn orange-border">Read More</a>-->
@@ -46,10 +46,10 @@
 <!--                                <h1>Discover your Destiny</h1>-->
 <!--                                <h4>as you worship with us today</h4>-->
 <!--                            </header>-->
-                            <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
+                            <footer class="entry-footer d-flex flex-wrap align-items-center mt-5 get-involved">
                                 <?php
                                 if (!isset($_SESSION['user_session'])){
-                                    echo '<a href="?register=true" class="btn gradient-bg mr-2">Get Involved</a>';
+                                    echo '<a href="?register=true" class="btn gradient-bg mr-2 get-involved">Get Involved</a>';
                                 }
                                 ?>
 <!--                                <a href="about" class="btn orange-border">Read More</a>-->
@@ -71,10 +71,10 @@
 <!--                                <h1>Join us,</h1>-->
 <!--                                <h4>Jesus lords you</h4>-->
 <!--                            </header>-->
-                            <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
+                            <footer class="entry-footer d-flex flex-wrap align-items-center mt-5 get-involved">
                                 <?php
                                 if (!isset($_SESSION['user_session'])){
-                                    echo '<a href="?register=true" class="btn gradient-bg mr-2">Get Involved</a>';
+                                    echo '<a href="?register=true" class="btn gradient-bg mr-2 get-involved">Get Involved</a>';
                                 }
                                 ?>
 <!--                                <a href="about" class="btn orange-border">Read More</a>-->

@@ -25,11 +25,11 @@ require("./components/menu.php");
                     while ($contentRow = mysqli_fetch_assoc($result)) {
                         echo '
                             <div class="section-heading">
-                                <h4 class="entry-title text-capitalize">'.sanitize($contentRow['heading']).'</h4>
+                                <h4 class="entry-title text-capitalize">'. str_replace("'","''",$contentRow["heading"]) .'</h4>
                             </div>
         
                             <div class="entry-content">
-                                <p class="comment more">'.nl2br(sanitize($contentRow['body'])).'</p>
+                                <p class="comment more">'. str_replace("'","''",nl2br($contentRow['body'])).'</p>
                             </div>
                         ';
                     }

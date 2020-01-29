@@ -214,6 +214,7 @@ if(window.matchMedia('(min-width:1030px) and (max-width: 1366px)').matches)
     $('.swiper-slide.hero-content-wrap img').css('height','400px');
     $('.hero-slider').css('max-height','400px');
     $('.position-absolute.w-100').css('margin-top','33rem');
+    $('.get-involved').addClass('d-none');
     // $('div#testimony-content-box').addClass('col-12');
     // $('.flickity-viewport').css('height','600px !important');
 }
@@ -309,14 +310,8 @@ jQuery(window).load(function() {
     jQuery("#preloader").delay(1000).fadeOut("slow");
 });
 // LOADING WHEN BTN CLICKS
-var $loading = $('.spinner').hide();
-$(document)
-    .ajaxStart(function () {
-        $loading.show();
-    })
-    .ajaxStop(function () {
-        $loading.hide();
-    });// GOOGLE MAP
+
+// GOOGLE MAP
 function myMap() {
     var mapProp= {
         center:new google.maps.LatLng(4.832504, -6.990813),

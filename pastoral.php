@@ -19,7 +19,6 @@ require("./components/menu.php");
                     $sql = "SELECT * FROM pastoral";
                     $result = mysqli_query($conn, $sql);
                     while ($row = mysqli_fetch_assoc($result)) {
-                        $body = sanitize($row['body']);
                         echo '
                             <div class="col-12 col-md-4">
                                 <div class="cause-wrap">
@@ -29,11 +28,11 @@ require("./components/menu.php");
         
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title text-dark m-0">'.sanitize($row['heading']).'</h3>
+                                            <h3 class="entry-title text-dark m-0">'. str_replace("'","''",$row["heading"]) .'</h3>
                                         </header><!-- .entry-header -->
         
                                         <div class="entry-content text-dark">
-                                            <p class="comment more">'. sanitize($body) .'</p>
+                                            <p class="comment more">'. str_replace("'","''",$row["body"]) .'</p>
                                         </div>
                                     </div>
                                 </div>

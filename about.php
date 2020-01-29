@@ -22,17 +22,20 @@ require("./components/menu.php");
                         $sql = "SELECT * FROM pageContents WHERE id = 1 LIMIT 1";
                         $result = mysqli_query($conn, $sql);
                         while ($contentRow = mysqli_fetch_assoc($result)){
-                           echo '
-                            <header class="entry-header">
-                                <h2 class="entry-title">'. $contentRow['heading'] .'</h2>
-                            </header>
-    
-                            <div class="entry-content mt-5">
-                                <p>'. nl2br(sanitize($contentRow['body'])) .'</p>
-                            </div>
-                           ';
+                            $heading = $contentRow['heading'];
+                            $heading = str_replace("'","''",$heading);
+                            $body = sanitize($contentRow['body']);
+                            $body = str_replace("'","''",$body);
                         }
                         ?>
+
+                        <header class="entry-header">
+                            <h2 class="entry-title"><?php echo $heading;?></h2>
+                        </header>
+
+                        <div class="entry-content mt-5">
+                            <p><?php echo nl2br($body);?></p>
+                        </div>
 
                     </div>
                 </div>
