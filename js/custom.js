@@ -352,6 +352,7 @@ let bishop = document.URL.indexOf("/bishop") >= 0;
 let pastoral = document.URL.indexOf("/pastoral") >= 0;
 let outreaches = document.URL.indexOf("/outreaches") >= 0;
 let profile = document.URL.indexOf("/profile") >= 0;
+let live = document.URL.indexOf("/live") >= 0;
 
 if(home){
     title_el.innerHTML = "Home | kingdomlifegospel.org";
@@ -428,4 +429,10 @@ if(outreaches){
 if(profile){
     account_nav.classList.add("current-menu-item");
     loading.classList.remove("d-none");
+}
+if(live){
+    title_el.innerHTML = "Live | kingdomlifegospel.org";
+    body.classList.add("live-page");
+    $('.stream-live span a').addClass('p-0');
+    $('.stream-live span a').html('<span><img src="https://media.giphy.com/media/1k4sqw2jZHaOkFvHs0/giphy.gif" height="40"/></span>');
 }

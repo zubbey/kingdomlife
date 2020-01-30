@@ -147,7 +147,7 @@ if (isset($_SESSION['user_session']) && $_SESSION['verified'] < 1){
                             ';
                         }
                         ?>
-                        <li class="stream-live" onclick="comingSoon()"><span><a class="btn btn default"><span>Stream Live</span> <img class="signal" src="./images/signal.svg"/></a></span></li>
+                        <li class="stream-live" ><span><a href="http://live.kingdomlifegospel.org/" class="btn btn default"><span>Stream Live</span> <img class="signal" src="./images/signal.svg"/></a></span></li>
                     </ul>
                 </nav><!-- .site-navigation -->
 

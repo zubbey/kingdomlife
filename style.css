@@ -1383,6 +1383,9 @@ img.mr-4.product {
 .outreaches-page .page-header {
     background: url("https://i.imgur.com/hH7fFS9.jpg") no-repeat center;
 }
+.live-page .page-header {
+    background: url("https://i.imgur.com/8drTlvc.png") no-repeat center;
+}
 
 .about-page .welcome-wrap {
     padding: 96px 0;
