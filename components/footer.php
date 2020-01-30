@@ -4,30 +4,31 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="foot-about">
-                        <h2><a class="foot-logo" href="#"><img class="d-block" src="https://i.imgur.com/eGgxGWK.png" height="40" alt="Kingdomlife Gospel"></a></h2>
+                        <h2><a class="foot-logo" href="/"><img class="d-block" src="https://i.imgur.com/eGgxGWK.png" height="40" alt="Kingdomlife Gospel"></a></h2>
 
                         <p>Kingdom Life Gospel Outreach Ministries is a dynamic commission through which God has reached and transformed the destinies of people in Nigeria, Africa and beyond since it was birthed in November 1994.</p>
 
                         <ul class="d-flex flex-wrap align-items-center">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://facebook.com/klgoministries" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/klgoministries" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://instagram.com/klgoministries" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UC39-qgyOK0Fxj21jW-IFX9Q" target="_blank"><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div><!-- .foot-about -->
                 </div><!-- .col -->
 
                 <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
-                    <h2>Hot Links</h2>
+                    <h2>Quick Access</h2>
 
                     <ul>
-                        <li><a href="#">About Kingdomlife</a></li>
-                        <li><a href="#">Download Bulletins</a></li>
-                        <li><a href="#">Prayer Request</a></li>
-                        <li><a href="#">Testimonies</a></li>
-                        <li><a href="#">Outreaches</a></li>
-                        <li><a href="#">Give</a></li>
-                        <li><a href="#">E Store</a></li>
-                        <li><a href="#">Events</a></li>
+                        <li><a href="about">About Kingdomlife</a></li>
+                        <li><a href="bulletins">Download Bulletins</a></li>
+                        <li><a href="prayer-request">Prayer Request</a></li>
+                        <li><a href="testimonies">Testimonies</a></li>
+                        <li><a href="outreaches">Outreaches</a></li>
+                        <li><a href="give">Give</a></li>
+                        <li><a href="store" target="_blank">E Store</a></li>
+                        <li><a href="events">Events</a></li>
                     </ul>
                 </div><!-- .col -->
 

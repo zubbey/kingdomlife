@@ -66,10 +66,8 @@ require("./components/menu.php");
                                     $descriptionvalue= $row['description'];
                                     echo "<li id='track' class='py-3'>";
                                     echo "<a href='".$files_show."'>".$descriptionvalue."</a>
-                                <span class='text-black px-3 float-right' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' data-toggle='tooltip' data-placement='left' title='Click to Download'>
-                                    <a href='".$files_show.".mp3' download><i class='fas fa-arrow-down'></i> Download</a>
-                                </span>
-                                ";
+                                    <span class='float-right'><a href='".$files_show.".mp3' download><i class='fas fa-arrow-down'></i> Download</a></span>                              
+                                    ";
                                     echo "</li>";
                                 }
                                 echo "</ol>";

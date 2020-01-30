@@ -29,7 +29,7 @@
 <script type='text/javascript' src='../js/custom.js'></script>
 <script>
     $(document).ready(function() {
-        var showChar = 150;
+        var showChar = 350;
         var ellipsestext = "...";
         var moretext = "Read More";
         var lesstext = "Show less";

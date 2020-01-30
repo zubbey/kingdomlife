@@ -86,10 +86,11 @@ require("./components/menu.php");
 
                 </div><!-- .col -->
 
-                <div id="get_direction" class="col-12">
+                <div id="get_direction" class="my-5 col-12">
                     <h4>Get Direction</h4>
                     <div class="contact-gmap my-lg-5">
-                        <div id="googleMap" style="width:100%;height:400px;"></div>
+<!--                        <div id="googleMap" style="width:100%;height:400px;"></div>-->
+                        <div style="width: 100%"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=4.832502,6.990813&amp;q=Jesus%20Cathedral%20No%206%20Akwaka%20Avenue%2C%20Off%20Market%20Junction%2C%20Orazi%20Road%2C%20Mile%204%2C%20Rumueme%2C%20Port%20Harcourt.+(Kingdom%20Life%20Gospel%20Outreach%20Ministries%20Jesus%20Cathedral)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/coordinates.html">latitude longitude finder</a></iframe></div><br />
                     </div>
                 </div>
             </div><!-- .row -->
