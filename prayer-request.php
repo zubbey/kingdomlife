@@ -38,7 +38,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'prayerempty'){
                 <div class="col-12 col-lg-7">
                     <?php
                         if (isset($_SESSION['user_session'])){
-                            $sql = "SELECT * FROM prayerRequest WHERE userid='$id' order by id DESC";
+                            $sql = "SELECT * FROM `prayerRequest` WHERE `userid` = '$id' order by DESC ";
                             $prayercheckResult = mysqli_query($conn, $sql);
                             $prayerRow = mysqli_fetch_assoc($prayercheckResult);
                             if ($prayerRow > 0){

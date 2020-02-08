@@ -236,29 +236,29 @@
                 <div class="swiper-container causes-slider">
                     <div class="swiper-wrapper">
                         <?php
+                        $Query = "SELECT * FROM `outReaches`";
+                        if ($result = mysqli_query($conn, $Query)) {
+                            while ($row = mysqli_fetch_assoc($result)){
+                                echo "<div class='swiper-slide'>";
+                                echo "<div class='cause-wrap'>";
+                                echo "<figure class='m-0'>";
+                                echo "<img onclick=\"location.assign('outreaches?imageid=".$row["id"]."')\" src='".$row["image"]."' alt='".$row["heading"]."'>";
+                                echo "<div class='figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100'>";
+                                echo "<a href='outreaches?imageid=".$row["id"]."' class='btn orange-border mr-2'>Read more</a>";
+                                echo "</div>";
+                                echo "</figure>";
+                                echo "<div class='cause-content-wrap'>";
+                                echo "<header class='entry-header d-flex flex-wrap align-items-center'>";
+                                echo "<h3 class='entry-title w-100 m-0'><a href='#'>".$row["heading"]."</a></h3>";
+                                echo "</header>";
+                                echo "<div class='entry-content'>";
+                                echo "<p class='m-0 comment more'>".sanitize($row["body"])."</p>";
+                                echo "</div>";
 
-                        $Query = "SELECT * FROM outReaches order by id DESC;";
-                        $result = mysqli_query($conn, $Query);
-                        while ($row = mysqli_fetch_assoc($result)){
-                            echo "<div class='swiper-slide'>";
-                            echo "<div class='cause-wrap'>";
-                            echo "<figure class='m-0'>";
-                            echo "<img onclick=\"location.assign('outreaches?imageid=".$row["id"]."')\" src='".$row["image"]."' alt='".$row["heading"]."'>";
-                            echo "<div class='figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100'>";
-                            echo "<a href='outreaches?imageid=".$row["id"]."' class='btn orange-border mr-2'>Read more</a>";
-                            echo "</div>";
-                            echo "</figure>";
-                            echo "<div class='cause-content-wrap'>";
-                            echo "<header class='entry-header d-flex flex-wrap align-items-center'>";
-                            echo "<h3 class='entry-title w-100 m-0'><a href='#'>".$row["heading"]."</a></h3>";
-                            echo "</header>";
-                            echo "<div class='entry-content'>";
-                            echo "<p class='m-0 comment more'>".sanitize($row["body"])."</p>";
-                            echo "</div>";
-
-                            echo "</div>";
-                            echo "</div>";
-                            echo "</div>";//end of Swiper
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</div>";//end of Swiper
+                            }
                         }
                         ?>
                     </div>

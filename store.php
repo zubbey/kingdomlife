@@ -134,7 +134,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'emptyinput'){
                                 <div class="row">
                                     <?php
 
-                                    $Query = "SELECT * FROM ebooks";
+                                    $Query = "SELECT * FROM `ebooks`";
                                     if ($result = mysqli_query($conn, $Query)) {
 
                                         // fetch associative array

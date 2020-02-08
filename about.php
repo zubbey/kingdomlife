@@ -56,10 +56,10 @@ require("./components/menu.php");
                                 <div class="col">
                                     <ul class="list-unstyled mb-0">
                                         <?php
-                                        $sql = "SELECT * FROM outReaches";
+                                        $sql = "SELECT * FROM `outReaches`";
 
-                                        if ($result = $conn->query($sql)) {
-                                            while ($row = $result->fetch_assoc()) {
+                                        if ($result = mysqli_query($conn, $sql)) {
+                                            while ($row = mysqli_fetch_assoc($result)) {
                                                 echo "<li><a href='outreaches.php#".$row["id"]."' class='list-group-item'>" . sanitize($row['heading']) . "</a></li>";
                                             }
                                         }

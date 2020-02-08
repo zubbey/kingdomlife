@@ -53,14 +53,14 @@ if (isset($_GET['error']) && $_GET['error'] === 'postempty'){
             <h4 class="pt-5 pb-3">Share your story</h4>
             <?php
             if (isset($_SESSION['user_session'])){
-                $sql = "SELECT * FROM members LIMIT 1;";
+                $sql = "SELECT * FROM `members` LIMIT 1;";
                 $result = mysqli_query($conn, $sql);
 
                 if (mysqli_num_rows($result) > 0) {
                     if ($user = mysqli_fetch_assoc($result)) {
                         $id = $_SESSION['user_id'];
 
-                        $sqlImg = "SELECT * FROM profileimg WHERE userid='$id' LIMIT 1;";
+                        $sqlImg = "SELECT * FROM `profileimg` WHERE `userid` ='$id' LIMIT 1;";
                         $resultImg = mysqli_query($conn, $sqlImg);
                         while ($imgRow = mysqli_fetch_assoc($resultImg)){
                             if ($imgRow['status'] == 1 ) {

@@ -142,14 +142,14 @@ if (isset($_GET['error']) && $_GET['error'] === 'passwordnotmatch'){
                                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="multipart/form-data">
                                     <?php
 
-                                    $sql = "SELECT * FROM members LIMIT 1;";
+                                    $sql = "SELECT * FROM `members` LIMIT 1;";
                                     $result = mysqli_query($conn, $sql);
 
                                     if (mysqli_num_rows($result) > 0) {
                                         if ($user = mysqli_fetch_assoc($result)) {
                                             $id = $_SESSION['user_id'];
 
-                                            $sqlImg = "SELECT * FROM profileimg WHERE userid='$id' LIMIT 1;";
+                                            $sqlImg = "SELECT * FROM `profileimg` WHERE `userid` ='$id' LIMIT 1;";
                                             $resultImg = mysqli_query($conn, $sqlImg);
                                             while ($imgRow = mysqli_fetch_assoc($resultImg)){
                                                 if ($imgRow['status'] == 1 ) {
@@ -230,7 +230,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'passwordnotmatch'){
                                 <div class="col" id="mystory-tab">
                                     <h4 class="pt-4 pb-3">My Stories</h4>
                                     <?php
-                                    $sql = "SELECT * FROM testimonies WHERE userid='$id' order by id DESC;";
+                                    $sql = "SELECT * FROM `testimonies` WHERE `userid` ='$id' order by `id` DESC;";
                                     $testiResult = mysqli_query($conn, $sql);
                                     while ($row = mysqli_fetch_assoc($testiResult)){
                                         if ($row['status'] > 0){
@@ -271,7 +271,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'passwordnotmatch'){
                                     <h4 class="pt-4 pb-3">My Prayer Request</h4>
                                     <div class="col-12">
                                         <?php
-                                        $sql = "SELECT * FROM prayerRequest WHERE userid='$id' order by id DESC;";
+                                        $sql = "SELECT * FROM `prayerRequest` WHERE `userid` ='$id' order by `id` DESC;";
                                         $prayercheckResult = mysqli_query($conn, $sql);
                                         $prayerRow = mysqli_fetch_assoc($prayercheckResult);
                                         if ($prayerRow > 0){
@@ -324,7 +324,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'passwordnotmatch'){
                                 <div class="col-12">
                                     <h4 class="pt-4 pb-3">My Prayers</h4>
                                     <?php
-                                    $sql = "SELECT * FROM prayerRequest WHERE userid='$id' order by id DESC;";
+                                    $sql = "SELECT * FROM `prayerRequest` WHERE `userid` ='$id' order by `id` DESC;";
                                     $prayerResult = mysqli_query($conn, $sql);
                                     while ($row = mysqli_fetch_assoc($prayerResult)) {
                                         $prayer = sanitize($row['prayer']);
@@ -372,7 +372,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'passwordnotmatch'){
                                 <tbody>
                                 <?php
 //                                SELECT domain FROM mytable WHERE domain LIKE '%domain.com%';
-                                $sql = "SELECT productKey, productValue, ordernumber, status, order_date FROM orders WHERE productKey LIKE 'qty%' OR productKey LIKE 'product_amount%' OR productKey LIKE 'product_name%' AND userid='$id' order by id DESC;";
+                                $sql = "SELECT `productKey`, `productValue`, `ordernumber`, `status`, `order_date` FROM `orders` WHERE `productKey` LIKE 'qty%' OR `productKey` LIKE 'product_amount%' OR `productKey` LIKE 'product_name%' AND `userid` ='$id' order by `id` DESC;";
                                 $orderResult = mysqli_query($conn, $sql);
                                 while ($row = mysqli_fetch_assoc($orderResult)) {
                                     if ($row['status'] > 0) {
@@ -401,7 +401,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'passwordnotmatch'){
                         <div class="container">
                             <div class="row">
                                     <?php
-                                        $sql = "SELECT * FROM givePayment WHERE userid='$id' order by id DESC;";
+                                        $sql = "SELECT * FROM `givePayment` WHERE `userid` ='$id' order by `id` DESC;";
                                         $giveResult = mysqli_query($conn, $sql);
                                         while ($row = mysqli_fetch_assoc($giveResult)) {
                                             echo '
