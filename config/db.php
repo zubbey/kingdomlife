@@ -23,7 +23,7 @@ if ($WEBSITE_ENVIRONMENT =="Development") {
     $password 	= "KLGospel@2019";
     $database 	= "kingdoml_database";
     define("APP_ENVIRONMENT", "Production");
-    define("APP_BASE_URL", "http://kingdomlifegospel.org");
+    define("APP_BASE_URL", "https://kingdomlifegospel.org");
     #error_reporting(0); // turn OFF showing errors
     error_reporting(E_ALL ^ E_NOTICE); // turn ON showing errors
 }
