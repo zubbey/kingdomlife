@@ -957,18 +957,9 @@ function resetpasswordMail($email, $token){
 }
 
 function sendcontactadminMail($contactMsg, $contactEmail){
-    $mail = new PHPMailer(true);
+    $to = "kingdoml@kingdomlifegospel.org, no-reply@kingdomlifegospel.org";
+    $subject = "YOU HAVE MAIL FROM ".$contactEmail;
 
-    try {
-        //Server settings
-//        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-        $mail->isSMTP();                                            // Send using SMTP
-        $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $mail->Username   = 'media.kingdomlife@gmail.com';                     // SMTP username
-        $mail->Password   = 'KLGospel@2019';                               // SMTP password
-        $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-        $mail->Port       = 465;// TCP port to connect to
 
 
         //Recipients
@@ -1380,18 +1371,14 @@ function sendcontactadminMail($contactMsg, $contactEmail){
             
             </html>
         ';
-        $mail->setFrom('no=reply@kingdomlifegospel.org');
 
-        // Content
-        $mail->isHTML(true);                                  // Set email format to HTML
+    // Always set content-type when sending HTML email
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-        $mail->Subject = 'YOU HAVE MAIL FROM '.$contactEmail.' ';
-        $mail->Body    = $message;
-        $mail->addAddress('kingdomlifegospelchurch@gmail.com');     // Add a recipient
-        $mail->addCC('media.kingdomlife@gmail.com'); //send to central admin mail
-        $mail->send();
+// More headers
+    $headers .= 'From: <'.$contactEmail.'>' . "\r\n";
+    $headers .= 'Cc: com.zubbey@hotmail.com' . "\r\n";
 
-    } catch (Exception $e) {
-//        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    }
+    mail($to,$subject,$message,$headers);
 }
