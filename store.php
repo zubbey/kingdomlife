@@ -60,6 +60,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'emptyinput'){
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+
                     <form class="contact-form m-0" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="GET">
                         <div class="row">
                             <div id="cart-form" class="col-sm-8">
@@ -76,7 +77,13 @@ if (isset($_GET['error']) && $_GET['error'] === 'emptyinput'){
                                     </div>
                                 </div>
                                 <label for="Email">Email Address: </label>
-                                <input type="email" id="Email" value="<?php echo $_SESSION['email']; ?>" disabled>
+                                <?php
+                                if (isset($_SESSION['user_session'])){
+                                    echo '<input type="email" id="Email" value="'.$_SESSION['email'].'" disabled>';
+                                } else{
+                                    echo '<input type="email" id="Email" value="'.$_GET['email'].'">';
+                                }
+                                ?>
                                 <input type="hidden" name="email" value="<?php echo $_SESSION['email']; ?>">
                                 <label for="Phone">Phone Number: </label>
                                 <?php echo $invalid_phone_Msg;?>
@@ -128,11 +135,10 @@ if (isset($_GET['error']) && $_GET['error'] === 'emptyinput'){
                                     <?php
 
                                     $Query = "SELECT * FROM ebooks";
-
-                                    if ($result = $conn->query($Query)) {
+                                    if ($result = mysqli_query($conn, $Query)) {
 
                                         // fetch associative array
-                                        while ($row = $result->fetch_assoc()) {
+                                        while ($row = mysqli_fetch_assoc($result)) {
 
                                             echo "
                                                  <div class='col-sm-6 col-md-4 col-md-3'>
@@ -148,7 +154,6 @@ if (isset($_GET['error']) && $_GET['error'] === 'emptyinput'){
                                                 </div>
                                             ";
                                         }
-                                        $result->free();
                                     }
                                     ?>
                                 </div>
@@ -158,13 +163,16 @@ if (isset($_GET['error']) && $_GET['error'] === 'emptyinput'){
 
                     <div id="cd" class="tab-content">
                        <h3>There's 0 available item here</h3>
+                        <div style="margin-top: 10rem"></div>
                     </div>
 
                     <div id="dvd" class="tab-content">
                         <h3>There's 0 available item here</h3>
+                        <div style="margin-top: 10rem"></div>
                     </div>
                     <div id="audio_books" class="tab-content">
                         <h3>There's 0 available item here</h3>
+                        <div style="margin-top: 10rem"></div>
                     </div>
                 </div>
             </div>

@@ -38,49 +38,49 @@ if (isset($_GET['error']) && $_GET['error'] === 'prayerempty'){
                 <div class="col-12 col-lg-7">
                     <?php
                         if (isset($_SESSION['user_session'])){
-                            $sql = "SELECT * FROM prayerRequest WHERE userid='$id' order by id DESC;";
+                            $sql = "SELECT * FROM prayerRequest WHERE userid='$id' order by id DESC";
                             $prayercheckResult = mysqli_query($conn, $sql);
                             $prayerRow = mysqli_fetch_assoc($prayercheckResult);
                             if ($prayerRow > 0){
                                 echo '
-                                                <form class="contact-form m-0" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) .'" method="POST">
-                                                    <label for="fullname">Enter your full Name: </label>
-                                                     <input type="text" name="fullname" id="fullname" class="form-control '. $invalid_username .'" value="'.$prayerRow['fullname'].'">
-                                                    '. $invalid_username_Msg .'
-                                                    <label for="Email">Email Address: </label>
-                                                    <input type="email" name="email" id="Email" placeholder="Email Address" value="'. $_SESSION['email'] .'">
-                                                    <label for="Phone">Phone Number: </label>
-                                                    <input type="text" id="Phone" name="phone" placeholder="Phone Number" value="'. $_SESSION['phone'] .'">
-                                                    <label for="Country">Country: </label>
-                                                    <input type="text" id="Country" name="country" value="'.$prayerRow['country'].'">
-                                                    <label for="Prayer">Focus Prayer: </label>
-                                                    '. $invalid_post_Msg .'
-                                                    <textarea '. $invalid_post_textarea .' id="Prayer" rows="8" cols="6" name="prayer" placeholder="Prayer Request"></textarea>
-                                                    <span>
-                                                        <input class="btn gradient-bg" type="submit" name="prayer-btn" value="Submit">
-                                                    </span>
-                                                </form>
-                                            ';
+                                    <form class="contact-form m-0" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) .'" method="POST">
+                                        <label for="fullname">Enter your full Name: </label>
+                                         <input type="text" name="fullname" id="fullname" class="form-control '. $invalid_username .'" value="'.$prayerRow['fullname'].'">
+                                        '. $invalid_username_Msg .'
+                                        <label for="Email">Email Address: </label>
+                                        <input type="email" name="email" id="Email" placeholder="Email Address" value="'. $_SESSION['email'] .'">
+                                        <label for="Phone">Phone Number: </label>
+                                        <input type="text" id="Phone" name="phone" placeholder="Phone Number" value="'. $_SESSION['phone'] .'">
+                                        <label for="Country">Country: </label>
+                                        <input type="text" id="Country" name="country" value="'.$prayerRow['country'].'">
+                                        <label for="Prayer">Focus Prayer: </label>
+                                        '. $invalid_post_Msg .'
+                                        <textarea '. $invalid_post_textarea .' id="Prayer" rows="8" cols="6" name="prayer" placeholder="Prayer Request"></textarea>
+                                        <span>
+                                            <input class="btn gradient-bg" type="submit" name="prayer-btn" value="Submit">
+                                        </span>
+                                    </form>
+                                ';
                             } else {
                                 echo '
-                                                <form class="contact-form m-0" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) .'" method="POST">
-                                                    <label for="fullname">Enter your full Name: </label>
-                                                     <input type="text" name="fullname" id="fullname" class="form-control '. $invalid_username .'" placeholder="fullname">
-                                                    '. $invalid_username_Msg .'
-                                                    <label for="Email">Email Address: </label>
-                                                    <input type="email" name="email" id="Email" placeholder="Email Address" value="'. $_SESSION['email'] .'">
-                                                    <label for="Phone">Phone Number: </label>
-                                                    <input type="text" id="Phone" name="phone" placeholder="Phone Number" value="'. $_SESSION['phone'] .'">
-                                                    <label for="Country">Country: </label>
-                                                    <input type="text" id="Country" name="country" placeholder="country">
-                                                    <label for="Prayer">Focus Prayer: </label>
-                                                    '. $invalid_post_Msg .'
-                                                    <textarea '. $invalid_post_textarea .' id="Prayer" rows="8" cols="6" name="prayer" placeholder="Prayer Request"></textarea>
-                                                    <span>
-                                                        <input class="btn gradient-bg" type="submit" name="prayer-btn" value="Submit">
-                                                    </span>
-                                                </form>
-                                            ';
+                                    <form class="contact-form m-0" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) .'" method="POST">
+                                        <label for="fullname">Enter your full Name: </label>
+                                         <input type="text" name="fullname" id="fullname" class="form-control '. $invalid_username .'" placeholder="fullname">
+                                        '. $invalid_username_Msg .'
+                                        <label for="Email">Email Address: </label>
+                                        <input type="email" name="email" id="Email" placeholder="Email Address" value="'. $_SESSION['email'] .'">
+                                        <label for="Phone">Phone Number: </label>
+                                        <input type="text" id="Phone" name="phone" placeholder="Phone Number" value="'. $_SESSION['phone'] .'">
+                                        <label for="Country">Country: </label>
+                                        <input type="text" id="Country" name="country" placeholder="country">
+                                        <label for="Prayer">Focus Prayer: </label>
+                                        '. $invalid_post_Msg .'
+                                        <textarea '. $invalid_post_textarea .' id="Prayer" rows="8" cols="6" name="prayer" placeholder="Prayer Request"></textarea>
+                                        <span>
+                                            <input class="btn gradient-bg" type="submit" name="prayer-btn" value="Submit">
+                                        </span>
+                                    </form>
+                                ';
                             }
                         } else{
                             echo '

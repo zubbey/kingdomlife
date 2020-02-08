@@ -21,10 +21,10 @@ require("./components/menu.php");
 
                         $Query = "SELECT * FROM churchUnits";
 
-                        if ($result = $conn->query($Query)) {
+                        if ($result = mysqli_query($conn, $Query)) {
 
                             /* fetch associative array */
-                            while ($row = $result->fetch_assoc()) {
+                            while ($row = mysqli_fetch_assoc($result)) {
                                 echo "<div class='swiper-slide'>";
                                 echo "<div class='cause-wrap'>";
                                 echo "<figure class='m-0'>";
@@ -42,7 +42,6 @@ require("./components/menu.php");
                                 echo "</div>";
                                 echo "</div>";//end of Swiper
                             }
-                            $result->free();
                         }
                         ?>
                     </div>

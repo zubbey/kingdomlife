@@ -100,18 +100,18 @@ if (isset($_GET['error']) && $_GET['error'] === 'postempty'){
         <?php
         $Query = "SELECT * FROM `testimonies` WHERE `status` = 1";
 
-        if ($result = $conn->query($Query)) {
+        if ($result = mysqli_query($conn, $Query)) {
             /* fetch associative array */
-            while ($row = $result->fetch_assoc()) {
+            while ($row = mysqli_fetch_assoc($result)) {
                 $id = $row['userid'];
                 $UserQuery = "SELECT * FROM `members` WHERE `id` = '$id'";
-                if ($userResult = $conn->query($UserQuery)){
-                    $userRow = $userResult->fetch_assoc();
+                if ($userResult = mysqli_query($conn, $UserQuery)){
+                    $userRow = mysqli_fetch_assoc($userResult);
                     $username = $userRow["username"];
                     $userid = $userRow["id"];
                 }
                 echo '
-                    <div class="testimonial-item col col-4 m-auto">
+                    <div class="testimonial-item col col-4">
                         <div class="testimonial-cont text-center">
                             <div class="entry-footer align-items-center mt-5">
                                 <img src="./images/uploads/profile' . $userid . '.jpg?' . mt_rand() . '" class="rounded-circle" height="100px" alt="'.$username.'">

@@ -20,22 +20,17 @@ require("./components/menu.php");
                 <!-- Blog Post -->
                 <?php
 
-                $Query = "SELECT * FROM outReaches";
-
-                if ($result = $conn->query($Query)) {
-
-                    /* fetch associative array */
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<div id='".$row["id"]."' class='card mb-4'>";
-                        echo "<img onclick=\"location.assign('?imageid=".$row["id"]."')\" class='card-img-top outreaches' src='".$row["image"]."' alt='Card image cap'>";
-                        echo "<div class='card-body'>";
-                        echo "<h2 class='card-title font-weight-bold'>".mysqli_real_escape_string($conn, stripslashes($row['heading']))."</h2>";
-                        echo "<p class='card-text comment more'>".mysqli_real_escape_string($conn, stripslashes($row['body']))."</p>";
-                        echo "</div>";
-                        echo "</div>";
+                $Query = "SELECT * FROM outReaches order by id DESC;";
+                        $result = mysqli_query($conn, $Query);
+                            while ($row = mysqli_fetch_assoc($result)){
+                            echo "<div id='".$row["id"]."' class='card mb-4'>";
+                            echo "<img onclick=\"location.assign('?imageid=".$row["id"]."')\" class='card-img-top outreaches' src='".$row["image"]."' alt='Card image cap'>";
+                            echo "<div class='card-body'>";
+                            echo "<h2 class='card-title font-weight-bold'>".mysqli_real_escape_string($conn, stripslashes($row['heading']))."</h2>";
+                            echo "<p class='card-text comment more'>".mysqli_real_escape_string($conn, stripslashes($row['body']))."</p>";
+                            echo "</div>";
+                            echo "</div>";
                     }
-                    $result->free();
-                }
                 ?>
 
             </div>
@@ -61,10 +56,9 @@ require("./components/menu.php");
                             <div class="col">
                                 <ul class="list-unstyled mb-0">
                                     <?php
-                                    $sql = "SELECT * FROM outReaches";
-
-                                    if ($result = $conn->query($sql)) {
-                                        while ($row = $result->fetch_assoc()) {
+                                    $Query = "SELECT * FROM outReaches order by id DESC";
+                                    if ($result = mysqli_query($conn, $Query)) {
+                                        while ($row = mysqli_fetch_assoc($result)) {
                                             echo "<li><a href='#".$row["id"]."' class='list-group-item'>" . sanitize($row['heading']) . "</a></li>";
                                         }
                                     }

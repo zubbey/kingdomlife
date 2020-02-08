@@ -23,9 +23,9 @@ require("./components/menu.php");
                 </div>
                 <div class="col-12 col-lg-9 order-2 order-lg-2">
                     <?php
-                    $sql = "SELECT * FROM `pageContents` WHERE id = 2 LIMIT 1";
-                    $result = mysqli_query($conn, $sql);
-                    while ($contentRow = mysqli_fetch_assoc($result)) {
+//                    $sql = "SELECT * FROM `pageContents` WHERE id = 2 LIMIT 1";
+//                    $result = mysqli_query($conn, $sql);
+//                    while ($contentRow = mysqli_fetch_assoc($result)) {
                         echo '
                            
                             <div class="entry-content">
@@ -35,7 +35,6 @@ require("./components/menu.php");
                                 <p>He is highly respected as one of the Leaders of the Christian communities in Nigeria. In recognition and appreciation of his numerous contributions to nation building, Bishop Uzosike has received awards from West African Students Union Parliament (WASUP) and National Association of Imo State Students, Award of Excellence by National Association of Niger Delta students as clergy man of the year 2015, in appreciation of his scholarship awards to Niger Delta Youths.</p>
                             </div>
                         ';
-                    }
                     ?>
                 </div>
 
