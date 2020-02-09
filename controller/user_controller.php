@@ -1,7 +1,6 @@
 <?php
 session_start();
 require ('../config/db.php');
-require_once ('../controller/useremailController.php');
 date_default_timezone_set("Africa/Lagos");
 
 // last request was more than 30 minutes ago
@@ -170,12 +169,15 @@ function storePaymentData($referenceCode, $amount, $email, $gaveOption){
         ';
         exit();
     } else{
+        $_SESSION['refCode'] = $referenceCode;
+        $_SESSION['amount'] = $amount;
         $_SESSION['offeringsposted'] = $gaveOption;
     }
 }
 
 //Resend email verification link
 if (isset($_GET['resendmail'])){
+
     $id = $_SESSION['user_id'];
     $userEmail = $_SESSION['email'];
 
@@ -185,7 +187,71 @@ if (isset($_GET['resendmail'])){
         $user = mysqli_fetch_assoc($result);
         $token = $user['token'];
     }
-    sendVerificationEmail($userEmail, $token);
+    $to = $userEmail;
+    $subject = 'VERIFY YOUR MEMBERSHIP ACCOUNT';
+    $from = 'no-reply@kingdomlifegospel.org';
+
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+    // Create email headers
+    $headers .= 'From: '.$from."\r\n".
+        'Reply-To: '.$from."\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    // Compose a simple HTML email message
+    $message = '<html><body>';
+    $message .= '
+                        <table>
+                        <tr>
+                            <!-- logo -->
+                            <td align="left">
+                                <a href="https://kingdomlifegospel.org" style="display: block; border: 0 none !important;"><img width="80" border="0" style="display: block; width: 80px;" src="https://i.imgur.com/GW24SvT.png" alt="" /></a>
+                            </td>
+                        </tr>
+                        </table>
+            ';
+    $message .='<table>';
+    $message .= '
+                        <tr>
+                            <td align="center" class="section-img">
+                                <a href="" style=" display: block; border: 0 none !important;"><img src="https://i.imgur.com/0ae7Kp1.png" style="display: block; width: 590px;" width="590" border="0" alt="" /></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="20" style="font-size: 20px; line-height: 20px;">&nbsp;</td>
+                        </tr>
+            ';
+    $message .= '<tr>
+                            <td align="center">
+                                <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
+                                    <tr>
+                                        <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                            <div style="padding: 10px 0;line-height: 24px">
+                                                Thank you for worshiping with us please verify your email address to continue, God bless you.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>';
+    $message .= '<tr>
+                            <td align="center" style="color: #ffffff; font-size: 14px; line-height: 26px;">
+                                <div style="line-height: 26px;">
+                                    <a href="https://kingdomlifegospel.org/?accountcomfirm=true&token='.$token.'" target="_blank" style="padding: 10px;border-radius: 10px;background: #fb9834;color: #ffffff;text-decoration: none;">CONFIRM ACCOUNT</a>
+                                </div>
+                            </td>
+                        </tr>';
+    $message .='</table>';
+    $message .= '</body></html>';
+
+    // Sending email
+    if(mail($to, $subject, $message, $headers)){
+        header("Location: ?resendmail=true");
+    } else{
+        header("Location: ?error=true");
+    }
 }
 
 //UPDATE ACCOUNT information
@@ -271,12 +337,54 @@ if (isset($_POST['change-email-btn'])) {
 
                 $update = mysqli_query($conn, "UPDATE members SET verified = 0, email = '$email' WHERE id = '$id'");
                 if ($update) {
-                    emailUpdate($email, $token);
+                    $to = $email;
+                    $subject = 'VERIFY YOUR NEW EMAIL ADDRESS';
+                    $from = 'no-reply@kingdomlifegospel.org';
 
-                    $_SESSION['email'] = $email;
-                    $_SESSION['updatedemail'] = "you changed your email address.";
-                    header('location: ?success=emailchanged');
-                    exit();
+                    // To send HTML mail, the Content-type header must be set
+                    $headers  = 'MIME-Version: 1.0' . "\r\n";
+                    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+                    // Create email headers
+                    $headers .= 'From: '.$from."\r\n".
+                        'Reply-To: '.$from."\r\n" .
+                        'X-Mailer: PHP/' . phpversion();
+
+                    // Compose a simple HTML email message
+                    $message = '<html><body>';
+                    $message .= '<tr>
+                            <td align="center">
+                                <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
+                                    <tr>
+                                        <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                            <div style="padding:10px 0; line-height: 24px">
+                                                You current changed your email address please verify to continue, God bless you.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>';
+                    $message .= '<tr>
+                            <td align="center" style="color: #ffffff; font-size: 14px; line-height: 26px;">
+                                <div style="line-height: 26px;">
+                                    <a href="https://kingdomlifegospel.org?accountcomfirm=true&token='.$token.'" target="_blank" style="padding: 10px;border-radius: 10px;background: #fb9834;color: #ffffff;text-decoration: none;">CONFIRM ACCOUNT</a>
+                                </div>
+                            </td>
+                        </tr>';
+                    $message .= '</body></html>';
+
+                    // Sending email
+                    if(mail($to, $subject, $message, $headers)){
+
+                        $_SESSION['email'] = $email;
+                        $_SESSION['updatedemail'] = "you changed your email address.";
+                        header('location: ?success=emailchanged');
+                        exit();
+                    } else{
+                        header("Location: ?error=true");
+                        exit();
+                    }
 
                 }
             } else if (mysqli_num_rows($emailResult) > 0) {
@@ -325,12 +433,54 @@ if (isset($_POST['change-username-btn'])) {
                 $update = mysqli_query($conn, "UPDATE members SET verified = 0, email = '$email' WHERE id = '$id'");
                 if ($update) {
                     $email = $_SESSION['email'];
-                    changedusernameMail($email, $username);
+                    $to = $email;
+                    $subject = 'YOU CHANGED YOUR USERNAME TO '.$username;
+                    $from = 'no-reply@kingdomlifegospel.org';
 
-                    $_SESSION['username'] = $username;
-                    $_SESSION['updatedusername'] = "you changed your username.";
-                    header('location: ?success=usernamechanged');
-                    exit();
+                    // To send HTML mail, the Content-type header must be set
+                    $headers  = 'MIME-Version: 1.0' . "\r\n";
+                    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+                    // Create email headers
+                    $headers .= 'From: '.$from."\r\n".
+                        'Reply-To: '.$from."\r\n" .
+                        'X-Mailer: PHP/' . phpversion();
+
+                    // Compose a simple HTML email message
+                    $message = '<html><body>';
+                    $message .= '<tr>
+                            <td align="center">
+                                <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
+                                    <tr>
+                                        <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                            <div style="padding:10px 0; line-height: 24px">
+                                                You current changed your Username to ( '.$username.' ) if you did not perform this action please contact us quickly, God bless you.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                            <div style="padding:10px 0; line-height: 24px">
+                                                Contact Line: +234 807 299 2247 | +234 807 299 2248 | +234 803 309 6872
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>';
+                    $message .= '</body></html>';
+
+                    // Sending email
+                    if(mail($to, $subject, $message, $headers)){
+
+                        $_SESSION['username'] = $username;
+                        $_SESSION['updatedusername'] = "you changed your username.";
+                        header('location: ?success=usernamechanged');
+                        exit();
+                    } else {
+                        header("Location: ?error=true");
+                        exit();
+                    }
 
                 }
             } else if (mysqli_num_rows($usernameResult) > 0) {

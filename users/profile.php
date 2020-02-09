@@ -5,26 +5,218 @@ require("../components/user_menu.php");
 //SEND EMAIL FOR ACTIVITIES
 if (isset($_SESSION['user_session']) && isset($_SESSION['updatedpassword'])){
     $email = $_SESSION['email'];
-    passwordChangeMail($email);
+    $to = $email;
+    $subject = 'YOU HAVE CHANGED YOUR PASSWORD';
+    $from = 'no-reply@kingdomlifegospel.org';
+
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+    // Create email headers
+    $headers .= 'From: '.$from."\r\n".
+        'Reply-To: '.$from."\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    // Compose a simple HTML email message
+    $message = '<html><body>';
+    $message .= '<tr>
+                    <td align="center">
+                        <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
+                            <tr>
+                                <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                    <div style="padding:10px 0; line-height: 24px">
+                                        You have changed your password, if you did not perform this action please contact us quickly, God bless you.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                    <div style="padding:10px 0; line-height: 24px">
+                                        Contact Line: +234 807 299 2247 | +234 807 299 2248 | +234 803 309 6872
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>';
+    $message .= '</body></html>';
+    mail($to, $subject, $message, $headers);
 }
 if (isset($_SESSION['user_session']) && isset($_SESSION['testimonyposted'])){
     $email = $_SESSION['email'];
-    testimonyMail($email);
+    $to = $email;
+    $subject = 'THANKS FOR SHARING WITH GOD\'S PEOPLE.';
+    $from = 'no-reply@kingdomlifegospel.org';
+
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+    // Create email headers
+    $headers .= 'From: '.$from."\r\n".
+        'Reply-To: '.$from."\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    // Compose a simple HTML email message
+    $message = '<html><body>';
+    $message .= '<tr>
+                    <td align="center">
+                        <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
+                            <tr>
+                                <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                    <div style="padding:10px 0; line-height: 24px">
+                                        Thank you for sharing your testimony with God\'s people, God bless you.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                    <div style="padding:10px 0; line-height: 24px">
+                                        Contact Line: +234 807 299 2247 | +234 807 299 2248 | +234 803 309 6872
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>';
+    $message .= '</body></html>';
+    mail($to, $subject, $message, $headers);
 }
 if (isset($_SESSION['user_session']) && isset($_SESSION['prayerrequestposted'])){
-    $email = $_SESSION['email'];
+//    for admin
+    $admin_email = 'kingdoml@kingdomlifegospel.org';
     $prayer = $_SESSION['prayerrequestposted'];
-    prayerrequestMail($email, $prayer);
+    $username = $_SESSION['username'];
+    $admin_subject = $username.' HAS A NEW PRAYER REQUEST';
+
+    //    User
+    $email = $_SESSION['email'];
+    $to = $email;
+    $subject = 'YOUR PRAYER HAS BEEN RECEIVED!';
+    $from = 'no-reply@kingdomlifegospel.org';
+
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+    // Create email headers
+    $headers .= 'From: '.$from."\r\n".
+        'Reply-To: '.$from."\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    // Compose a simple HTML email message
+    $message = '<html><body>';
+    $message .= '<tr>
+                    <td align="center">
+                        <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
+                            <tr>
+                                <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                    <div style="padding:10px 0; line-height: 24px">
+                                        Your Prayer Request has been received, God bless you.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                    <div style="padding:10px 0; line-height: 24px">
+                                        Contact Line: +234 807 299 2247 | +234 807 299 2248 | +234 803 309 6872
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>';
+    $message .= '</body></html>';
+//    for users
+    mail($to, $subject, $message, $headers);
+
+//    for admin
+    mail($admin_email, $admin_subject, $prayer, $headers);
 }
 if (isset($_SESSION['user_session']) && isset($_SESSION['offeringsposted'])){
     $email = $_SESSION['email'];
     $offering = $_SESSION['offeringsposted'];
-    offeringsMail($email, $offering);
+    $ref = $_SESSION['refCode'];
+    $amount = $_SESSION['amount'];
+    $to = $email;
+    $subject = 'THANKS FOR GIVING '.$offering;
+    $from = 'no-reply@kingdomlifegospel.org';
+
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+    // Create email headers
+    $headers .= 'From: '.$from."\r\n".
+        'Reply-To: '.$from."\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    // Compose a simple HTML email message
+    $message = '<html><body>';
+    $message .= '<tr>
+                    <td align="center">
+                        <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
+                            <tr>
+                                <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                    <div style="padding:10px 0; line-height: 24px">
+                                        You gave '.$amount.' for '.$offering.', God bless you.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                    <div style="padding:10px 0; line-height: 24px">
+                                        Contact Line: +234 807 299 2247 | +234 807 299 2248 | +234 803 309 6872
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>';
+    $message .= '</body></html>';
+    mail($to, $subject, $message, $headers);
 }
 if (isset($_SESSION['user_session']) && isset($_SESSION['ordersposted'])){
     $email = $_SESSION['email'];
     $deliveryAddress = $_SESSION['ordersposted'];
-    orderssMail($email, $deliveryAddress);
+    $to = $email;
+    $subject = 'YOUR ORDER HAS BEEN RECEIVED!';
+    $from = 'no-reply@kingdomlifegospel.org';
+
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+    // Create email headers
+    $headers .= 'From: '.$from."\r\n".
+        'Reply-To: '.$from."\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    // Compose a simple HTML email message
+    $message = '<html><body>';
+    $message .= '<tr>
+                    <td align="center">
+                        <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
+                            <tr>
+                                <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                    <div style="padding:10px 0; line-height: 24px">
+                                        We will deliver to the provided address below. <br> '.$deliveryAddress.' <br> to change this address please contact us, God Bless you.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                    <div style="padding:10px 0; line-height: 24px">
+                                        Contact Line: +234 807 299 2247 | +234 807 299 2248 | +234 803 309 6872
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>';
+    $message .= '</body></html>';
+    mail($to, $subject, $message, $headers);
 }
 
 //FOR TESTIMONY

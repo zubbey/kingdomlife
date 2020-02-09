@@ -176,7 +176,7 @@ if (isset($_POST['register'])) {
                                 <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
                                     <tr>
                                         <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
-                                            <div style="line-height: 24px">
+                                            <div style="padding: 10px 0;line-height: 24px">
                                                 Thank you for worshiping with us please verify your email address to continue, God bless you.
                                             </div>
                                         </td>
@@ -187,7 +187,7 @@ if (isset($_POST['register'])) {
             $message .= '<tr>
                             <td align="center" style="color: #ffffff; font-size: 14px; line-height: 26px;">
                                 <div style="line-height: 26px;">
-                                    <a href="https://kingdomlifegospel.org/?accountcomfirm=true&token='.$token.'" target="_blank" style="color: #ffffff; text-decoration: none;">CONFIRM ACCOUNT</a>
+                                    <a href="https://kingdomlifegospel.org/?accountcomfirm=true&token='.$token.'" target="_blank" style="padding: 10px;border-radius: 10px;background: #fb9834;color: #ffffff;text-decoration: none;">CONFIRM ACCOUNT</a>
                                 </div>
                             </td>
                         </tr>';
@@ -237,7 +237,7 @@ if (isset($_POST['login-btn'])) {
             $query->close();
             if (password_verify($password, $user['password'])) {
                 $id = $user['id'];
-                if ($user[`lastAction`] == 0) {
+                if ($user[`lastAction`] = 0) {
                     $updateQuery = mysqli_query($conn, "UPDATE `members` SET lastAction = NOW() WHERE `id` = '$id'");
                 } else {
                     $updateQuery = mysqli_query($conn, "UPDATE `members` SET lastAction = NOW() WHERE `id` = '$id'");
@@ -321,7 +321,7 @@ if (isset($_POST['forgotten-password-btn'])){
                                 <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
                                     <tr>
                                         <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
-                                            <div style="line-height: 24px">
+                                            <div style="padding:10px 0; line-height: 24px">
                                                 Please click the link below to reset you Kingdom life Gospel Outreach Membership Account, God bless you.
                                             </div>
                                         </td>
@@ -332,7 +332,7 @@ if (isset($_POST['forgotten-password-btn'])){
             $message .= '<tr>
                             <td align="center" style="color: #ffffff; font-size: 14px; line-height: 26px;">
                                 <div style="line-height: 26px;">
-                                    <a href="https://kingdomlifegospel.org?resetpassword=true&token='.$token.'" target="_blank" style="color: #ffffff; text-decoration: none;">RESET YOUR PASSWORD</a>
+                                    <a href="https://kingdomlifegospel.org?resetpassword=true&token='.$token.'" target="_blank" style="padding: 10px;border-radius: 10px;background: #fb9834;color: #ffffff;text-decoration: none;">RESET YOUR PASSWORD</a>
                                 </div>
                             </td>
                         </tr>';
@@ -405,7 +405,71 @@ if (isset($_GET['resendmail'])){
         $user = mysqli_fetch_assoc($result);
         $token = $user['token'];
     }
-    sendVerificationEmail($userEmail, $token);
+    $to = $userEmail;
+    $subject = 'VERIFY YOUR MEMBERSHIP ACCOUNT';
+    $from = 'no-reply@kingdomlifegospel.org';
+
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+    // Create email headers
+    $headers .= 'From: '.$from."\r\n".
+        'Reply-To: '.$from."\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    // Compose a simple HTML email message
+    $message = '<html><body>';
+    $message .= '
+                        <table>
+                        <tr>
+                            <!-- logo -->
+                            <td align="left">
+                                <a href="https://kingdomlifegospel.org" style="display: block; border: 0 none !important;"><img width="80" border="0" style="display: block; width: 80px;" src="https://i.imgur.com/GW24SvT.png" alt="" /></a>
+                            </td>
+                        </tr>
+                        </table>
+            ';
+    $message .='<table>';
+    $message .= '
+                        <tr>
+                            <td align="center" class="section-img">
+                                <a href="" style=" display: block; border: 0 none !important;"><img src="https://i.imgur.com/0ae7Kp1.png" style="display: block; width: 590px;" width="590" border="0" alt="" /></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="20" style="font-size: 20px; line-height: 20px;">&nbsp;</td>
+                        </tr>
+            ';
+    $message .= '<tr>
+                            <td align="center">
+                                <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
+                                    <tr>
+                                        <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                            <div style="padding: 10px 0;line-height: 24px">
+                                                Thank you for worshiping with us please verify your email address to continue, God bless you.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>';
+    $message .= '<tr>
+                            <td align="center" style="color: #ffffff; font-size: 14px; line-height: 26px;">
+                                <div style="line-height: 26px;">
+                                    <a href="https://kingdomlifegospel.org/?accountcomfirm=true&token='.$token.'" target="_blank" style="padding: 10px;border-radius: 10px;background: #fb9834;color: #ffffff;text-decoration: none;">CONFIRM ACCOUNT</a>
+                                </div>
+                            </td>
+                        </tr>';
+    $message .='</table>';
+    $message .= '</body></html>';
+
+    // Sending email
+    if(mail($to, $subject, $message, $headers)){
+        header("Location: ?resendmail=true");
+    } else{
+        header("Location: ?error=true");
+    }
 }
 
 // verify your new user email address ####################################################

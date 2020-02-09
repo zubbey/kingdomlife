@@ -252,7 +252,7 @@
                                 echo "<h3 class='entry-title w-100 m-0'><a href='#'>".$row["heading"]."</a></h3>";
                                 echo "</header>";
                                 echo "<div class='entry-content'>";
-                                echo "<p class='m-0 comment more'>".sanitize($row["body"])."</p>";
+                                echo "<p class='m-0 comment more'>".nl2br($row["body"])."</p>";
                                 echo "</div>";
 
                                 echo "</div>";
