@@ -39,7 +39,7 @@
                         <ul>
 
                             <?php
-                            $Query = mysqli_query($conn,"SELECT * FROM outReaches LIMIT 3");
+                            $Query = mysqli_query($conn,"SELECT * FROM outreaches LIMIT 3");
 
                             if ($Query) {
                                 /* fetch associative array */

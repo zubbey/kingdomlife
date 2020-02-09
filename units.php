@@ -19,7 +19,7 @@ require("./components/menu.php");
                     <div class="swiper-wrapper">
                         <?php
 
-                        $sql = "SELECT * FROM `churchUnits`";
+                        $sql = "SELECT * FROM `churchunits`";
 
                         if ($result = mysqli_query($conn, $sql)) {
                             /* fetch associative array */

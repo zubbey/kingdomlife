@@ -56,7 +56,7 @@ require("./components/menu.php");
                                 <div class="col">
                                     <ul class="list-unstyled mb-0">
                                         <?php
-                                        $sql = "SELECT * FROM `outReaches`";
+                                        $sql = "SELECT * FROM `outreaches`";
 
                                         if ($result = mysqli_query($conn, $sql)) {
                                             while ($row = mysqli_fetch_assoc($result)) {

@@ -20,7 +20,7 @@ require("./components/menu.php");
                 <!-- Blog Post -->
                 <?php
 
-                $OutReach_sql = "SELECT * FROM outReaches";
+                $OutReach_sql = "SELECT * FROM outreaches";
                 if ($outResult = mysqli_query($conn, $OutReach_sql)){
                     while ($out_row = mysqli_fetch_assoc($outResult)){
                         echo "<div id='".$out_row["id"]."' class='card mb-4'>";
