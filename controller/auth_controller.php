@@ -3,7 +3,6 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 require ('config/db.php');
-require_once ('emailController.php');
 
 date_default_timezone_set("Africa/Lagos");
 
@@ -120,7 +119,6 @@ if (isset($_POST['register'])) {
                     $status = 0;
                     $sql = mysqli_query($conn, "INSERT INTO profileimg (userid, status) VALUES ('$user_id', '$status')");
                 }
-                sendVerificationEmail($email, $token);
             } else {
                 $errors['userimg'] = "Ops! no user : cant store image.";
             }
@@ -137,14 +135,79 @@ if (isset($_POST['register'])) {
             $_SESSION['phone'] = $phone;
             $_SESSION['verified'] = $verified;
 
-            if (isset($_SESSION['fromStore'])){
-                header('location: store?cart=true');
-            } else if (isset($_SESSION['fromGive'])){
-                $gaveOption = $_SESSION['gaveOption'];
-                header('location: give?give='.$gaveOption);
-            } else{
+            $to = $email;
+            $subject = 'VERIFY YOUR MEMBERSHIP ACCOUNT';
+            $from = 'no-reply@kingdomlifegospel.org';
+
+            // To send HTML mail, the Content-type header must be set
+            $headers  = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+            // Create email headers
+            $headers .= 'From: '.$from."\r\n".
+                'Reply-To: '.$from."\r\n" .
+                'X-Mailer: PHP/' . phpversion();
+
+            // Compose a simple HTML email message
+            $message = '<html><body>';
+            $message .= '
+                        <table>
+                        <tr>
+                            <!-- logo -->
+                            <td align="left">
+                                <a href="https://kingdomlifegospel.org" style="display: block; border: 0 none !important;"><img width="80" border="0" style="display: block; width: 80px;" src="https://i.imgur.com/GW24SvT.png" alt="" /></a>
+                            </td>
+                        </tr>
+                        </table>
+            ';
+            $message .='<table>';
+            $message .= '
+                        <tr>
+                            <td align="center" class="section-img">
+                                <a href="" style=" display: block; border: 0 none !important;"><img src="https://i.imgur.com/0ae7Kp1.png" style="display: block; width: 590px;" width="590" border="0" alt="" /></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="20" style="font-size: 20px; line-height: 20px;">&nbsp;</td>
+                        </tr>
+            ';
+            $message .= '<tr>
+                            <td align="center">
+                                <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
+                                    <tr>
+                                        <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                            <div style="line-height: 24px">
+                                                Thank you for worshiping with us please verify your email address to continue, God bless you.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>';
+            $message .= '<tr>
+                            <td align="center" style="color: #ffffff; font-size: 14px; line-height: 26px;">
+                                <div style="line-height: 26px;">
+                                    <a href="https://kingdomlifegospel.org/?accountcomfirm=true&token='.$token.'" target="_blank" style="color: #ffffff; text-decoration: none;">CONFIRM ACCOUNT</a>
+                                </div>
+                            </td>
+                        </tr>';
+            $message .='</table>';
+            $message .= '</body></html>';
+
+            // Sending email
+            if(mail($to, $subject, $message, $headers)){
+
+                if (isset($_SESSION['fromStore'])){
+                    header('location: store?cart=true');
+                } else if (isset($_SESSION['fromGive'])){
+                    $gaveOption = $_SESSION['gaveOption'];
+                    header('location: give?give='.$gaveOption);
+                } else{
 //                    DEFAULT LOCATION
-                header('location: users/profile?account=created');
+                    header('location: users/profile?account=created');
+                }
+            } else{
+                header("Location: ?error=true"); //could not send mail
             }
         }
     }
@@ -237,8 +300,50 @@ if (isset($_POST['forgotten-password-btn'])){
 
             $row = mysqli_fetch_assoc($emailResult);
             $token = $row['token'];
-            resetpasswordMail($email, $token);
-            header('location: ?passwordlink=sent');
+
+            $to = $email;
+            $subject = 'RESET YOUR MEMBERSHIP ACCOUNT PASSWORD';
+            $from = 'no-reply@kingdomlifegospel.org';
+
+            // To send HTML mail, the Content-type header must be set
+            $headers  = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+            // Create email headers
+            $headers .= 'From: '.$from."\r\n".
+                'Reply-To: '.$from."\r\n" .
+                'X-Mailer: PHP/' . phpversion();
+
+            // Compose a simple HTML email message
+            $message = '<html><body>';
+            $message .= '<tr>
+                            <td align="center">
+                                <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
+                                    <tr>
+                                        <td align="center" style="color: #888888; font-size: 16px; line-height: 24px;">
+                                            <div style="line-height: 24px">
+                                                Please click the link below to reset you Kingdom life Gospel Outreach Membership Account, God bless you.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>';
+            $message .= '<tr>
+                            <td align="center" style="color: #ffffff; font-size: 14px; line-height: 26px;">
+                                <div style="line-height: 26px;">
+                                    <a href="https://kingdomlifegospel.org?resetpassword=true&token='.$token.'" target="_blank" style="color: #ffffff; text-decoration: none;">RESET YOUR PASSWORD</a>
+                                </div>
+                            </td>
+                        </tr>';
+            $message .= '</body></html>';
+
+            // Sending email
+            if(mail($to, $subject, $message, $headers)){
+                header('location: ?passwordlink=sent');
+            } else{
+                header("Location: ?error=true");
+            }
 
         } else{
             $errors['emailnotfound'] = "This email is not in our record!";
@@ -551,7 +656,7 @@ if (isset($_POST['contact-btn'])){
 // Compose a simple HTML email message
         $message = '<html><body>';
         $message .= '<h1 style="font-size:18px;">'.$msg.'</h1>';
-        $message .= '<p style="color:#080;font-size:18px;">My Contact Line: '.$phone.'</p>';
+        $message .= '<p style="color:#2e3133;font-size:14px;">My Contact Line: '.$phone.'</p>';
         $message .= '</body></html>';
 
 // Sending email
