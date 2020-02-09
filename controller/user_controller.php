@@ -14,6 +14,8 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
     exit();
 }$_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
 
+$admin = ['kingdomlifegospelchurch@gmail.com', 'media.kingdomlife@gmail.com'];
+
 //Initializing Sanitize
 function sanitize($str){
     if (get_magic_quotes_gpc()) $str=stripslashes($str);
@@ -136,7 +138,7 @@ if (isset($_POST['prayer-btn'])){
         $status = 0;
         $userid = $_SESSION['user_id'];
 
-        $query = "INSERT INTO prayerRequest (userid, fullname, email, phone, country, prayer, created_date, status)
+        $query = "INSERT INTO prayerrequest (userid, fullname, email, phone, country, prayer, created_date, status)
                     VALUES('$userid', '$fullname', '$email', '$phone', '$country', '$prayer', '$date', '$status')";
         $result = mysqli_query($conn, $query);
 
@@ -156,7 +158,7 @@ function storePaymentData($referenceCode, $amount, $email, $gaveOption){
     $date = date("F j, Y, g:i a");
     $userid = $_SESSION['user_id'];
     $username = $_SESSION['username'];
-    $paymentQuery = "INSERT INTO givePayment (userid, username, email, referenceCode, amount, gaveOption, created_date) VALUES('$userid', '$username', '$email', '$referenceCode', '$amount', '$gaveOption', '$date')";
+    $paymentQuery = "INSERT INTO givepayment (userid, username, email, referenceCode, amount, gaveOption, created_date) VALUES('$userid', '$username', '$email', '$referenceCode', '$amount', '$gaveOption', '$date')";
     $result = mysqli_query($conn, $paymentQuery);
     if (!$result){
         echo '
@@ -198,6 +200,7 @@ if (isset($_GET['resendmail'])){
     // Create email headers
     $headers .= 'From: '.$from."\r\n".
         'Reply-To: '.$from."\r\n" .
+        'CC: '.$admin[0].', '.$admin[1]."\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
     // Compose a simple HTML email message
@@ -348,6 +351,7 @@ if (isset($_POST['change-email-btn'])) {
                     // Create email headers
                     $headers .= 'From: '.$from."\r\n".
                         'Reply-To: '.$from."\r\n" .
+                        'CC: '.$admin[0].', '.$admin[1]."\r\n" .
                         'X-Mailer: PHP/' . phpversion();
 
                     // Compose a simple HTML email message
@@ -444,6 +448,7 @@ if (isset($_POST['change-username-btn'])) {
                     // Create email headers
                     $headers .= 'From: '.$from."\r\n".
                         'Reply-To: '.$from."\r\n" .
+                        'CC: '.$admin[0].', '.$admin[1]."\r\n" .
                         'X-Mailer: PHP/' . phpversion();
 
                     // Compose a simple HTML email message

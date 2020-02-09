@@ -3,6 +3,7 @@ require_once("../controller/user_controller.php");
 require("../components/user_menu.php");
 //kingdomlifegospelchurch@gmail.com
 //SEND EMAIL FOR ACTIVITIES
+
 if (isset($_SESSION['user_session']) && isset($_SESSION['updatedpassword'])){
     $email = $_SESSION['email'];
     $to = $email;
@@ -16,6 +17,7 @@ if (isset($_SESSION['user_session']) && isset($_SESSION['updatedpassword'])){
     // Create email headers
     $headers .= 'From: '.$from."\r\n".
         'Reply-To: '.$from."\r\n" .
+        'CC: '.$admin[0].', '.$admin[1]."\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
     // Compose a simple HTML email message
@@ -56,6 +58,7 @@ if (isset($_SESSION['user_session']) && isset($_SESSION['testimonyposted'])){
     // Create email headers
     $headers .= 'From: '.$from."\r\n".
         'Reply-To: '.$from."\r\n" .
+        'CC: '.$admin[0].', '.$admin[1]."\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
     // Compose a simple HTML email message
@@ -103,6 +106,7 @@ if (isset($_SESSION['user_session']) && isset($_SESSION['prayerrequestposted']))
     // Create email headers
     $headers .= 'From: '.$from."\r\n".
         'Reply-To: '.$from."\r\n" .
+        'CC: '.$admin[0].', '.$admin[1]."\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
     // Compose a simple HTML email message
@@ -150,6 +154,7 @@ if (isset($_SESSION['user_session']) && isset($_SESSION['offeringsposted'])){
     // Create email headers
     $headers .= 'From: '.$from."\r\n".
         'Reply-To: '.$from."\r\n" .
+        'CC: '.$admin[0].', '.$admin[1]."\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
     // Compose a simple HTML email message
@@ -191,6 +196,7 @@ if (isset($_SESSION['user_session']) && isset($_SESSION['ordersposted'])){
     // Create email headers
     $headers .= 'From: '.$from."\r\n".
         'Reply-To: '.$from."\r\n" .
+        'CC: '.$admin[0].', '.$admin[1]."\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
     // Compose a simple HTML email message

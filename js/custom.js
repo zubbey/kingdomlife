@@ -294,6 +294,15 @@ if (queryParameters().resendmail === "true" || queryParameters().contact === "se
         timer: 2500
     });
 }
+if (queryParameters().success === "emailchanged"){
+    Swal.fire({
+        icon: 'success',
+        title: 'An email has been sent to your email address',
+        text: 'Please verify your account.',
+        showConfirmButton: false,
+        timer: 2500
+    });
+}
 function comingSoon(){
     Swal.fire({
         icon: 'warning',

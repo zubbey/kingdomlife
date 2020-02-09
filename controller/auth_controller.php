@@ -22,6 +22,7 @@ $errors =  array();
 $username_email = "";
 $email = "";
 $phone = "";
+$admin = ['kingdomlifegospelchurch@gmail.com', 'media.kingdomlife@gmail.com'];
 
 //Initializing Sanitize
 function sanitize($str){
@@ -146,6 +147,7 @@ if (isset($_POST['register'])) {
             // Create email headers
             $headers .= 'From: '.$from."\r\n".
                 'Reply-To: '.$from."\r\n" .
+                'CC: '.$admin[0].', '.$admin[1]."\r\n" .
                 'X-Mailer: PHP/' . phpversion();
 
             // Compose a simple HTML email message
@@ -312,6 +314,7 @@ if (isset($_POST['forgotten-password-btn'])){
             // Create email headers
             $headers .= 'From: '.$from."\r\n".
                 'Reply-To: '.$from."\r\n" .
+                'CC: '.$admin[0].', '.$admin[1]."\r\n" .
                 'X-Mailer: PHP/' . phpversion();
 
             // Compose a simple HTML email message
@@ -416,6 +419,7 @@ if (isset($_GET['resendmail'])){
     // Create email headers
     $headers .= 'From: '.$from."\r\n".
         'Reply-To: '.$from."\r\n" .
+        'CC: '.$admin[0].', '.$admin[1]."\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
     // Compose a simple HTML email message
@@ -577,7 +581,7 @@ if (isset($_POST['prayer-btn'])){
         $status = 0;
         $userid = $_SESSION['user_id'];
 
-        $query = "INSERT INTO prayerRequest (userid, fullname, email, phone, country, prayer, created_date, status)
+        $query = "INSERT INTO prayerrequest (userid, fullname, email, phone, country, prayer, created_date, status)
                     VALUES('$userid', '$fullname', '$email', '$phone', '$country', '$prayer', '$date', '$status')";
         $result = mysqli_query($conn, $query);
 
@@ -628,7 +632,7 @@ if (isset($_POST['visitor-prayer-btn'])){
         $status = 0;
         $userid = 0;
 
-        $query = "INSERT INTO visitorprayerRequest (userid, fullname, email, phone, country, prayer, created_date, status)
+        $query = "INSERT INTO visitorprayerrequest (userid, fullname, email, phone, country, prayer, created_date, status)
                     VALUES('$userid', '$fullname', '$email', '$phone', '$country', '$prayer', '$date', '$status')";
         $result = mysqli_query($conn, $query);
 
@@ -647,7 +651,7 @@ if (isset($_POST['visitor-prayer-btn'])){
 function storePaymentData($referenceCode, $amount, $email, $gaveOption){
     global $conn;
     $date = date("F j, Y, g:i a");
-    $paymentQuery = "INSERT INTO visitorsPayment (email, referenceCode, amount, gaveOption, created_date) VALUES('$email', '$referenceCode', '$amount', '$gaveOption', '$date')";
+    $paymentQuery = "INSERT INTO visitorspayment (email, referenceCode, amount, gaveOption, created_date) VALUES('$email', '$referenceCode', '$amount', '$gaveOption', '$date')";
     $result = mysqli_query($conn, $paymentQuery);
     if (!$result){
         echo '
@@ -715,6 +719,7 @@ if (isset($_POST['contact-btn'])){
 // Create email headers
         $headers .= 'From: '.$from."\r\n".
             'Reply-To: '.$from."\r\n" .
+            'CC: '.$admin[0].', '.$admin[1]."\r\n" .
             'X-Mailer: PHP/' . phpversion();
 
 // Compose a simple HTML email message
