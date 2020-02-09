@@ -534,16 +534,37 @@ if (isset($_POST['contact-btn'])){
     $msg = mysqli_real_escape_string($conn, $_POST['message']);
 
     if (!empty($fullname) || !empty($email) || !empty($phone) || !empty($msg)){
-        $contactMsg = '<p>'. $msg.' <p><br/><br/><br/><h4>'.$fullname.' Contact Line:'.'  '.$phone .'</h4>';
-        require_once ('emailController.php');
-        
-        sendcontactadminMail($contactMsg, $email);
+
+        $to = 'kingdoml@kingdomlifegospel.org';
+        $subject = 'YOU HAVE A NEW MAIL FROM ' . $fullname;
+        $from = $email;
+
+// To send HTML mail, the Content-type header must be set
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+// Create email headers
+        $headers .= 'From: '.$from."\r\n".
+            'Reply-To: '.$from."\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+// Compose a simple HTML email message
+        $message = '<html><body>';
+        $message .= '<h1 style="font-size:18px;">'.$msg.'</h1>';
+        $message .= '<p style="color:#080;font-size:18px;">My Contact Line: '.$phone.'</p>';
+        $message .= '</body></html>';
+
+// Sending email
+        if(mail($to, $subject, $message, $headers)){
+            header("Location: ?contact=sent");
+        } else{
+            header("Location: ?error=true");
+        }
     } else {
         $errors['emptyContact'] = "Please don't leave any field empty.";
         header("Location: ?error=true&errorMsg=".$errors['emptyContact']."&fullname=".$fullname."&email=".$email."&phone=".$phone."&msg=".$msg."#contactForm");
         exit();
     }
-//    echo $contactMsg;
 }
 
 // CODE TO LOGOUT A USER
