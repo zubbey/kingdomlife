@@ -536,7 +536,6 @@ if (isset($_POST['contact-btn'])){
     if (!empty($fullname) || !empty($email) || !empty($phone) || !empty($msg)){
         $contactMsg = '<p>'. $msg.' <p><br/><br/><br/><h4>'.$fullname.' Contact Line:'.'  '.$phone .'</h4>';
         sendcontactadminMail($contactMsg, $email);
-        header("Location: ?contact=sent");
     } else {
         $errors['emptyContact'] = "Please don't leave any field empty.";
         header("Location: ?error=true&errorMsg=".$errors['emptyContact']."&fullname=".$fullname."&email=".$email."&phone=".$phone."&msg=".$msg."#contactForm");

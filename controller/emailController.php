@@ -957,9 +957,27 @@ function resetpasswordMail($email, $token){
 }
 
 function sendcontactadminMail($contactMsg, $contactEmail){
-    $to = "kingdoml@kingdomlifegospel.org";
-    $subject = "YOU HAVE MAIL FROM ".$contactEmail;
-        $message = '
+
+    $to = 'kingdoml@kingdomlifegospel.org';
+    $subject = 'YOU HAVE MAIL FROM '.$contactEmail;
+    $from = $contactEmail;
+
+// To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+// Create email headers
+    $headers .= 'From: '.$from."\r\n".
+        'Reply-To: '.$from."\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+// Compose a simple HTML email message
+//    $message = '<html><body>';
+//    $message .= '<h1 style="color:#f40;">Hi Kingdomlife!</h1>';
+//    $message .= '<p style="color:#080;font-size:18px;">Am just testing from mail.php</p>';
+//    $message .= '</body></html>';
+
+    $message = '
             <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
             <html xmlns:v="urn:schemas-microsoft-com:vml">
             
@@ -1368,13 +1386,10 @@ function sendcontactadminMail($contactMsg, $contactEmail){
             </html>
         ';
 
-    // Always set content-type when sending HTML email
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-// More headers
-    $headers .= 'From: <'.$contactEmail.'>' . "\r\n";
-    $headers .= 'Cc: com.zubbey@hotmail.com' . "\r\n";
-
-    mail($to,$subject,$message,$headers);
+// Sending email
+    if(mail($to, $subject, $message, $headers)){
+        header("Location: ?contact=sent");
+    } else{
+        header("Location: ?error=true");
+    }
 }
