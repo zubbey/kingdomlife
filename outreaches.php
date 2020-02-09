@@ -57,7 +57,7 @@ require("./components/menu.php");
                             <div class="col">
                                 <ul class="list-unstyled mb-0">
                                     <?php
-                                    $Query = "SELECT * FROM `outReaches`";
+                                    $Query = "SELECT * FROM `outreaches`";
                                     if ($result = mysqli_query($conn, $Query)) {
                                         while ($row = mysqli_fetch_assoc($result)) {
                                             echo "<li><a href='#".$row["id"]."' class='list-group-item'>" . sanitize($row['heading']) . "</a></li>";
@@ -90,7 +90,7 @@ require("./components/menu.php");
                 <div class="modal-body mb-0 p-0">
                     <?php
                     $id = intval($_GET['imageid']);
-                    $results = mysqli_query($conn, "SELECT * FROM `outReaches` WHERE `id`=$id");
+                    $results = mysqli_query($conn, "SELECT * FROM `outreaches` WHERE `id`=$id");
                     while ($row = mysqli_fetch_array($results))
                     {
                         echo "<button type='button' class='close mr-3 p-2' data-dismiss='modal' aria-label='Close'>
