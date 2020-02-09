@@ -39,13 +39,11 @@
                         <ul>
 
                             <?php
+                            $Query = mysqli_query($conn,"SELECT * FROM outReaches LIMIT 3");
 
-                            $Query = "SELECT * FROM outReaches LIMIT 3";
-
-                            if ($result = $conn->query($Query)) {
-
+                            if ($Query) {
                                 /* fetch associative array */
-                                while ($row = $result->fetch_assoc()) {
+                                while ($row = mysqli_fetch_array($Query)) {
                                     echo "<li>";
                                     echo "<h3>".$row['heading']."</h3>";
                                     echo "<a href='#' class=\"posted-date\">Read more</a>";

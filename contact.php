@@ -1,6 +1,12 @@
 <?php
 require_once("./controller/auth_controller.php");
 require("./components/menu.php");
+
+//for Contact validation
+if (isset($_GET['errorMsg'])){
+    $invalid_field = "is-invalid";
+    $invalid_field_Msg = "<div class=\"invalid-feedback d-block\">".$_GET['errorMsg']."</div>";
+}
 ?>
 
     <div class="page-header">
@@ -57,28 +63,30 @@ require("./components/menu.php");
                     </div>
                 </div><!-- .col -->
 
-                <div class="col-12 col-lg-7">
+                <div id="contactForm" class="col-12 col-lg-7">
                     <?php
                         if (isset($_SESSION['user_session'])){
-                            echo '<form class="contact-form" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="GET">
-                                    <input class="form-control form-control-lg" name="fullname" type="text" placeholder="Full Name" value="'.$_SESSION['username'].'" required>
-                                    <input class="form-control form-control-lg" name="email" type="email" placeholder="Email Address" value="'.$_SESSION['email'].'" required>
-                                    <input class="form-control   mb-2" name="phone" type="tel" placeholder="Phone Number" value="'.$_SESSION['phone'].'" required>
-                                    <textarea class="form-control form-control-lg" name="message" rows="10" cols="6" placeholder="Messages" required></textarea>
+                            echo '<form class="contact-form" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="POST">
+                                    '.$invalid_field_Msg.'
+                                    <input class="form-control form-control-lg '.$invalid_field.'" name="fullname" type="text" placeholder="Full Name" value="'.$_SESSION['username'].'" required>
+                                    <input class="form-control form-control-lg '.$invalid_field.'" name="email" type="email" placeholder="Email Address" value="'.$_SESSION['email'].'" required>
+                                    <input class="form-control mb-2 '.$invalid_field.'" name="phone" type="tel" placeholder="Phone Number" value="'.$_SESSION['phone'].'" required>
+                                    <textarea class="form-control form-control-lg '.$invalid_field.'" name="message" rows="10" cols="6" placeholder="Messages" required>'.$_GET['msg'].'</textarea>
             
                                     <span>
-                                    <button name="contact" type="submit" class="btn gradient-bg has-spinner" id="btn" ><span><i class="icon-spin icon-refresh"></i></span> Send Message</button>
+                                    <button name="contact-btn" type="submit" class="btn gradient-bg has-spinner" id="btn" >Send Message <i class="fas fa-paper-plane"></i></button>
                                     </span>
                                 </form>';
                         } else {
-                            echo '<form class="contact-form" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="GET">
-                                    <input class="form-control form-control-lg" name="fullname" type="text" placeholder="Full Name" required>
-                                    <input class="form-control form-control-lg" name="email" type="email" placeholder="Email Address" required>
-                                    <input class="form-control  mb-2" name="phone" type="tel" placeholder="Phone Number" required>
-                                    <textarea class="form-control form-control-lg" name="message" rows="10" cols="6" placeholder="Messages" required></textarea>
+                            echo '<form class="contact-form" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="POST">
+                                    '.$invalid_field_Msg.'
+                                    <input class="form-control form-control-lg '.$invalid_field.'" name="fullname" type="text" placeholder="Full Name" value="'.$_GET['fullname'].'" required>
+                                    <input class="form-control form-control-lg '.$invalid_field.'" name="email" type="email" placeholder="Email Address" value="'.$_GET['email'].'"  required>
+                                    <input class="form-control mb-2 '.$invalid_field.'" name="phone" type="tel" placeholder="Phone Number" value="'.$_GET['phone'].'" required>
+                                    <textarea class="form-control form-control-lg '.$invalid_field.'" name="message" rows="10" cols="6" placeholder="Messages" required>'.$_GET['msg'].'</textarea>
             
                                     <span>
-                                    <button name="contact" type="submit" class="btn gradient-bg has-spinner" id="btn" ><span class="spinner"><i class="icon-spin icon-refresh"></i></span> Send Message</button>
+                                    <button name="contact-btn" type="submit" class="btn gradient-bg has-spinner" id="btn" >Send Message <i class="fas fa-paper-plane"></i></button>
                                     </span>
                                 </form>';
                         }

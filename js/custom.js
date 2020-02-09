@@ -286,7 +286,7 @@ function register() {
     $("#inputEmail").val(urlemail);
     $("#inputPhone").val(urlphone);
 }
-if (queryParameters().resendmail === "true" || queryParameters().contact === "Send"){
+if (queryParameters().resendmail === "true" || queryParameters().contact === "sent"){
     Swal.fire({
         icon: 'success',
         title: 'Email Sent Successfully! Please Check your mail.',

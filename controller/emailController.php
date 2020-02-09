@@ -957,12 +957,8 @@ function resetpasswordMail($email, $token){
 }
 
 function sendcontactadminMail($contactMsg, $contactEmail){
-    $to = "kingdoml@kingdomlifegospel.org, no-reply@kingdomlifegospel.org";
+    $to = "kingdoml@kingdomlifegospel.org";
     $subject = "YOU HAVE MAIL FROM ".$contactEmail;
-
-
-
-        //Recipients
         $message = '
             <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
             <html xmlns:v="urn:schemas-microsoft-com:vml">

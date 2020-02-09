@@ -20,14 +20,14 @@ require("./components/menu.php");
                 <!-- Blog Post -->
                 <?php
 
-                $Query = "SELECT * FROM `outReaches`";
-                if ($result = mysqli_query($conn, $Query)){
-                    while ($row = mysqli_fetch_assoc($result)){
-                        echo "<div id='".$row["id"]."' class='card mb-4'>";
-                        echo "<img onclick=\"location.assign('?imageid=".$row["id"]."')\" class='card-img-top outreaches' src='".$row["image"]."' alt='Card image cap'>";
+                $OutReach_sql = "SELECT * FROM outReaches";
+                if ($outResult = mysqli_query($conn, $OutReach_sql)){
+                    while ($out_row = mysqli_fetch_assoc($outResult)){
+                        echo "<div id='".$out_row["id"]."' class='card mb-4'>";
+                        echo "<img onclick=\"location.assign('?imageid=".$out_row["id"]."')\" class='card-img-top outreaches' src='".$out_row["image"]."' alt='Card image cap'>";
                         echo "<div class='card-body'>";
-                        echo "<h2 class='card-title font-weight-bold'>".mysqli_real_escape_string($conn, stripslashes($row['heading']))."</h2>";
-                        echo "<p class='card-text comment more'>".mysqli_real_escape_string($conn, stripslashes($row['body']))."</p>";
+                        echo "<h2 class='card-title font-weight-bold'>".mysqli_real_escape_string($conn, stripslashes($out_row['heading']))."</h2>";
+                        echo "<p class='card-text comment more'>".mysqli_real_escape_string($conn, stripslashes($out_row['body']))."</p>";
                         echo "</div>";
                         echo "</div>";
                     }

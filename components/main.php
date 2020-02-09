@@ -236,9 +236,9 @@
                 <div class="swiper-container causes-slider">
                     <div class="swiper-wrapper">
                         <?php
-                        $Query = "SELECT * FROM `outReaches`";
-                        if ($result = mysqli_query($conn, $Query)) {
-                            while ($row = mysqli_fetch_assoc($result)){
+                        $OutReach_sql = mysqli_query($conn, "SELECT * FROM outReaches");
+                        if ($OutReach_sql){
+                            while ($row = mysqli_fetch_assoc($OutReach_sql)){
                                 echo "<div class='swiper-slide'>";
                                 echo "<div class='cause-wrap'>";
                                 echo "<figure class='m-0'>";

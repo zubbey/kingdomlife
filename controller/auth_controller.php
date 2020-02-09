@@ -527,13 +527,21 @@ if (isset($_GET['checkout'])){
 }
 
 //CONTACT US FORM
-if (isset($_GET['contact'])){
-    $fullname = $_GET['fullname'];
-    $email = $_GET['email'];
-    $phone = $_GET['phone'];
-    $msg = $_GET['message'];
-    $contactMsg = '<p>'. $msg.' <br/><br/><br/><h4>'.$fullname.' Contact Line:'.'  '.$phone .'</h4><p>';
-    sendcontactadminMail($contactMsg, $email);
+if (isset($_POST['contact-btn'])){
+    $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $msg = mysqli_real_escape_string($conn, $_POST['message']);
+
+    if (!empty($fullname) || !empty($email) || !empty($phone) || !empty($msg)){
+        $contactMsg = '<p>'. $msg.' <p><br/><br/><br/><h4>'.$fullname.' Contact Line:'.'  '.$phone .'</h4>';
+        sendcontactadminMail($contactMsg, $email);
+        header("Location: ?contact=sent");
+    } else {
+        $errors['emptyContact'] = "Please don't leave any field empty.";
+        header("Location: ?error=true&errorMsg=".$errors['emptyContact']."&fullname=".$fullname."&email=".$email."&phone=".$phone."&msg=".$msg."#contactForm");
+        exit();
+    }
 //    echo $contactMsg;
 }
 
