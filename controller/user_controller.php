@@ -144,7 +144,7 @@ if (isset($_POST['prayer-btn'])){
 
         if ($result){
             $_SESSION['prayerrequestposted'] = $prayer;
-            header('location: ?success=prayersent');
+            header('location: ?userprayerrequest=sent');
             exit();
         } else{
             header('location: ?error=posted');

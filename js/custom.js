@@ -255,6 +255,14 @@ if (queryParameters().success === "posted"){
         timer: 5000
     })
 }
+if (queryParameters().error === "posted"){
+    Swal.fire({
+        icon: 'error',
+        title: 'Something went wrong, Please Check your connection!',
+        showConfirmButton: false,
+        timer: 5000
+    })
+}
 function getUrlVars() {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -262,7 +270,17 @@ function getUrlVars() {
     });
     return vars;
 }
-if (queryParameters().success === "prayersent" || queryParameters().passwordlink === "sent"){
+
+if (queryParameters().passwordlink === "sent" || queryParameters().contact === "sent" || queryParameters().userprayerrequest === "sent"){
+    Swal.fire({
+        icon: 'success',
+        title: 'Sent Successfully!',
+        showConfirmButton: false,
+        timer: 2500
+    });
+}
+
+if (queryParameters().success === "prayersent"){
     Swal.fire({
         icon: 'success',
         title: 'Sent Successfully!',
@@ -286,7 +304,7 @@ function register() {
     $("#inputEmail").val(urlemail);
     $("#inputPhone").val(urlphone);
 }
-if (queryParameters().resendmail === "true" || queryParameters().contact === "sent"){
+if (queryParameters().resendmail === "true"){
     Swal.fire({
         icon: 'success',
         title: 'Email Sent Successfully! Please Check your mail.',
