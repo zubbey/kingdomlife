@@ -151,7 +151,7 @@ if (isset($_POST['register'])) {
                 'X-Mailer: PHP/' . phpversion();
 
             // Compose a simple HTML email message
-            $message = '<html><body>';
+            $message = '<html lang="en"><body>';
             $message .= '
                         <table>
                         <tr>
@@ -239,7 +239,7 @@ if (isset($_POST['login-btn'])) {
             $query->close();
             if (password_verify($password, $user['password'])) {
                 $id = $user['id'];
-                if ($user[`lastAction`] = 0) {
+                if ($user['lastAction'] = 0) {
                     $updateQuery = mysqli_query($conn, "UPDATE `members` SET lastAction = NOW() WHERE `id` = '$id'");
                 } else {
                     $updateQuery = mysqli_query($conn, "UPDATE `members` SET lastAction = NOW() WHERE `id` = '$id'");
@@ -318,7 +318,7 @@ if (isset($_POST['forgotten-password-btn'])){
                 'X-Mailer: PHP/' . phpversion();
 
             // Compose a simple HTML email message
-            $message = '<html><body>';
+            $message = '<html lang="en"><body>';
             $message .= '<tr>
                             <td align="center">
                                 <table border="0" width="400" align="center" cellpadding="0" cellspacing="0" class="container590">
@@ -423,7 +423,7 @@ if (isset($_GET['resendmail'])){
         'X-Mailer: PHP/' . phpversion();
 
     // Compose a simple HTML email message
-    $message = '<html><body>';
+    $message = '<html lang="en"><body>';
     $message .= '
                         <table>
                         <tr>
@@ -723,7 +723,7 @@ if (isset($_POST['contact-btn'])){
             'X-Mailer: PHP/' . phpversion();
 
 // Compose a simple HTML email message
-        $message = '<html><body>';
+        $message = '<html lang="en"><body>';
         $message .= '<h1 style="font-size:18px;">'.$msg.'</h1>';
         $message .= '<p style="color:#2e3133;font-size:14px;">My Contact Line: '.$phone.'</p>';
         $message .= '</body></html>';

@@ -11,13 +11,12 @@ if(stristr($_SERVER['HTTP_HOST'], 'localhost') === FALSE) $WEBSITE_ENVIRONMENT =
 if ($WEBSITE_ENVIRONMENT =="Development") {
     $host 		= "localhost";
     $user 		= "root";
-    $password 	= "Inno070687";
+    $password 	= "";
     $database 	= "kingdomlife_database";
     define("APP_ENVIRONMENT", "Development");
     define("APP_BASE_URL", "http://localhost/kingdomlife");
     error_reporting(E_ALL ^ E_NOTICE); // turn ON showing errors
 } else {
-
     $host 		= "localhost";
     $user 		= "kingdoml_church";
     $password 	= "KLGospel@2019";
