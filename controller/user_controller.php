@@ -14,7 +14,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
     exit();
 }$_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
 
-$admin = ['kingdomlifegospelchurch@gmail.com', 'media.kingdomlife@gmail.com'];
+$admin = ['kingdomlifegospelchurch@gmail.com'];
 
 //Initializing Sanitize
 function sanitize($str){
@@ -200,7 +200,7 @@ if (isset($_GET['resendmail'])){
     // Create email headers
     $headers .= 'From: '.$from."\r\n".
         'Reply-To: '.$from."\r\n" .
-        'CC: '.$admin[0].', '.$admin[1]."\r\n" .
+        'CC: '.$admin[0]."\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
     // Compose a simple HTML email message
@@ -351,7 +351,7 @@ if (isset($_POST['change-email-btn'])) {
                     // Create email headers
                     $headers .= 'From: '.$from."\r\n".
                         'Reply-To: '.$from."\r\n" .
-                        'CC: '.$admin[0].', '.$admin[1]."\r\n" .
+                        'CC: '.$admin[0]."\r\n" .
                         'X-Mailer: PHP/' . phpversion();
 
                     // Compose a simple HTML email message
@@ -448,7 +448,7 @@ if (isset($_POST['change-username-btn'])) {
                     // Create email headers
                     $headers .= 'From: '.$from."\r\n".
                         'Reply-To: '.$from."\r\n" .
-                        'CC: '.$admin[0].', '.$admin[1]."\r\n" .
+                        'CC: '.$admin[0]."\r\n" .
                         'X-Mailer: PHP/' . phpversion();
 
                     // Compose a simple HTML email message
