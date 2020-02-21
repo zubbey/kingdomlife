@@ -71,6 +71,17 @@
                     <header class="entry-header">
                         <h2 class="entry-title">Weekly Bulletin</h2>
                     </header><!-- .entry-header -->
+                    <?php
+                    $btSql = "SELECT * FROM `bulletins` order by id DESC LIMIT 1";
+                    $btResult = mysqli_query($conn, $btSql);
+                    if (mysqli_num_rows($btResult) > 0){
+                        $btrow = mysqli_fetch_assoc($btResult);
+                        $file = './images/uploads/bulletin/'.$btrow['file'];
+                        $bulletin = '<iframe src="'.$file.'" class="card-img-top" width="100%" height="300px"></iframe>';
+                    } else {
+
+                    }
+                    ?>
 
                     <div class="entry-content mt-5">
                         <p>It’s the beginning of a new year and the best thing you can do is to become a positive influence to your family and friends this year.
@@ -81,13 +92,13 @@
                     </div><!-- .entry-content -->
 
                     <div class="entry-footer mt-5">
-                        <a href="#" class="btn gradient-bg mr-2" download="images/welcome.jpg"><i class="icon_download"></i> Download</a>
+                        <a href="<?php echo $file;?>" class="btn gradient-bg mr-2" download="weekly_bulletin"><i class="icon_download"></i> Download</a>
                     </div><!-- .entry-footer -->
                 </div><!-- .welcome-content -->
             </div><!-- .col -->
 
             <div class="col-12 col-lg-6 order-1 order-lg-2">
-                <img src="images/welcome.jpg" alt="welcome">
+                <?php echo $bulletin;?>
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
@@ -176,9 +187,21 @@
                         <h2 class="entry-title">Upcoming Events</h2>
                     </div><!-- .section-heading -->
 
+                    <?php
+                    $eSql = "SELECT * FROM `events` order by id DESC LIMIT 1";
+                    $eResult = mysqli_query($conn, $eSql);
+                    if (mysqli_num_rows($eResult) > 0){
+                        $erow = mysqli_fetch_assoc($eResult);
+                        $eventName = $erow['ename'];
+                        $eImg = './images/uploads/events/'.$erow['eimage'];
+                    } else {
+                        echo "<p>Coming up soon!</p>";
+                    }
+                    ?>
+
                     <div class="event-wrap d-flex flex-wrap justify-content-between">
                         <figure class="" style="width: 100%;">
-                            <img src="https://i.imgur.com/pxWMKj4.jpg" alt="">
+                            <img src="<?php echo $eImg; ?>" alt="<?php echo $eventName;?>">
                             <div class="entry-footer my-2">
                                 <a href="events" class="btn orange-border mr-2">Read More</a>
                             </div>
@@ -242,7 +265,7 @@
                                 echo "<div class='swiper-slide'>";
                                 echo "<div class='cause-wrap'>";
                                 echo "<figure class='m-0'>";
-                                echo "<img onclick=\"location.assign('outreaches?imageid=".$row["id"]."')\" src='".$row["image"]."' alt='".$row["heading"]."'>";
+                                echo "<img onclick=\"location.assign('outreaches?imageid=".$row["id"]."')\" src='./images/uploads/outreach/".$row["image"]."' alt='".$row["heading"]."'>";
                                 echo "<div class='figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100'>";
                                 echo "<a href='outreaches?imageid=".$row["id"]."' class='btn orange-border mr-2'>Read more</a>";
                                 echo "</div>";

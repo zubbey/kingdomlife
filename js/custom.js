@@ -180,8 +180,8 @@ if(window.matchMedia('(min-width:320px) and (max-width: 768px)').matches)
 {
     $('.testimonial-item.col.col-6.col-4.m-auto').removeClass(['col-6', 'col-4']);
     $('ul.tabs-nav .tab-nav, .btn').css({'padding': '10px', 'border-radius': '15px'});
-    $('div#event-img').addClass(['col-12','my-4']);
-    $('div#event-details').addClass('col-12');
+    $('div#events-img').addClass(['col-12','my-4']);
+    $('div#events-details').addClass('col-12');
     // INDEX
     $('.home-page-icon-boxes').css('padding', '10px 0');
     $('.swiper-slide.hero-content-wrap img').css('height','150px');

@@ -61,6 +61,8 @@ if (isset($_GET['error']) && $_GET['error'] === 'emptyinput'){
                         </button>
                     </div>
 
+                    <?php if (isset($_SESSION['user_session'])):?>
+
                     <form class="contact-form m-0" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="GET">
                         <div class="row">
                             <div id="cart-form" class="col-sm-8">
@@ -110,6 +112,15 @@ if (isset($_GET['error']) && $_GET['error'] === 'emptyinput'){
                             </div>
                         </div>
                     </form>
+                    <?php else: ?>
+                    <?php $_SESSION['fromStore'] = true ?>
+                    <div class="row">
+                        <div class="col-sm-4 p-4">
+                            <p>Your not Registered yet!</p>
+                            <input onclick="location.assign('index?register=true')" class="btn gradient-bg" type="submit" value="Register Now">
+                        </div>
+                    </div>
+                    <?php endif ;?>
                 </div>
         </div>
     </div>
@@ -134,16 +145,17 @@ if (isset($_GET['error']) && $_GET['error'] === 'emptyinput'){
                                 <div class="row">
                                     <?php
 
-                                    $Query = "SELECT * FROM `ebooks`";
+                                    $Query = "SELECT * FROM `stock` WHERE type = 'ebook'";
                                     if ($result = mysqli_query($conn, $Query)) {
 
                                         // fetch associative array
-                                        while ($row = mysqli_fetch_assoc($result)) {
+                                        if (mysqli_num_rows($result) > 0){
+                                            while ($row = mysqli_fetch_assoc($result)) {
 
-                                            echo "
+                                                echo "
                                                  <div class='col-sm-6 col-md-4 col-md-3'>
                                                     <div class='card p-3'>
-                                                        <img class='card-img-top' src='".$row["thumbnail"]."' alt='".$row["name"]."'>
+                                                        <img class='card-img-top' src='./images/uploads/stock/".$row["thumbnail"]."' alt='".$row["name"]."'>
                                                         <div class='card-block'>
                                                             <h5 class='card-title pt-3'>".$row["name"]."</h5>
                                                             <hr class='m-0'>
@@ -153,7 +165,12 @@ if (isset($_GET['error']) && $_GET['error'] === 'emptyinput'){
                                                     </div>
                                                 </div>
                                             ";
+                                            }
+                                        } else {
+                                            echo '<h3>There\'s 0 available item here</h3>';
+                                            echo '<div style="margin-top: 10rem"></div>';
                                         }
+
                                     }
                                     ?>
                                 </div>
@@ -162,17 +179,119 @@ if (isset($_GET['error']) && $_GET['error'] === 'emptyinput'){
                     </div>
 
                     <div id="cd" class="tab-content">
-                       <h3>There's 0 available item here</h3>
-                        <div style="margin-top: 10rem"></div>
+                        <div id="cd" class="row clearfix">
+                            <div class="container">
+                                <div class="row">
+                                    <?php
+
+                                    $Query = "SELECT * FROM `stock` WHERE type = 'cd'";
+                                    if ($result = mysqli_query($conn, $Query)) {
+
+                                        // fetch associative array
+                                        if (mysqli_num_rows($result) > 0){
+                                            while ($row = mysqli_fetch_assoc($result)) {
+
+                                                echo "
+                                                 <div class='col-sm-6 col-md-4 col-md-3'>
+                                                    <div class='card p-3'>
+                                                        <img class='card-img-top' src='./images/uploads/stock/".$row["thumbnail"]."' alt='".$row["name"]."'>
+                                                        <div class='card-block'>
+                                                            <h5 class='card-title pt-3'>".$row["name"]."</h5>
+                                                            <hr class='m-0'>
+                                                            <p class='card-text p-2'>Price: &#8358;".number_format($row["amount"])."</p>
+                                                            <a onclick=\"checkCart('cart-id".$row["id"]."')\" data-name='".$row["name"]."' data-price='".$row["amount"]."' class='add-to-cart btn btn-outline btn-block cart-id".$row["id"]."'><i class='cart icon_cart'></i> Add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ";
+                                            }
+                                        } else {
+                                            echo '<h3>There\'s 0 available item here</h3>';
+                                            echo '<div style="margin-top: 10rem"></div>';
+                                        }
+
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div id="dvd" class="tab-content">
-                        <h3>There's 0 available item here</h3>
-                        <div style="margin-top: 10rem"></div>
+                        <div id="dvd" class="row clearfix">
+                            <div class="container">
+                                <div class="row">
+                                    <?php
+
+                                    $Query = "SELECT * FROM `stock` WHERE type = 'dvd'";
+                                    if ($result = mysqli_query($conn, $Query)) {
+
+                                        // fetch associative array
+                                        if (mysqli_num_rows($result) > 0){
+                                            while ($row = mysqli_fetch_assoc($result)) {
+
+                                                echo "
+                                                 <div class='col-sm-6 col-md-4 col-md-3'>
+                                                    <div class='card p-3'>
+                                                        <img class='card-img-top' src='./images/uploads/stock/".$row["thumbnail"]."' alt='".$row["name"]."'>
+                                                        <div class='card-block'>
+                                                            <h5 class='card-title pt-3'>".$row["name"]."</h5>
+                                                            <hr class='m-0'>
+                                                            <p class='card-text p-2'>Price: &#8358;".number_format($row["amount"])."</p>
+                                                            <a onclick=\"checkCart('cart-id".$row["id"]."')\" data-name='".$row["name"]."' data-price='".$row["amount"]."' class='add-to-cart btn btn-outline btn-block cart-id".$row["id"]."'><i class='cart icon_cart'></i> Add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ";
+                                            }
+                                        } else {
+                                            echo '<h3>There\'s 0 available CD here</h3>';
+                                            echo '<div style="margin-top: 10rem"></div>';
+                                        }
+
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div id="audio_books" class="tab-content">
-                        <h3>There's 0 available item here</h3>
-                        <div style="margin-top: 10rem"></div>
+                        <div id="audio_books" class="row clearfix">
+                            <div class="container">
+                                <div class="row">
+                                    <?php
+
+                                    $Query = "SELECT * FROM `stock` WHERE type = 'audiobook'";
+                                    if ($result = mysqli_query($conn, $Query)) {
+
+                                        // fetch associative array
+                                        if (mysqli_num_rows($result) > 0){
+                                            while ($row = mysqli_fetch_assoc($result)) {
+
+                                                echo "
+                                                 <div class='col-sm-6 col-md-4 col-md-3'>
+                                                    <div class='card p-3'>
+                                                        <img class='card-img-top' src='./images/uploads/stock/".$row["thumbnail"]."' alt='".$row["name"]."'>
+                                                        <div class='card-block'>
+                                                            <h5 class='card-title pt-3'>".$row["name"]."</h5>
+                                                            <hr class='m-0'>
+                                                            <p class='card-text p-2'>Price: &#8358;".number_format($row["amount"])."</p>
+                                                            <a onclick=\"checkCart('cart-id".$row["id"]."')\" data-name='".$row["name"]."' data-price='".$row["amount"]."' class='add-to-cart btn btn-outline btn-block cart-id".$row["id"]."'><i class='cart icon_cart'></i> Add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ";
+                                            }
+                                        } else {
+                                            echo '<h3>There\'s 0 available Audio Book here</h3>';
+                                            echo '<div style="margin-top: 10rem"></div>';
+                                        }
+
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

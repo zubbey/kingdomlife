@@ -16,7 +16,7 @@
         if (mysqli_num_rows($result) > 0){
             while ($row = mysqli_fetch_assoc($result)){
                 echo '<div class="swiper-slide hero-content-wrap">';
-                echo '<img src="'. $row['image'] .'" alt="'. $row['image'] .'">';
+                echo '<img src="images/uploads/banner/'.$row['image'].'" alt="'. $row['image'] .'">';
                 echo ' <div class="position-absolute w-100">';
                 echo '<div class="container">';
                 echo '<div class="row">';

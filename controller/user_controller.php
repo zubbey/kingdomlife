@@ -582,8 +582,8 @@ if (isset($_GET['order']) && $_GET['order'] === 'orderSent'){
 // CODE TO LOGOUT A USER
 if (isset($_GET['logout'])) {
     $id = $_SESSION['user_id'];
-    $time = time();
-    $updateQuery = mysqli_query($conn,"UPDATE `members` SET lastAction = '$time' WHERE `id` = '$id'");
+//    $time
+    $updateQuery = mysqli_query($conn,"UPDATE `members` SET `lastAction` = NULL WHERE `id` = '$id'");
     session_destroy();
     $_SESSION['user_session'] = FALSE;
     unset($_SESSION['user_id']);

@@ -7,7 +7,7 @@ require("./components/menu.php");
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1>Bulletin</h1>
+                    <h1>Weekly Bulletin</h1>
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
@@ -15,17 +15,21 @@ require("./components/menu.php");
 
 <div class="container">
     <div class="row my-lg-5">
-        <div class="col-12">
-            <div id="bulletin" class="media">
-                <img src="images/welcome.jpg" class="mr-3" alt="...">
-                <div class="media-body">
-                    <h5 class="mt-0">BULLETIN FOR THE WEEK</h5>
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                    <a href="#" class="btn gradient-bg mr-2"><i class="icon_download"></i> Download</a>
-                </div>
-            </div>
-
-        </div>
+        <?php
+        $btSql = "SELECT * FROM `bulletins` order by id DESC ";
+        $btResult = mysqli_query($conn, $btSql);
+        if (mysqli_num_rows($btResult) > 0){
+            while ($btrow = mysqli_fetch_assoc($btResult)){
+                echo '<div id="bulletin" class="col-8">';
+                echo '<iframe src="./images/uploads/bulletin/'.$btrow['file'].'" class="card-img-top" width="100%" height="500px"></iframe>';
+                echo '</div>';
+                echo '<div class="col-4">';
+                echo '<h5 class="mt-0">BULLETIN FOR THE WEEK</h5>';
+                echo '<a href="./images/uploads/bulletin/'.$btrow['file'].'" class="btn gradient-bg mr-2" download="weekly_bulletin"><i class="icon_download"></i> Download</a>';
+                echo '</div>';
+            }
+        }
+        ?>
     </div>
 </div>
 

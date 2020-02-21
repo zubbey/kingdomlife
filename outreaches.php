@@ -20,11 +20,11 @@ require("./components/menu.php");
                 <!-- Blog Post -->
                 <?php
 
-                $OutReach_sql = "SELECT * FROM outreaches";
+                $OutReach_sql = "SELECT * FROM outreaches order by id DESC";
                 if ($outResult = mysqli_query($conn, $OutReach_sql)){
                     while ($out_row = mysqli_fetch_assoc($outResult)){
                         echo "<div id='".$out_row["id"]."' class='card mb-4'>";
-                        echo "<img onclick=\"location.assign('?imageid=".$out_row["id"]."')\" class='card-img-top outreaches' src='".$out_row["image"]."' alt='Card image cap'>";
+                        echo "<img onclick=\"location.assign('?imageid=".$out_row["id"]."')\" class='card-img-top outreaches' src='./images/uploads/outreach/".$out_row["image"]."' alt='Card image cap'>";
                         echo "<div class='card-body'>";
                         echo "<h2 class='card-title font-weight-bold'>".mysqli_real_escape_string($conn, $out_row['heading'])."</h2>";
                         echo "<p class='card-text comment more'>".nl2br($out_row['body'])."</p>";
@@ -74,8 +74,19 @@ require("./components/menu.php");
                 <div class="card my-4">
                     <h5 class="card-header">Upcoming Events</h5>
                     <div class="card-body">
+                        <?php
+                        $eSql = "SELECT * FROM `events` order by id DESC LIMIT 1";
+                        $eResult = mysqli_query($conn, $eSql);
+                        if (mysqli_num_rows($eResult) > 0){
+                            $erow = mysqli_fetch_assoc($eResult);
+                            $eventName = $erow['ename'];
+                            $eImg = './images/uploads/events/'.$erow['eimage'];
+                        } else {
+                            echo "<p>Coming up soon!</p>";
+                        }
+                        ?>
                         <a href="events">
-                            <img class="img-fluid preview-thumbnail" src="https://i.imgur.com/pxWMKj4.jpg">
+                            <img class="img-fluid preview-thumbnail" src="<?php echo $eImg;?>" alt="<?php echo $eventName;?>">
                         </a>
                     </div>
                 </div>
@@ -96,7 +107,7 @@ require("./components/menu.php");
                         echo "<button type='button' class='close mr-3 p-2' data-dismiss='modal' aria-label='Close'>
                             <span aria-hidden='true'>&times;</span>
                         </button>";
-                        echo "<img src='".$row['image']."' alt='".$row['heading']."' style='width:100%'>";
+                        echo "<img src='./images/uploads/outreach/".$row['image']."' alt='".$row['heading']."' style='width:100%'>";
                     }
                     ?>
                 </div>

@@ -744,8 +744,7 @@ if (isset($_POST['contact-btn'])){
 // CODE TO LOGOUT A USER
 if (isset($_GET['logout'])) {
     $id = $_SESSION['user_id'];
-    $time = time();
-    $updateQuery = mysqli_query($conn,"UPDATE `members` SET lastAction = '$time' WHERE `id` = '$id'");
+    $updateQuery = mysqli_query($conn,"UPDATE `members` SET lastAction = NULL WHERE `id` = '$id'");
     session_destroy();
     $_SESSION['user_session'] = FALSE;
     unset($_SESSION['user_id']);

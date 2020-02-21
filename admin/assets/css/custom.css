@@ -1,0 +1,41 @@
+/*.card-columns {*/
+/*@include media-breakpoint-only(lg) {*/
+/*    column-count: 4;*/
+/*}*/
+/*@include media-breakpoint-only(xl) {*/
+/*    column-count: 5;*/
+/*}*/
+/*}*/
+
+button.swal2-cancel.btn.btn-danger {
+    border: none !important;
+    color: #fff !important;
+}
+button.swal2-confirm.btn.btn-success{
+    border: none !important;
+    color: #fff !important;
+}
+a.morelink {
+    text-decoration:none;
+    outline: none;
+}
+.morecontent span {
+    display: none;
+}
+.comment {
+    /*width: 400px;*/
+    /*background-color: #f0f0f0;*/
+    margin: 10px;
+}
+a.morelink{
+    color: #f94101 !important;
+}
+a.morelink:hover, a.morelink:visited{
+    color: #c14906 !important;
+}
+a.morelink.less{
+    color: #f94101 !important;
+}
+a.morelink.less:hover, a.morelink.less:visited{
+    color: #f94101 !important;
+}

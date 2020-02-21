@@ -1147,7 +1147,7 @@ SwiperClass.prototype.useModules = function useModules (modulesParams) {
         }
       });
     }
-    // Add event listeners
+    // Add events listeners
     if (module.on && instance.on) {
       Object.keys(module.on).forEach(function (moduleEventName) {
         instance.on(moduleEventName, module.on[moduleEventName]);
@@ -2706,7 +2706,7 @@ var onTouchEnd = function (event) {
           swiper.velocity = 0;
         }
         // this implies that the user stopped moving a finger then released.
-        // There would be no events with distance zero, so the last event is stale.
+        // There would be no events with distance zero, so the last events is stale.
         if (time > 150 || (Utils.now() - lastMoveEvent.time) > 300) {
           swiper.velocity = 0;
         }
@@ -4200,7 +4200,7 @@ function isEventSupported() {
     // @see http://dom.spec.whatwg.org/#dom-domimplementation-hasfeature
     doc.implementation.hasFeature('', '') !== true
   ) {
-    // This is the only way to test support for the `wheel` event in IE9+.
+    // This is the only way to test support for the `wheel` events in IE9+.
     isSupported = doc.implementation.hasFeature('Events.wheel', '3.0');
   }
 
@@ -4340,7 +4340,7 @@ var Mousewheel = {
           swiper.slideReset();
         }, 300);
       }
-      // Emit event
+      // Emit events
       swiper.emit('scroll', e);
 
       // Stop autoplay

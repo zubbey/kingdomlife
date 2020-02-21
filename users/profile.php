@@ -374,7 +374,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'passwordnotmatch'){
                                 <hr class="my-4">
                                 <p class="mb-1"><?php echo $_SESSION['phone'];?></p>
                                 <p><?php echo $_SESSION['email'];?></p>
-                                <p class="mb-0 text-black font-weight-bold"><a class="text-secondary mr-3" data-toggle="modal" data-target="#edit-profile-modal" href="#"><i class="icon_pencil-edit"></i> Edit Profile</a></p>
+                                <p class="mb-0 text-black font-weight-bold"><a class="text-secondary mr-3" id="settings-tab" data-toggle="tab" role="tab" href="#settings" aria-selected="false"><i class="icon_pencil-edit"></i> Edit Profile</a></p>
                             </div>
                         </div>
                     </div>
@@ -496,7 +496,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'passwordnotmatch'){
                                             echo '
                                                 <form class="contact-form m-0" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) .'" method="POST">
                                                     <label for="fullname">Enter your full Name: </label>
-                                                     <input type="text" name="fullname" id="fullname" class="form-control '. $invalid_username .'" placeholder="fullname">
+                                                     <input type="text" name="fullname" id="fullname" class="form-control '. $invalid_username .'" value="'.$_SESSION['fname'].' '.$_SESSION['lname'].'">
                                                     '. $invalid_username_Msg .'
                                                     <label for="Email">Email Address: </label>
                                                     <input type="email" name="email" id="Email" placeholder="Email Address" value="'. $_SESSION['email'] .'">
@@ -671,7 +671,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'passwordnotmatch'){
                         </div>
 
 
-                        <div class="row m-lg-5" id="password-tab">
+                        <div class="row mt-5" id="password-tab">
                             <div class="col-12">
                                 <div class="entry-title">
                                     <h4 class="font-weight-bold">Change Password</h4>
