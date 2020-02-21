@@ -62,7 +62,7 @@ require ("./assets/admin_menu.php");
 
 
                                 $headers = array();
-                                $headers[] = 'Authorization: Bearer SECRET_KEY';
+                                $headers[] = 'Authorization: Bearer sk_live_ca31ec7e3f2c925d6e2a023f76c4cdb43c8e4a1f';
                                 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
                                 $result = curl_exec($ch);
