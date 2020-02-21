@@ -43,7 +43,7 @@ if (isset($_POST['login-btn'])) {
             $query->close();
             if ($password === $user['password'] || password_verify($_POST['password'], $user['password'])) {
                 $id = $user['id'];
-                if ($user[`lastaction`] == 0) {
+                if ($user[`lastaction`] = 0) {
                     $updateQuery = mysqli_query($conn, "UPDATE `admin` SET lastaction = NOW() WHERE `id` = '$id'");
                 } else {
                     $updateQuery = mysqli_query($conn, "UPDATE `admin` SET lastaction = NOW() WHERE `id` = '$id'");
