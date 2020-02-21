@@ -12,7 +12,10 @@ require("./assets/admin_menu.php");
                         <h4 class="card-title">Members Testimonies</h4>
                     </div>
                 </div>
-                <div class="card" style="width: 20rem;">
+            </div>
+        </div>
+        <div class="row">
+
                 <?php
                 $Query = "SELECT * FROM `testimonies` order by id DESC ";
 
@@ -35,6 +38,8 @@ require("./assets/admin_menu.php");
                             $userid = $userRow["id"];
                         }
                         echo '
+                        <div class="col-sm-3 col-sm-4">
+                            <div class="card" style="width: 20rem;">
                             <div class="card-body">
                                 <img src="../images/uploads/profile' . $userid . '.jpg?' . mt_rand() . '" class="card-img-top" height="200px" alt="'.$username.'">
                                 <h6 class="my-3">@'.$username.'</h6>
@@ -63,6 +68,8 @@ require("./assets/admin_menu.php");
                              ';
                         echo '</blockquote>';
                         echo '</div> ';
+                        echo '</div>';
+                        echo '</div>';
                     }
                 }
 
