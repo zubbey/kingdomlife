@@ -9,7 +9,7 @@ date_default_timezone_set("Africa/Lagos");
 // last request was more than 30 minutes ago
 if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
     $id = $_SESSION['id'];
-    $updateQuery = mysqli_query($conn,"UPDATE `admin` SET `lastAction` = NULL WHERE `lastAction` = NOW() - 1800");
+    $updateQuery = mysqli_query($conn,"UPDATE `admin` SET `lastaction` = NULL WHERE `lastaction` = NOW() - 1800");
     session_unset();     // unset $_SESSION variable for the run-time
     session_destroy();   // destroy session data in storage
     header("Location: ?login=true&time=inactive");
@@ -44,9 +44,9 @@ if (isset($_POST['login-btn'])) {
             if ($password === $user['password'] || password_verify($_POST['password'], $user['password'])) {
                 $id = $user['id'];
                 if ($user[`lastaction`] == 0) {
-                    $updateQuery = mysqli_query($conn, "UPDATE `admin` SET lastAction = NOW() WHERE `id` = '$id'");
+                    $updateQuery = mysqli_query($conn, "UPDATE `admin` SET lastaction = NOW() WHERE `id` = '$id'");
                 } else {
-                    $updateQuery = mysqli_query($conn, "UPDATE `admin` SET lastAction = NOW() WHERE `id` = '$id'");
+                    $updateQuery = mysqli_query($conn, "UPDATE `admin` SET lastaction = NOW() WHERE `id` = '$id'");
                 }
                 $_SESSION['admin_session'] = TRUE;
                 $_SESSION['adminid'] = $user['id'];
@@ -190,7 +190,7 @@ switch (isset($_SESSION['admin_session'])) {
 //LOGOUT ADMIN
 if (isset($_GET['logout'])) {
     $id = $_SESSION['id'];
-    $updateQuery = mysqli_query($conn,"UPDATE `admin` SET lastAction = NULL WHERE `id` = '$id'");
+    $updateQuery = mysqli_query($conn,"UPDATE `admin` SET lastaction = NULL WHERE `id` = '$id'");
     session_destroy();
     $_SESSION['admin_session'] = FALSE;
     unset($_SESSION['id']);
